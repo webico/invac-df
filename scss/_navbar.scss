@@ -1,0 +1,26 @@
+.header {
+  background-color: var(--600);
+
+  .header__container {
+    padding: 1rem;
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      #header__button {
+        //codigo temporario
+        background: none;
+        border: none;
+        color: #ccc;
+        text-transform: uppercase;
+      }
+    }
+
+    #menu {
+      display: none;
+      // background: blue;
+    }
+  }
+}
