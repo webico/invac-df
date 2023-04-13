@@ -1,5 +1,8 @@
 .header {
-  background-color: var(--600);
+  background-color: var(--200);
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   .header__container {
     padding: 1rem;
@@ -9,18 +12,105 @@
       align-items: center;
       justify-content: space-between;
 
-      #header__button {
+      a {
+        display: flex;
+      }
+
+      .header__button {
         //codigo temporario
         background: none;
         border: none;
-        color: #ccc;
+        color: #202020;
+        font-weight: $semi;
         text-transform: uppercase;
       }
     }
 
-    #menu {
-      display: none;
-      // background: blue;
+    .menu {
+      padding: 0;
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      transition: .3s opacity ease-in-out;
+
+      .menu-list__item {
+        padding: .75rem 0;
+        display: flex;
+        align-items: center;
+        font-weight: $semi;
+        color: var(--400);
+
+        //temporario
+        &::before {
+          content: '';
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: var(--400);
+          margin-right: .5rem;
+        }
+      }
+
+      .menu__instalacao {
+        margin: 1.5rem 0 5.8rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--100);
+
+        button {
+          padding: .75rem;
+          width: 12rem;
+          margin: auto;
+          border-radius: .25rem;
+          border: 1px solid var(--300);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: $semi;
+          color: var(--400);
+
+          //temporario
+          &::before {
+            content: '';
+            width: 10px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--300);
+            margin-right: .5rem;
+          }
+        }
+      }
+
+      .menu__info__div {
+        li:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        .menu-info__item {
+          font-weight: $medium;
+          color: var(--300);
+          text-decoration: underline;
+          text-underline-offset: .375rem;
+        }
+      }
+
+      .copyright {
+        color: var(--400);
+        text-align: center;
+        margin-top: 2.5rem;
+      }
+    }
+  }
+
+  &.--open {
+    height: 100vh;
+    overflow-y: auto;
+
+    .menu {
+      padding: 2rem 0 1rem;
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      transition: .3s opacity ease-in-out;
     }
   }
 }
