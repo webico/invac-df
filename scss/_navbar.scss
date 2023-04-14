@@ -106,7 +106,7 @@
     height: 100vh;
     overflow-y: auto;
     background-color: var(--200);
-    transition: .3s background-color ease-in-out;
+    transition: .2s background-color linear;
 
     .header-logo .header__button {
       color: var(--600);
@@ -117,7 +117,7 @@
       visibility: visible;
       opacity: 1;
       height: auto;
-      transition: .3s opacity background-color ease-in-out;
+      transition: .2s opacity background-color linear;
     }
   }
 }
