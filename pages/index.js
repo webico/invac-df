@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -9,6 +10,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <main className='main'>
+        <div className="container">
+          <h1 className='main__titulo'>Marque suas vacinas e testes de COVID.</h1>
+
+          <Link href='#' className='btn-principal main__btn'>Fazer agendamento</Link>
+        </div>
+      </main>
     </>
   );
 }

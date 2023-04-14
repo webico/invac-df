@@ -32,7 +32,8 @@ body {
   position: relative;
 }
 
-a, span {
+a,
+span {
   display: block;
 }
 
@@ -50,8 +51,20 @@ button {
   border: none;
 }
 
+.btn-principal {
+  width: fit-content;
+  padding: .625rem 1rem;
+  border-radius: .25rem;
+}
+
 .container {
   padding: 0 1rem;
 }
 
+.page {
+  padding-top: 4rem;
+}
+
 @import "navbar";
+
+@import "Index";

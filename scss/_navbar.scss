@@ -1,8 +1,9 @@
 .header {
-  background-color: var(--200);
+  background-color: var(--600);
   position: fixed;
   top: 0;
   width: 100%;
+  // transition: .3s background-color ease-in-out;
 
   .header__container {
     padding: 1rem;
@@ -20,7 +21,7 @@
         //codigo temporario
         background: none;
         border: none;
-        color: #202020;
+        color: var(--100);
         font-weight: $semi;
         text-transform: uppercase;
       }
@@ -31,14 +32,14 @@
       visibility: hidden;
       opacity: 0;
       height: 0;
-      transition: .3s opacity ease-in-out;
+      // transition: .3s opacity background-color ease-in-out;
 
       .menu-list__item {
         padding: .75rem 0;
         display: flex;
         align-items: center;
         font-weight: $semi;
-        color: var(--400);
+        color: var(--600);
 
         //temporario
         &::before {
@@ -46,7 +47,7 @@
           width: 20px;
           height: 20px;
           border-radius: 50%;
-          background: var(--400);
+          background: var(--500);
           margin-right: .5rem;
         }
       }
@@ -54,7 +55,7 @@
       .menu__instalacao {
         margin: 1.5rem 0 5.8rem;
         padding-top: 2rem;
-        border-top: 1px solid var(--100);
+        border-top: 1px solid var(--300);
 
         button {
           padding: .75rem;
@@ -66,7 +67,7 @@
           align-items: center;
           justify-content: center;
           font-weight: $semi;
-          color: var(--400);
+          color: var(--600);
 
           //temporario
           &::before {
@@ -87,14 +88,14 @@
 
         .menu-info__item {
           font-weight: $medium;
-          color: var(--300);
+          color: var(--400);
           text-decoration: underline;
           text-underline-offset: .375rem;
         }
       }
 
       .copyright {
-        color: var(--400);
+        color: var(--600);
         text-align: center;
         margin-top: 2.5rem;
       }
@@ -104,13 +105,19 @@
   &.--open {
     height: 100vh;
     overflow-y: auto;
+    background-color: var(--200);
+    transition: .3s background-color ease-in-out;
+
+    .header-logo .header__button {
+      color: var(--600);
+    }
 
     .menu {
       padding: 2rem 0 1rem;
       visibility: visible;
       opacity: 1;
       height: auto;
-      transition: .3s opacity ease-in-out;
+      transition: .3s opacity background-color ease-in-out;
     }
   }
 }

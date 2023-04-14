@@ -1,0 +1,19 @@
+.main {
+  padding: 2.5rem 0;
+  background: var(--600);
+  margin-bottom: 2.5rem;
+  
+  .main__titulo {
+    font-weight: $bold;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: var(--100);
+  }
+
+  .main__btn {
+    margin-top: 2rem;
+    background: var(--100);
+    color: var(--600);
+    font-weight: $semi;
+  }
+}
