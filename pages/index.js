@@ -25,8 +25,19 @@ export default function Home(props) {
     ]),
     disponibilidade: PropTypes.oneOfType([
       PropTypes.object,
+      PropTypes.array]),
+    casos: PropTypes.oneOfType([
+      PropTypes.object,
       PropTypes.array])
   };
+
+  const dataCasosInicial = props.casos[1][0];
+
+  const [casos, setCasos] = useState(dataCasosInicial);
+
+  function handleCasos(e) {
+    setCasos(props.casos[1][e.target.value]);
+  }
 
   return (
     <>
@@ -51,6 +62,41 @@ export default function Home(props) {
         <div className="container">
           <h2>Consulte os resultados dos seus testes e a sua carteira de vacinação contra a COVID-19.</h2>
           <Link href='#' className='btn-principal'>Consultar!</Link>
+        </div>
+      </section>
+
+      <section className='casos-covid'>
+        <div className="container">
+          <h2>Veja casos da COVID do último mês na sua região!</h2>
+
+          <div className='casos__div'>
+            <select name="" id="" onChange={handleCasos} className='casos__filtro'>
+              {
+                props.casos[1] && props.casos[1].map(regiao => (
+                  <option key={regiao.id} value={regiao.id}>{regiao.nome_regiao}</option>
+                ))
+              }
+            </select>
+
+            <ul>
+              <li className='caso__card'>
+                <p>Casos Ativos</p>
+                <span>{casos.casos_ativos}</span>
+              </li>
+
+              <li className='caso__card'>
+                <p>Casos confirmados</p>
+                <span>{casos.casos_confirmados}</span>
+              </li>
+
+              <li className='caso__card'>
+                <p>Óbitos Confirmados</p>
+                <span>{casos.obitos_confirmados}</span>
+              </li>
+            </ul>
+
+            <p className='atualizado-em'>Atualizado em: {props.casos[0].atualizado_em}</p>
+          </div>
         </div>
       </section>
     </>

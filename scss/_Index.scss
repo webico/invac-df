@@ -122,3 +122,51 @@
 
   }
 }
+
+.casos-covid {
+  text-align: center;
+
+
+  .casos__div {
+    background: var(--600);
+    border-radius: .5rem;
+    padding: 4rem 1.5rem;
+    margin-top: 2rem;
+
+    .casos__filtro {
+      width: 100%;
+      padding: .75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--300);
+      border-radius: .25rem;
+      margin-bottom: 2rem;
+    }
+
+    .caso__card {
+      color: var(-100);
+      padding: 1rem .75rem;
+      background: var(--400);
+      color: var(--100);
+      border-radius: .25rem;
+
+      p {
+        font-size: 1.25rem;
+        font-weight: $semi;
+      }
+
+      span {
+        font-weight: $medium;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: .375rem;
+      }
+    }
+
+    .atualizado-em {
+      text-align: right;
+      margin-top: 1.5rem;
+      color: var(--100);
+    }
+  }
+}
