@@ -94,6 +94,13 @@ export default function Home(props) {
           {itemsShow == 4 ? <button className='ver-todas' onClick={handleShowMore}>Ver todas as regiões</button> : ''}
         </div>
       </section>
+
+      <section className='consulta'>
+        <div className="container">
+          <h2>Consulte os resultados dos seus testes e a sua carteira de vacinação contra a COVID-19.</h2>
+          <Link href='#' className='btn-principal'>Consultar!</Link>
+        </div>
+      </section>
     </>
   );
 }
