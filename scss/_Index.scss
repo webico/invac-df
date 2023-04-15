@@ -98,4 +98,15 @@
       }
     }
   }
+
+  .ver-todas {
+    display: block;
+    font-weight: $bold;
+    text-decoration: underline;
+    text-underline-offset: .2rem;
+    background: none;
+    color: var(--400);
+    width: fit-content;
+    margin: 2rem auto 0;
+  }
 }
