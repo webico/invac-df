@@ -3,6 +3,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import fsPromises from 'fs/promises';
 import path from 'path';
+import { useState } from 'react';
 
 export async function getStaticProps() {
   // eslint-disable-next-line no-undef
@@ -26,7 +27,22 @@ export default function Home(props) {
       PropTypes.array])
   };
 
-  const disponiveis = props.disponibilidade;
+  const vacinas = props.disponibilidade.vacinas,
+    testes = props.disponibilidade.testes;
+
+  const [data, setData] = useState(vacinas),
+    [nome, setNome] = useState('vacinas');
+
+  function handleChange(e) {
+    //dá pra melhorar isso aqui, tá feio demais
+    if (e.target.value == 'testes') {
+      setData(testes);
+      setNome('testes');
+    } else {
+      setData(vacinas);
+      setNome('vacinas');
+    }
+  }
 
   return (
     <>
@@ -50,19 +66,19 @@ export default function Home(props) {
           <div className="disponivel__filtro">
             <p>Disponibilidade de:</p>
 
-            <select name="" id="">
+            <select name="" id="" onChange={handleChange}>
               <option value="vacinas">Vacinas</option>
               <option value="testes">Testes</option>
             </select>
           </div>
 
           <ul className='disponivel__lista'>
-            {disponiveis.map(regiao =>
+            {data && data.map(regiao =>
               <li key={regiao.id} className='disponivel__card'>
                 <div className='card__info'>
                   <span className='regiao'>Região</span>
                   <h2 className='regiao__nome'>{regiao.nome_regiao}</h2>
-                  <p className='regiao__disponiveis'>{regiao.vacinas} vacinas disponíveis</p>
+                  <p className='regiao__disponiveis'>{regiao.quantidade} {nome} disponíveis</p>
                 </div>
 
                 <button className='card__btn'></button>
