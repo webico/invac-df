@@ -125,12 +125,12 @@
 
 .casos-covid {
   text-align: center;
-
+  margin-bottom: 4rem;
 
   .casos__div {
     background: var(--600);
     border-radius: .5rem;
-    padding: 4rem 1.5rem;
+    padding: 2.5rem 1.5rem 2rem;
     margin-top: 2rem;
 
     .casos__filtro {
@@ -166,7 +166,8 @@
     .atualizado-em {
       text-align: right;
       margin-top: 1.5rem;
-      color: var(--100);
+      color: var(--200);
+      font-size: .875rem;
     }
   }
 }
