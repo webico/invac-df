@@ -1,3 +1,4 @@
+// SECAO INICIAL
 .main {
   padding: 2.5rem 0;
   background: var(--600);
@@ -17,6 +18,7 @@
   }
 }
 
+// DISPONIBILIDADE DE VACINAS E TESTES
 .disponivel {
   .disponivel__filtro {
     display: flex;
@@ -123,6 +125,14 @@
   }
 }
 
+//para reutilizar o estilo
+.dado__card {
+  padding: 1rem .75rem;
+  color: var(--100);
+  border-radius: .25rem;
+}
+
+// CASOS DE COVID NO ULTIMO MES
 .casos-covid {
   text-align: center;
   margin-bottom: 4rem;
@@ -142,12 +152,8 @@
       margin-bottom: 2rem;
     }
 
-    .caso__card {
-      color: var(-100);
-      padding: 1rem .75rem;
-      background: var(--400);
-      color: var(--100);
-      border-radius: .25rem;
+    .dado__card {
+      background: rgba(51, 51, 51, 0.81);
 
       p {
         font-size: 1.25rem;
@@ -169,5 +175,60 @@
       color: var(--200);
       font-size: .875rem;
     }
+  }
+}
+
+// DADOS VACINAIS DF
+.dados-vacinais {
+  background: var(--600);
+  padding: 3rem 0;
+
+  h2 {
+    color: var(--100);
+    text-align: center;
+  }
+
+  .dados__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+
+    .dado__card {
+      background: var(--400);
+      padding: 1.5rem .75rem;
+      text-align: center;
+      flex: 1 0 6rem;
+
+      &:nth-child(3) {
+        margin: 0 .625rem;
+      }
+
+      p {
+        margin-bottom: .5rem;
+        font-weight: $bold;
+      }
+
+      &.big-card {
+        flex-basis: 100%;
+        margin-bottom: .75rem;
+
+        p, span {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+
+  .ver-todas-doses {
+    padding: .875rem 0;
+    text-align: center;
+    font-weight: $semi;
+    width: 100%;
+    background: var(--100);
+    color: var(--600);
+    margin-top: 2rem;
+    border-radius: .25rem;
   }
 }

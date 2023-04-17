@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { addComma } from '@/public/js/globalFunctions';
 
 const DisponiveisLista = ({ props }) => {
   DisponiveisLista.propTypes = {
@@ -51,7 +52,7 @@ const DisponiveisLista = ({ props }) => {
               <div className='card__info'>
                 <span className='regiao'>Região</span>
                 <h2 className='regiao__nome'>{regiao.nome_regiao}</h2>
-                <p className='regiao__disponiveis'>{regiao.quantidade} {nome} disponíveis</p>
+                <p className='regiao__disponiveis'>{addComma(regiao.quantidade)} {nome} disponíveis</p>
               </div>
 
               <button className='card__btn'></button>

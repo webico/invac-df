@@ -5,6 +5,7 @@ import fsPromises from 'fs/promises';
 import path from 'path';
 import { useState } from 'react';
 import DisponiveisLista from '@/components/DisponiveisLista';
+import { addComma } from '@/public/js/globalFunctions';
 
 export async function getStaticProps() {
   // eslint-disable-next-line no-undef
@@ -28,16 +29,20 @@ export default function Home(props) {
       PropTypes.array]),
     casos: PropTypes.oneOfType([
       PropTypes.object,
+      PropTypes.array]),
+    dados_vacinais_df: PropTypes.oneOfType([
+      PropTypes.object,
       PropTypes.array])
   };
 
   const dataCasosInicial = props.casos[1][0];
-
   const [casos, setCasos] = useState(dataCasosInicial);
 
   function handleCasos(e) {
     setCasos(props.casos[1][e.target.value]);
   }
+
+  const dadosVacinais = props.dados_vacinais_df;
 
   return (
     <>
@@ -48,6 +53,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* SEÇÃO INICIAL */}
       <main className='main'>
         <div className="container">
           <h1 className='main__titulo'>Marque suas vacinas e testes de COVID.</h1>
@@ -56,6 +62,7 @@ export default function Home(props) {
         </div>
       </main>
 
+      {/* DISPONIBILIDADE DE VACINAS E TESTES */}
       <DisponiveisLista props={props} />
 
       <section className='consulta'>
@@ -65,6 +72,7 @@ export default function Home(props) {
         </div>
       </section>
 
+      {/* CASOS DE COVID NO ULTIMO MES */}
       <section className='casos-covid'>
         <div className="container">
           <h2>Veja casos da COVID do último mês na sua região!</h2>
@@ -79,24 +87,56 @@ export default function Home(props) {
             </select>
 
             <ul>
-              <li className='caso__card'>
+              <li className='dado__card'>
                 <p>Casos Ativos</p>
-                <span>{casos.casos_ativos}</span>
+                <span>{addComma(casos.casos_ativos)}</span>
               </li>
 
-              <li className='caso__card'>
+              <li className='dado__card'>
                 <p>Casos confirmados</p>
-                <span>{casos.casos_confirmados}</span>
+                <span>{addComma(casos.casos_confirmados)}</span>
               </li>
 
-              <li className='caso__card'>
+              <li className='dado__card'>
                 <p>Óbitos Confirmados</p>
-                <span>{casos.obitos_confirmados}</span>
+                <span>{addComma(casos.obitos_confirmados)}</span>
               </li>
             </ul>
 
             <p className='atualizado-em'>Atualizado em: {props.casos[0].atualizado_em}</p>
           </div>
+        </div>
+      </section>
+
+      {/* DADOS VACINAIS DF */}
+
+      <section className='dados-vacinais'>
+        <div className="container">
+          <h2>Dados vacinais do Distrito Federal</h2>
+
+          <ul className='dados__list'>
+            <li className='dado__card big-card'>
+              <p>Total de Doses Aplicadas</p>
+              <span>{addComma(dadosVacinais.total_doses)}</span>
+            </li>
+
+            <li className='dado__card'>
+              <p>1ª Dose</p>
+              <span>{addComma(dadosVacinais.dose_1)}</span>
+            </li>
+
+            <li className='dado__card'>
+              <p>2ª Dose</p>
+              <span>{addComma(dadosVacinais.dose_2)}</span>
+            </li>
+
+            <li className='dado__card'>
+              <p>3ª Dose</p>
+              <span>{addComma(dadosVacinais.reforco_1)}</span>
+            </li>
+          </ul>
+
+          <Link href='#' className='ver-todas-doses'>Ver todas as doses aplicadas</Link>
         </div>
       </section>
     </>

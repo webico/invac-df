@@ -83,52 +83,59 @@
       {
         "id": 0,
         "nome_regiao": "Norte",
-        "casos_ativos": "100.000",
-        "casos_confirmados": "200.000",
-        "obitos_confirmados": "300.000"
+        "casos_ativos": 100000,
+        "casos_confirmados": 200000,
+        "obitos_confirmados": 300000
       },
       {
         "id": 1,
         "nome_regiao": "Oeste",
-        "casos_ativos": "400.000",
-        "casos_confirmados": "500.000",
-        "obitos_confirmados": "600.000"
+        "casos_ativos": 400000,
+        "casos_confirmados": 500000,
+        "obitos_confirmados": 600000
       },
       {
         "id": 2,
         "nome_regiao": "Central",
-        "casos_ativos": "700.000",
-        "casos_confirmados": "800.000",
-        "obitos_confirmados": "900.000"
+        "casos_ativos": 700000,
+        "casos_confirmados": 800000,
+        "obitos_confirmados": 900000
       },
       {
         "id": 3,
         "nome_regiao": "Leste",
-        "casos_ativos": "110.000",
-        "casos_confirmados": "220.000",
-        "obitos_confirmados": "330.000"
+        "casos_ativos": 110000,
+        "casos_confirmados": 220000,
+        "obitos_confirmados": 330000
       },
       {
         "id": 4,
         "nome_regiao": "Sul",
-        "casos_ativos": "440.000",
-        "casos_confirmados": "550.000",
-        "obitos_confirmados": "660.000"
+        "casos_ativos": 440000,
+        "casos_confirmados": 550000,
+        "obitos_confirmados": 660000
       },
       {
         "id": 5,
         "nome_regiao": "Centro-Sul",
-        "casos_ativos": "770.000",
-        "casos_confirmados": "880.000",
-        "obitos_confirmados": "990.000"
+        "casos_ativos": 770000,
+        "casos_confirmados": 880000,
+        "obitos_confirmados": 990000
       },
       {
         "id": 6,
         "nome_regiao": "Sudoeste",
-        "casos_ativos": "111.000",
-        "casos_confirmados": "222.000",
-        "obitos_confirmados": "333.000"
+        "casos_ativos": 111000,
+        "casos_confirmados": 222000,
+        "obitos_confirmados": 333000
       }
     ]
-  ]
+  ],
+  "dados_vacinais_df": {
+    "total_doses": 7335354,
+    "dose_1": 2556299,
+    "dose_2": 2384873,
+    "reforco_1": 1488695,
+    "reforco_2": 641860
+  }
 }
