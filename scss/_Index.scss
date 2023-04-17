@@ -222,13 +222,24 @@
   }
 
   .ver-todas-doses {
-    padding: .875rem 0;
     text-align: center;
-    font-weight: $semi;
     width: 100%;
     background: var(--100);
     color: var(--600);
     margin-top: 2rem;
-    border-radius: .25rem;
+  }
+}
+
+//secão de duvidas frequentes
+.secao-duvidas {
+  margin: 4rem 0;
+
+  p {
+    margin: 1rem 0 2.5rem;
+  }
+
+  .btn-principal {
+    background: var(--600);
+    color: var(--100);
   }
 }

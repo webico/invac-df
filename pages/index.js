@@ -136,7 +136,15 @@ export default function Home(props) {
             </li>
           </ul>
 
-          <Link href='#' className='ver-todas-doses'>Ver todas as doses aplicadas</Link>
+          <Link href='#' className='btn-principal ver-todas-doses'>Ver todas as doses aplicadas</Link>
+        </div>
+      </section>
+
+      <section className='secao-duvidas'>
+        <div className="container">
+          <h2>Dúvidas sobre a vacina?</h2>
+          <p>Separamos todas as frequentes dúvidas  que as pessoas possuem sobre a vacina e respondemos para que você se manter informado!</p>
+          <Link href='#' className='btn-principal'>Dúvidas frequentes</Link>
         </div>
       </section>
     </>
