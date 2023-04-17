@@ -80,25 +80,6 @@
           }
         }
       }
-
-      .menu-info {
-        li:not(:last-child) {
-          margin-bottom: 1rem;
-        }
-
-        .menu-info__item {
-          font-weight: $medium;
-          color: var(--400);
-          text-decoration: underline;
-          text-underline-offset: .375rem;
-        }
-      }
-
-      .copyright {
-        color: var(--600);
-        text-align: center;
-        margin-top: 2.5rem;
-      }
     }
   }
 

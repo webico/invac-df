@@ -5,7 +5,7 @@ $medium: 500;
 $semi: 600;
 $bold: 700;
 
-@import "tema";
+@import "parts/tema";
 
 html {
   scroll-behavior: smooth;
@@ -66,6 +66,26 @@ button {
   padding-top: 4rem;
 }
 
-@import "navbar";
+.menu-info {
+  li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .menu-info__item {
+    font-weight: $medium;
+    color: var(--400);
+    text-decoration: underline;
+    text-underline-offset: .375rem;
+  }
+}
+
+.copyright {
+  color: var(--600);
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: .875rem;
+}
+
+@import "parts/navbar";
 
 @import "Index";

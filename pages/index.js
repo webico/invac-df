@@ -6,6 +6,7 @@ import path from 'path';
 import { useState } from 'react';
 import DisponiveisLista from '@/components/DisponiveisLista';
 import { addComma } from '@/public/js/globalFunctions';
+import UserHelpLinks from '@/components/UserHelpLinks';
 
 export async function getStaticProps() {
   // eslint-disable-next-line no-undef
@@ -147,6 +148,12 @@ export default function Home(props) {
           <Link href='#' className='btn-principal'>Dúvidas frequentes</Link>
         </div>
       </section>
+
+      <footer>
+        <div className="container">
+          <UserHelpLinks />
+        </div>
+      </footer>
     </>
   );
 }
