@@ -16,25 +16,23 @@ const Navbar = () => {
         <div className="menu">
           <nav>
             <ul>
-              <li><Link href='#' className="menu-list__item">Página Inicial</Link></li>
-              <li><Link href='#' className="menu-list__item">Agendamento</Link></li>
-              <li><Link href='#' className="menu-list__item">Consulta</Link></li>
-              <li><Link href='#' className="menu-list__item">Dados Vacinais</Link></li>
-              <li><Link href='#' className="menu-list__item">Dúvidas Frequentes</Link></li>
+              <li><Link href='#' className="menu__item">Página Inicial</Link></li>
+              <li><Link href='#' className="menu__item">Agendamento</Link></li>
+              <li><Link href='#' className="menu__item">Consulta</Link></li>
+              <li><Link href='#' className="menu__item">Dados Vacinais</Link></li>
+              <li><Link href='#' className="menu__item">Dúvidas Frequentes</Link></li>
             </ul>
           </nav>
 
-          <div className='menu__instalacao'>
+          <div className='menu-instalacao'>
             <button>Instalar Aplicativo</button>
           </div>
 
-          <div>
-            <ul className="menu__info__div">
-              <li><Link href='#' className='menu-info__item'>Entre em contato</Link></li>
-              <li><Link href='#' className='menu-info__item'>Acesso à Informação</Link></li>
-              <li><Link href='#' className='menu-info__item'>Política de Privacidade</Link></li>
-            </ul>
-          </div>
+          <ul className="menu-info">
+            <li><Link href='#' className='menu-info__item'>Entre em contato</Link></li>
+            <li><Link href='#' className='menu-info__item'>Acesso à Informação</Link></li>
+            <li><Link href='#' className='menu-info__item'>Política de Privacidade</Link></li>
+          </ul>
 
           <div className="copyright">
             <p>SESDF Invac DF © 2023</p>
