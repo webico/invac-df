@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import fsPromises from 'fs/promises';
 import path from 'path';
-import { useState } from 'react';
+// import { useState } from 'react';
 import DisponiveisLista from '@/components/DisponiveisLista';
 import { addComma } from '@/public/js/globalFunctions';
 import UserHelpLinks from '@/components/UserHelpLinks';
+import useFetch from '@/public/js/useFetch';
 
 export async function getStaticProps() {
   // eslint-disable-next-line no-undef
@@ -19,31 +20,25 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home(props) {
-  Home.propTypes = {
-    props: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.array
-    ]),
-    disponibilidade: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.array]),
-    casos: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.array]),
-    dados_vacinais_df: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.array])
-  };
+export default function Home() {
+  const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
 
-  const dataCasosInicial = props.casos[1][0];
-  const [casos, setCasos] = useState(dataCasosInicial);
+  // Home.propTypes = {
+  //   props: defaultProps,
+  //   disponibilidade: defaultProps,
+  //   casos: defaultProps,
+  //   dados_vacinais_df: defaultProps
+  // };
 
-  function handleCasos(e) {
-    setCasos(props.casos[1][e.target.value]);
-  }
+  // const dataCasosInicial = data.casos[1][0];
+  // const [casos, setCasos] = useState(data.casos);
 
-  const dadosVacinais = props.dados_vacinais_df;
+  // function handleCasos(e) {
+  //   // setCasos(props.casos[1][e.target.value]);
+  //   console.log('jfshjkfsdhkjfsd');
+  // }
+
+  // console.log(dataCasosInicial);
 
   return (
     <>
@@ -64,7 +59,9 @@ export default function Home(props) {
       </main>
 
       {/* DISPONIBILIDADE DE VACINAS E TESTES */}
-      <DisponiveisLista props={props} />
+      {error && <div className='container'>{error}</div>}
+      {isPending && <div className='container'>Loading...</div>}
+      {data && <DisponiveisLista props={data.disponibilidade} />}
 
       <section className='consulta'>
         <div className="container">
@@ -74,40 +71,43 @@ export default function Home(props) {
       </section>
 
       {/* CASOS DE COVID NO ULTIMO MES */}
-      <section className='casos-covid'>
+      {/* <section className='casos-covid'>
         <div className="container">
           <h2>Veja casos da COVID do último mês na sua região!</h2>
 
           <div className='casos__div'>
             <select name="" id="" onChange={handleCasos} className='casos__filtro'>
               {
-                props.casos[1] && props.casos[1].map(regiao => (
+                data && data.casos[1].map(regiao => (
                   <option key={regiao.id} value={regiao.id}>{regiao.nome_regiao}</option>
                 ))
               }
             </select>
 
-            <ul>
-              <li className='dado__card'>
-                <p>Casos Ativos</p>
-                <span>{addComma(casos.casos_ativos)}</span>
-              </li>
+            {
+              data &&
+              <ul>
+                <li className='dado__card'>
+                  <p>Casos Ativos</p>
+                  <span>{addComma(casos.casos_ativos)}</span>
+                </li>
 
-              <li className='dado__card'>
-                <p>Casos confirmados</p>
-                <span>{addComma(casos.casos_confirmados)}</span>
-              </li>
+                <li className='dado__card'>
+                  <p>Casos confirmados</p>
+                  <span>{addComma(casos.casos_confirmados)}</span>
+                </li>
 
-              <li className='dado__card'>
-                <p>Óbitos Confirmados</p>
-                <span>{addComma(casos.obitos_confirmados)}</span>
-              </li>
-            </ul>
+                <li className='dado__card'>
+                  <p>Óbitos Confirmados</p>
+                  <span>{addComma(casos.obitos_confirmados)}</span>
+                </li>
+              </ul>
+            }
 
             <p className='atualizado-em'>Atualizado em: {props.casos[0].atualizado_em}</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* DADOS VACINAIS DF */}
 
@@ -118,24 +118,25 @@ export default function Home(props) {
           <ul className='dados__list'>
             <li className='dado__card big-card'>
               <p>Total de Doses Aplicadas</p>
-              <span>{addComma(dadosVacinais.total_doses)}</span>
+              <span>{data && addComma(data.dados_vacinais_df.total_doses)}</span>
             </li>
 
             <li className='dado__card'>
               <p>1ª Dose</p>
-              <span>{addComma(dadosVacinais.dose_1)}</span>
+              <span>{data && addComma(data.dados_vacinais_df.dose_1)}</span>
             </li>
 
             <li className='dado__card'>
               <p>2ª Dose</p>
-              <span>{addComma(dadosVacinais.dose_2)}</span>
+              <span>{data && addComma(data.dados_vacinais_df.dose_2)}</span>
             </li>
 
             <li className='dado__card'>
               <p>3ª Dose</p>
-              <span>{addComma(dadosVacinais.reforco_1)}</span>
+              <span>{data && addComma(data.dados_vacinais_df.reforco_1)}</span>
             </li>
           </ul>
+
 
           <Link href='#' className='btn-principal ver-todas-doses'>Ver todas as doses aplicadas</Link>
         </div>

@@ -1,31 +1,29 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { addComma } from '@/public/js/globalFunctions';
+import PropTypes from 'prop-types';
 
 const DisponiveisLista = ({ props }) => {
+  const defaultProps = PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array]);
+
   DisponiveisLista.propTypes = {
-    props: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.array]),
-    disponibilidade: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.array])
+    props: defaultProps,
+    vacinas: defaultProps,
+    testes: defaultProps
   };
 
-  const vacinas = props.disponibilidade.vacinas,
-    testes = props.disponibilidade.testes;
-
-  const [data, setData] = useState(vacinas),
+  const [data, setData] = useState(props.vacinas),
     [nome, setNome] = useState('vacinas'),
     [itemsShow, setItemsShow] = useState(4);
 
   function handleChange(e) {
     //dá pra melhorar isso aqui, tá feio demais
     if (e.target.value == 'testes') {
-      setData(testes);
+      setData(props.testes);
       setNome('testes');
     } else {
-      setData(vacinas);
+      setData(props.vacinas);
       setNome('vacinas');
     }
   }
