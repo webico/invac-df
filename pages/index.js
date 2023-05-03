@@ -1,34 +1,14 @@
 import Head from 'next/head';
 import Link from 'next/link';
 // import PropTypes from 'prop-types';
-import fsPromises from 'fs/promises';
-import path from 'path';
 // import { useState } from 'react';
 import DisponiveisLista from '@/components/DisponiveisLista';
 import { addComma } from '@/public/js/globalFunctions';
 import UserHelpLinks from '@/components/UserHelpLinks';
 import useFetch from '@/public/js/useFetch';
 
-export async function getStaticProps() {
-  // eslint-disable-next-line no-undef
-  const filePath = path.join(process.cwd(), '/public/tempData.json');
-  const jsonData = await fsPromises.readFile(filePath);
-  const objectData = JSON.parse(jsonData);
-
-  return {
-    props: objectData
-  };
-}
-
 export default function Home() {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
-
-  // Home.propTypes = {
-  //   props: defaultProps,
-  //   disponibilidade: defaultProps,
-  //   casos: defaultProps,
-  //   dados_vacinais_df: defaultProps
-  // };
 
   // const dataCasosInicial = data.casos[1][0];
   // const [casos, setCasos] = useState(data.casos);
@@ -113,27 +93,27 @@ export default function Home() {
 
       <section className='dados-vacinais'>
         <div className="container">
-          <h2>Dados vacinais do Distrito Federal</h2>
+          <h2 className='dados-vacinais__h2'>Dados vacinais do Distrito Federal</h2>
 
-          <ul className='dados__list'>
-            <li className='dado__card big-card'>
-              <p>Total de Doses Aplicadas</p>
-              <span>{data && addComma(data.dados_vacinais_df.total_doses)}</span>
+          <ul className='dados-list'>
+            <li className='dado-card big-card'>
+              <p className='dado-card__p'>Total de Doses Aplicadas</p>
+              <span className='dado-card__span'>{data && addComma(data.dados_vacinais_df.total_doses)}</span>
             </li>
 
-            <li className='dado__card'>
-              <p>1ª Dose</p>
-              <span>{data && addComma(data.dados_vacinais_df.dose_1)}</span>
+            <li className='dado-card'>
+              <p className='dado-card__p'>1ª Dose</p>
+              <span className='dado-card__span'>{data && addComma(data.dados_vacinais_df.dose_1)}</span>
             </li>
 
-            <li className='dado__card'>
-              <p>2ª Dose</p>
-              <span>{data && addComma(data.dados_vacinais_df.dose_2)}</span>
+            <li className='dado-card'>
+              <p className='dado-card__p'>2ª Dose</p>
+              <span className='dado-card__span'>{data && addComma(data.dados_vacinais_df.dose_2)}</span>
             </li>
 
-            <li className='dado__card'>
-              <p>3ª Dose</p>
-              <span>{data && addComma(data.dados_vacinais_df.reforco_1)}</span>
+            <li className='dado-card'>
+              <p className='dado-card__p'>3ª Dose</p>
+              <span className='dado-card__span'>{data && addComma(data.dados_vacinais_df.reforco_1)}</span>
             </li>
           </ul>
 
@@ -145,7 +125,7 @@ export default function Home() {
       <section className='secao-duvidas'>
         <div className="container">
           <h2>Dúvidas sobre a vacina?</h2>
-          <p>Separamos todas as frequentes dúvidas  que as pessoas possuem sobre a vacina e respondemos para que você se manter informado!</p>
+          <p className='secao-duvidas__p'>Separamos todas as frequentes dúvidas  que as pessoas possuem sobre a vacina e respondemos para que você se manter informado!</p>
           <Link href='/faq' className='btn-principal'>Dúvidas frequentes</Link>
         </div>
       </section>

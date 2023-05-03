@@ -1,16 +1,16 @@
 // DISPONIBILIDADE DE VACINAS E TESTES
 .disponivel {
-  .disponivel__filtro {
+  .disponivel-filtro {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
 
-    p {
+    .disponivel-filtro__p {
       font-weight: $semi;
     }
 
     //temporario
-    select {
+    .disponivel-filtro__select {
       width: 9.25rem;
       padding: .75rem 1rem;
       font-size: 1rem;
@@ -113,70 +113,71 @@
 }
 
 // CASOS DE COVID NO ULTIMO MES
-.casos-covid {
-  text-align: center;
-  margin-bottom: 4rem;
+// .casos-covid {
+//   text-align: center;
+//   margin-bottom: 4rem;
 
-  .casos__div {
-    background: var(--600);
-    border-radius: .5rem;
-    padding: 2.5rem 1.5rem 2rem;
-    margin-top: 2rem;
+//   .casos__div {
+//     background: var(--600);
+//     border-radius: .5rem;
+//     padding: 2.5rem 1.5rem 2rem;
+//     margin-top: 2rem;
 
-    .casos__filtro {
-      width: 100%;
-      padding: .75rem 1rem;
-      font-size: 1rem;
-      border: 1px solid var(--300);
-      border-radius: .25rem;
-      margin-bottom: 2rem;
-    }
+//     .casos__filtro {
+//       width: 100%;
+//       padding: .75rem 1rem;
+//       font-size: 1rem;
+//       border: 1px solid var(--300);
+//       border-radius: .25rem;
+//       margin-bottom: 2rem;
+//     }
 
-    .dado__card {
-      background: rgba(51, 51, 51, 0.81);
+//     .dado__card {
+//       background: rgba(51, 51, 51, 0.81);
 
-      p {
-        font-size: 1.25rem;
-        font-weight: $semi;
-      }
+//       p {
+//         font-size: 1.25rem;
+//         font-weight: $semi;
+//       }
 
-      span {
-        font-weight: $medium;
-      }
+//       span {
+//         font-weight: $medium;
+//       }
 
-      &:not(:last-child) {
-        margin-bottom: .375rem;
-      }
-    }
+//       &:not(:last-child) {
+//         margin-bottom: .375rem;
+//       }
+//     }
 
-    .atualizado-em {
-      text-align: right;
-      margin-top: 1.5rem;
-      color: var(--200);
-      font-size: .875rem;
-    }
-  }
-}
+//     .atualizado-em {
+//       text-align: right;
+//       margin-top: 1.5rem;
+//       color: var(--200);
+//       font-size: .875rem;
+//     }
+//   }
+// }
 
 // DADOS VACINAIS DF
 .dados-vacinais {
   background: var(--600);
   padding: 3rem 0;
 
-  h2 {
+  .dados-vacinais__h2 {
     color: var(--100);
     text-align: center;
   }
 
-  .dados__list {
+  .dados-list {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-top: 2.5rem;
 
-    .dado__card {
+    .dado-card {
       background: var(--400);
+      color: var(--100);
       padding: 1.5rem .75rem;
       text-align: center;
       flex: 1 0 6rem;
@@ -185,7 +186,7 @@
         margin: 0 .625rem;
       }
 
-      p {
+      .dado-card__p {
         margin-bottom: .5rem;
         font-weight: $bold;
       }
@@ -194,7 +195,8 @@
         flex-basis: 100%;
         margin-bottom: .75rem;
 
-        p, span {
+        .dado-card__p,
+        .dado-card__span {
           font-size: 1.25rem;
         }
       }
@@ -214,7 +216,7 @@
 .secao-duvidas {
   margin: 4rem 0;
 
-  p {
+  .secao-duvidas__p {
     margin: 1rem 0 2.5rem;
   }
 

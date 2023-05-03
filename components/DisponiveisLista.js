@@ -35,10 +35,10 @@ const DisponiveisLista = ({ props }) => {
   return (
     <section className='disponivel'>
       <div className="container">
-        <div className="disponivel__filtro">
-          <p>Disponibilidade de:</p>
+        <div className="disponivel-filtro">
+          <p className='disponivel-filtro__p'>Disponibilidade de:</p>
 
-          <select name="" id="" onClick={handleChange}>
+          <select className='disponivel-filtro__select' name="" id="" onClick={handleChange}>
             <option value="vacinas">Vacinas</option>
             <option value="testes">Testes</option>
           </select>
