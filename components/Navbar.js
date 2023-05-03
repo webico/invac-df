@@ -17,11 +17,11 @@ const Navbar = () => {
         <div className="menu">
           <nav>
             <ul>
-              <li><Link href='#' className="menu__item">Página Inicial</Link></li>
-              <li><Link href='#' className="menu__item">Agendamento</Link></li>
-              <li><Link href='#' className="menu__item">Consulta</Link></li>
-              <li><Link href='#' className="menu__item">Dados Vacinais</Link></li>
-              <li><Link href='#' className="menu__item">Dúvidas Frequentes</Link></li>
+              <li><Link href='#' className="menu__item btn-secundario">Página Inicial</Link></li>
+              <li><Link href='#' className="menu__item btn-secundario">Agendamento</Link></li>
+              <li><Link href='#' className="menu__item btn-secundario">Consulta</Link></li>
+              <li><Link href='#' className="menu__item btn-secundario">Dados Vacinais</Link></li>
+              <li><Link href='#' className="menu__item btn-secundario">Dúvidas Frequentes</Link></li>
             </ul>
           </nav>
 

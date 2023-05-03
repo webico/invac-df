@@ -58,8 +58,44 @@ button {
   font-weight: $semi;
 }
 
+.btn-secundario {
+  font-weight: $medium;
+  display: flex;
+  align-items: center;
+
+  //temporario
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--500);
+    margin-right: .5rem;
+  }
+
+}
+
 .container {
   padding: 0 1rem;
+}
+
+.main {
+  padding: 2.5rem 0;
+  background: var(--600);
+  margin-bottom: 2.5rem;
+
+  .main__titulo {
+    font-weight: $bold;
+    font-size: 1.75rem;
+    line-height: 1.4;
+    color: var(--100);
+  }
+
+  .main__btn {
+    margin-top: 2rem;
+    background: var(--100);
+    color: var(--600);
+  }
 }
 
 .page {

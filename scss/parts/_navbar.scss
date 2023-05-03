@@ -36,20 +36,7 @@
 
       .menu__item {
         padding: .75rem 0;
-        display: flex;
-        align-items: center;
-        font-weight: $semi;
         color: var(--600);
-
-        //temporario
-        &::before {
-          content: '';
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: var(--500);
-          margin-right: .5rem;
-        }
       }
 
       .menu-instalacao {
