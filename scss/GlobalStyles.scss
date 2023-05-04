@@ -58,7 +58,7 @@ button {
   font-weight: $semi;
 }
 
-.btn-secundario {
+.btn_secundario {
   font-weight: $medium;
   display: flex;
   align-items: center;
@@ -75,7 +75,7 @@ button {
 }
 
 .container {
-  padding: 0 1rem;
+  padding: 0 1.375rem;
 }
 
 .main {
@@ -83,14 +83,29 @@ button {
   background: var(--600);
   margin-bottom: 2.5rem;
 
-  .main__titulo {
+  .main__titulo, .main__titulo_secundario {
     font-weight: $bold;
     font-size: 1.75rem;
     line-height: 1.4;
     color: var(--100);
   }
 
+  .main__titulo_secundario {
+    font-size: 1.5rem !important;
+  }
+
   .main__btn {
+    color: var(--100);
+    text-decoration: underline;
+    text-underline-offset: 0.375rem;
+
+    &::before {
+      background: var(--300);
+      margin-right: .75rem;
+    }
+  }
+
+  .index_main__btn {
     margin-top: 2rem;
     background: var(--100);
     color: var(--600);
@@ -101,12 +116,12 @@ button {
   padding-top: 4rem;
 }
 
-.menu-info {
+.menu_info {
   li:not(:last-child) {
     margin-bottom: 1rem;
   }
 
-  .menu-info__item {
+  .menu_info__item {
     font-weight: $medium;
     color: var(--400);
     text-decoration: underline;
@@ -129,7 +144,7 @@ footer {
   background: var(--600);
   padding: 3rem 0 2rem;
 
-  .menu-info .menu-info__item {
+  .menu_info .menu_info__item {
     font-size: 1.125rem;
     color: var(--100);
     text-align: center;

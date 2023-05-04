@@ -2,9 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 // import PropTypes from 'prop-types';
 // import { useState } from 'react';
-import DisponiveisLista from '@/components/DisponiveisLista';
+// import DisponiveisLista from '@/components/DisponiveisLista';
 import { addComma } from '@/public/js/globalFunctions';
-import UserHelpLinks from '@/components/UserHelpLinks';
 import useFetch from '@/public/js/useFetch';
 
 import styles from '@/css/Index.module.css';
@@ -39,7 +38,7 @@ export default function Home() {
         <div className="container">
           <h1 className='main__titulo'>Marque suas vacinas e testes de COVID.</h1>
 
-          <Link href='#' className='btn_principal main__btn'>Fazer agendamento</Link>
+          <Link href='#' className="btn_principal index_main__btn">Fazer agendamento</Link>
         </div>
       </main>
 
