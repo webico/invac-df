@@ -1,16 +1,23 @@
+// @import 'parts/tema';
+
+$regular: 400;
+$medium: 500;
+$semi: 600;
+$bold: 700;
+
 // DISPONIBILIDADE DE VACINAS E TESTES
 .disponivel {
-  .disponivel-filtro {
+  .disponivel_filtro {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
 
-    .disponivel-filtro__p {
+    .disponivel_filtro__p {
       font-weight: $semi;
     }
 
     //temporario
-    .disponivel-filtro__select {
+    .disponivel_filtro__select {
       width: 9.25rem;
       padding: .75rem 1rem;
       font-size: 1rem;
@@ -97,16 +104,15 @@
   background: var(--100);
   padding: 2rem 0;
 
-  .btn-principal {
+  .consulta_btn {
     background: var(--600);
     color: var(--100);
     margin-top: 2rem;
-
   }
 }
 
 //para reutilizar o estilo
-.dado__card {
+.card {
   padding: 1rem .75rem;
   color: var(--100);
   border-radius: .25rem;
@@ -159,23 +165,23 @@
 // }
 
 // DADOS VACINAIS DF
-.dados-vacinais {
+.dados_vacinais {
   background: var(--600);
   padding: 3rem 0;
 
-  .dados-vacinais__h2 {
+  .dados_vacinais__h2 {
     color: var(--100);
     text-align: center;
   }
 
-  .dados-list {
+  .dados_lista {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-top: 2.5rem;
 
-    .dado-card {
+    .card {
       background: var(--400);
       color: var(--100);
       padding: 1.5rem .75rem;
@@ -186,24 +192,24 @@
         margin: 0 .625rem;
       }
 
-      .dado-card__p {
+      .card__p {
         margin-bottom: .5rem;
         font-weight: $bold;
       }
 
-      &.big-card {
+      &:first-child {
         flex-basis: 100%;
         margin-bottom: .75rem;
 
-        .dado-card__p,
-        .dado-card__span {
+        .card__p,
+        .card__span {
           font-size: 1.25rem;
         }
       }
     }
   }
 
-  .ver-todas-doses {
+  .ver_todas_doses {
     text-align: center;
     width: 100%;
     background: var(--100);
@@ -213,17 +219,15 @@
 }
 
 //secão de duvidas frequentes
-.secao-duvidas {
+.secao_duvidas {
   margin: 4rem 0;
 
-  .secao-duvidas__p {
+  .secao_duvidas__p {
     margin: 1rem 0 2.5rem;
   }
 
-  .btn-principal {
+  .secao_duvidas__btn {
     background: var(--600);
     color: var(--100);
   }
 }
-
-@import 'parts/footer'

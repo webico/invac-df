@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { addComma } from '@/public/js/globalFunctions';
 import PropTypes from 'prop-types';
 
-const DisponiveisLista = ({ props }) => {
+const DisponiveisLista = ({ props }, {styles}) => {
   const defaultProps = PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array]);
@@ -35,10 +35,10 @@ const DisponiveisLista = ({ props }) => {
   return (
     <section className='disponivel'>
       <div className="container">
-        <div className="disponivel-filtro">
-          <p className='disponivel-filtro__p'>Disponibilidade de:</p>
+        <div className={styles.disponivel_filtro}>
+          <p className={styles.disponivel_filtro__p}>Disponibilidade de:</p>
 
-          <select className='disponivel-filtro__select' name="" id="" onClick={handleChange}>
+          <select className={styles.disponivel_filtro__select} name="" id="" onClick={handleChange}>
             <option value="vacinas">Vacinas</option>
             <option value="testes">Testes</option>
           </select>

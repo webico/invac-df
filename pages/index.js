@@ -7,6 +7,11 @@ import { addComma } from '@/public/js/globalFunctions';
 import UserHelpLinks from '@/components/UserHelpLinks';
 import useFetch from '@/public/js/useFetch';
 
+import styles from '@/css/Index.module.css';
+
+import Footer from '@/components/Footer';
+
+
 export default function Home() {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
 
@@ -34,19 +39,19 @@ export default function Home() {
         <div className="container">
           <h1 className='main__titulo'>Marque suas vacinas e testes de COVID.</h1>
 
-          <Link href='#' className='btn-principal main__btn'>Fazer agendamento</Link>
+          <Link href='#' className='btn_principal main__btn'>Fazer agendamento</Link>
         </div>
       </main>
 
       {/* DISPONIBILIDADE DE VACINAS E TESTES */}
-      {error && <div className='container'>{error}</div>}
+      {/* {error && <div className='container'>{error}</div>}
       {isPending && <div className='container'>Loading...</div>}
-      {data && <DisponiveisLista props={data.disponibilidade} />}
+      {data && <DisponiveisLista props={data.disponibilidade} styles={styles} />} */}
 
-      <section className='consulta'>
+      <section className={styles.consulta}>
         <div className="container">
           <h2>Consulte os resultados dos seus testes e a sua carteira de vacinação contra a COVID-19.</h2>
-          <Link href='#' className='btn-principal'>Consultar!</Link>
+          <Link href='#' className={`btn_principal ${styles.consulta_btn}`}>Consultar!</Link>
         </div>
       </section>
 
@@ -90,51 +95,46 @@ export default function Home() {
       </section> */}
 
       {/* DADOS VACINAIS DF */}
-
-      <section className='dados-vacinais'>
+      <section className={styles.dados_vacinais}>
         <div className="container">
-          <h2 className='dados-vacinais__h2'>Dados vacinais do Distrito Federal</h2>
+          <h2 className={styles.dados_vacinais__h2}>Dados vacinais do Distrito Federal</h2>
 
-          <ul className='dados-list'>
-            <li className='dado-card big-card'>
-              <p className='dado-card__p'>Total de Doses Aplicadas</p>
-              <span className='dado-card__span'>{data && addComma(data.dados_vacinais_df.total_doses)}</span>
+          <ul className={styles.dados_lista}>
+
+            <li className={styles.card}>
+              <p className={styles.card__p}>Total de Doses Aplicadas</p>
+              <span className={styles.card__span}>{data && addComma(data.dados_vacinais_df.total_doses)}</span>
             </li>
 
-            <li className='dado-card'>
-              <p className='dado-card__p'>1ª Dose</p>
-              <span className='dado-card__span'>{data && addComma(data.dados_vacinais_df.dose_1)}</span>
+            <li className={styles.card}>
+              <p className={styles.card__p}>1ª Dose</p>
+              <span className={styles.card__span}>{data && addComma(data.dados_vacinais_df.dose_1)}</span>
             </li>
 
-            <li className='dado-card'>
-              <p className='dado-card__p'>2ª Dose</p>
-              <span className='dado-card__span'>{data && addComma(data.dados_vacinais_df.dose_2)}</span>
+            <li className={styles.card}>
+              <p className={styles.card__p}>2ª Dose</p>
+              <span className={styles.card__span}>{data && addComma(data.dados_vacinais_df.dose_2)}</span>
             </li>
 
-            <li className='dado-card'>
-              <p className='dado-card__p'>3ª Dose</p>
-              <span className='dado-card__span'>{data && addComma(data.dados_vacinais_df.reforco_1)}</span>
+            <li className={styles.card}>
+              <p className={styles.card__p}>3ª Dose</p>
+              <span className={styles.card__span}>{data && addComma(data.dados_vacinais_df.reforco_1)}</span>
             </li>
           </ul>
 
-
-          <Link href='#' className='btn-principal ver-todas-doses'>Ver todas as doses aplicadas</Link>
+          <Link href='#' className={`btn_principal ${styles.ver_todas_doses}`}>Ver todas as doses aplicadas</Link>
         </div>
       </section>
 
-      <section className='secao-duvidas'>
+      <section className={styles.secao_duvidas}>
         <div className="container">
           <h2>Dúvidas sobre a vacina?</h2>
-          <p className='secao-duvidas__p'>Separamos todas as frequentes dúvidas  que as pessoas possuem sobre a vacina e respondemos para que você se manter informado!</p>
-          <Link href='/faq' className='btn-principal'>Dúvidas frequentes</Link>
+          <p className={styles.secao_duvidas__p}>Separamos todas as frequentes dúvidas  que as pessoas possuem sobre a vacina e respondemos para que você se manter informado!</p>
+          <Link href='/faq' className={`btn_principal ${styles.secao_duvidas__btn}`}>Dúvidas frequentes</Link>
         </div>
       </section>
 
-      <footer>
-        <div className="container">
-          <UserHelpLinks />
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

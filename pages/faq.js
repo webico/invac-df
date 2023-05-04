@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import styles from '@/css/pageTemplate.module.css';
 
 const Faq = () => {
   return (
@@ -20,7 +21,7 @@ const Faq = () => {
             <p>Vacinas e Testes de Covid-19</p>
           </div>
 
-          <div className='main-call'>
+          <div className={styles.main_call}>
             <h1 className='main__titulo'>Tire suas dúvidas em relação as vacinas e aos testes de Covid-19.</h1>
 
             <div className="main-cta">
