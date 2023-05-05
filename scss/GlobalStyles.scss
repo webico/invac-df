@@ -16,6 +16,8 @@ html {
   margin: 0;
   box-sizing: border-box;
   line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+
 }
 
 img {
@@ -28,7 +30,6 @@ ul {
 
 body {
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
   position: relative;
 }
 
@@ -137,8 +138,6 @@ button {
 }
 
 @import "parts/navbar";
-
-// @import "Index";
 
 footer {
   background: var(--600);

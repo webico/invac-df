@@ -2,8 +2,29 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '@/css/Faq.module.css';
 import Footer from '@/components/Footer';
+import { useEffect, useState } from 'react';
 
 const Faq = () => {
+  const [ativo, setAtivo] = useState('');
+  const activeClass = `${styles.ativo}`;
+
+  useEffect(() => {
+    if (ativo) {
+      document.querySelectorAll(activeClass).forEach(each => {
+        each.classList.remove(activeClass);
+      });
+    } 
+  }, [ativo]);
+
+  const toggleClass = (item) => {
+    if (item !== ativo){
+      setAtivo(item);
+    }
+    else {
+      setAtivo('');
+    }
+  };
+
   return (
     <>
       <Head>
@@ -12,7 +33,6 @@ const Faq = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
 
       {/* SEÇÃO INICIAL */}
       <main className='main'>
@@ -32,6 +52,37 @@ const Faq = () => {
           </div>
         </div>
       </main>
+
+      <section className={styles.faq_section}>
+        <div className="container">
+          <ul className={styles.faq}>
+            <li onClick={() => toggleClass('item1')} className={`${styles.faq_item} ${ativo === 'item1' ? `${styles.ativo}` : ''}`} >
+              <button className={styles.faq_item__btn}><h2>Entenda o que é a Covid-19</h2></button>
+              <p className={styles.faq_item__p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim, nibh in varius blandit, enim arcu aliquet metus, et vehicula ligula tellus sit amet sem. Ut vel blandit enim. Integer in egestas tortor. Maecenas turpis sem, ultrices quis nisi nec, viverra dapibus neque. Curabitur placerat consectetur turpis quis mattis. Sed nec felis vitae purus laoreet consectetur.</p>
+            </li>
+
+            <li className={`${styles.faq_item} ${ativo === 'item2' ? `${styles.ativo}` : ''}`} onClick={() => toggleClass('item2')}>
+              <button className={styles.faq_item__btn}><h2>Como o vírus se espalha?</h2></button>
+              <p className={styles.faq_item__p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim, nibh in varius blandit, enim arcu aliquet metus, et vehicula ligula tellus sit amet sem. Ut vel blandit enim. Integer in egestas tortor. Maecenas turpis sem, ultrices quis nisi nec, viverra dapibus neque. Curabitur placerat consectetur turpis quis mattis. Sed nec felis vitae purus laoreet consectetur.</p>
+            </li>
+
+            <li className={`${styles.faq_item} ${ativo === 'item3' ? `${styles.ativo}` : ''}`} onClick={() => toggleClass('item3')}>
+              <button className={styles.faq_item__btn}><h2>Reações de Vacina</h2></button>
+              <p className={styles.faq_item__p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim, nibh in varius blandit, enim arcu aliquet metus, et vehicula ligula tellus sit amet sem. Ut vel blandit enim. Integer in egestas tortor. Maecenas turpis sem, ultrices quis nisi nec, viverra dapibus neque. Curabitur placerat consectetur turpis quis mattis. Sed nec felis vitae purus laoreet consectetur.</p>
+            </li>
+
+            <li className={`${styles.faq_item} ${ativo === 'item4' ? `${styles.ativo}` : ''}`} onClick={() => toggleClass('item4')}>
+              <button className={styles.faq_item__btn}><h2>Testes prévios da Vacina</h2></button>
+              <p className={styles.faq_item__p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim, nibh in varius blandit, enim arcu aliquet metus, et vehicula ligula tellus sit amet sem. Ut vel blandit enim. Integer in egestas tortor. Maecenas turpis sem, ultrices quis nisi nec, viverra dapibus neque. Curabitur placerat consectetur turpis quis mattis. Sed nec felis vitae purus laoreet consectetur.</p>
+            </li>
+
+            <li className={`${styles.faq_item} ${ativo === 'item5' ? `${styles.ativo}` : ''}`} onClick={() => toggleClass('item5')}>
+              <button className={styles.faq_item__btn}><h2>Reação a dose da Vacina</h2></button>
+              <p className={styles.faq_item__p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim, nibh in varius blandit, enim arcu aliquet metus, et vehicula ligula tellus sit amet sem. Ut vel blandit enim. Integer in egestas tortor. Maecenas turpis sem, ultrices quis nisi nec, viverra dapibus neque. Curabitur placerat consectetur turpis quis mattis. Sed nec felis vitae purus laoreet consectetur.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <Footer />
     </>

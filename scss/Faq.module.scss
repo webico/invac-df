@@ -28,3 +28,65 @@ $bold: 700;
     }
   }
 }
+
+.faq_section {
+  margin: 2rem 0 3rem;
+  
+  // .faq {
+
+    .faq_item {
+      padding: 1.5rem 0;
+      transition: .3s linear;
+      border-radius: .5rem;
+      color: var(--600);
+  
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--100);
+      }
+  
+      .faq_item__btn {
+        background: none;
+        width: 100%;
+  
+        h2 {
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+  
+          &::after {
+            content: url('../public/icons/fechado.svg');
+            width: 1.125rem;
+            height: 1.125rem;
+          }
+        }
+      }
+  
+      .faq_item__p {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+      }
+  
+      &.ativo {
+        background-color: var(--100);
+  
+        .faq_item__btn {
+          margin-bottom: 1.5rem;
+        }
+  
+        h2::after {
+          content: url('../public/icons/aberto.svg');
+        }
+  
+        .faq_item__p {
+          visibility: visible;
+          opacity: 1;
+          height: auto;
+          transition: .3s linear;
+  
+        }
+      }
+    }
+  // }
+}
