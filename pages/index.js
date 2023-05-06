@@ -38,7 +38,7 @@ export default function Home() {
         <div className="container">
           <h1 className='main__titulo'>Marque suas vacinas e testes de COVID.</h1>
 
-          <Link href='#' className="btn_principal index_main__btn">Fazer agendamento</Link>
+          <Link href='/agendamento' className="btn_principal index_main__btn">Fazer agendamento</Link>
         </div>
       </main>
 
