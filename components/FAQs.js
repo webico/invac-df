@@ -14,12 +14,7 @@ const FAQs = ({ styles }) => {
   }, [ativo]);
 
   const toggleClass = (item) => {
-    if (item !== ativo){
-      setAtivo(item);
-    }
-    else {
-      setAtivo('');
-    }
+    item !== ativo ? setAtivo(item) : setAtivo('');
   };
 
   return (
