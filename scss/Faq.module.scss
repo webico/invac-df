@@ -33,8 +33,7 @@ $bold: 700;
   margin: 2rem 0 3rem;
 
   .faq_item {
-    // padding: 1.5rem 0;
-    transition: .3s linear;
+    transition: .15s linear;
     border-radius: 0;
     color: var(--600);
 
@@ -46,7 +45,7 @@ $bold: 700;
       background: none;
       width: 100%;
       margin-bottom: 0;
-      padding: 1.5rem 0;
+      padding: 1.5rem 1.375rem;
 
       h2 {
         font-size: 1rem;
@@ -66,15 +65,13 @@ $bold: 700;
       visibility: hidden;
       opacity: 0;
       height: 0;
+      padding: 0 1.375rem;
     }
 
     &.ativo {
       background-color: var(--100);
-      border-radius: 0 0 .5rem .5rem; //não sei se vai ser assim
-
-      .faq_item__btn {
-        margin-bottom: 1.5rem;
-      }
+      border-radius: .5rem; 
+      padding-bottom: 1.5rem;
 
       h2::after {
         content: url('../public/icons/aberto.svg');
@@ -84,8 +81,6 @@ $bold: 700;
         visibility: visible;
         opacity: 1;
         height: auto;
-        transition: .3s linear;
-
       }
     }
   }
