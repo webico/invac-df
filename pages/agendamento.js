@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '@/css/Agendamento.module.css';
+import forms from '@/css/Forms.module.css';
 import { useState } from 'react';
 import VacinaForms from '@/components/VacinaForms/VacinaForms';
 
@@ -32,11 +33,7 @@ const Agendamento = () => {
             <li><button className={`${styles.tab_menu__btn} ${!tab ? styles.ativo : ''}`} onClick={switchTab}>Agendar Teste</button></li>
           </ul>
 
-          {/* <form action="">
-
-          </form> */}
-
-          <VacinaForms />
+          <VacinaForms styles={forms}/>
         </div>
       </section>
     </>

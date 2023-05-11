@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import FormUserDetails from '@/components/VacinaForms/FormUserDetails';
-import FormPersonalDetails from '@/components/VacinaForms/FormPersonalDetails';
+import FormPersonalDetails from '@/components/VacinaForms/FormLocalDetails';
 import Confirm from '@/components/VacinaForms/Confirm';
 import Success from '@/components/VacinaForms/Success';
+import forms from '@/css/Forms.module.css';
 
 export class UserForm extends Component {
   state = {
@@ -10,12 +11,12 @@ export class UserForm extends Component {
     nomeCompleto: '',
     cpf: '',
     telefone: '',
+    email: '',
     doseVacina: '',
     tipoVacina: '',
     //
     firstName: '',
     lastName: '',
-    email: '',
     occupation: '',
     city: '',
     bio: ''
@@ -43,6 +44,7 @@ export class UserForm extends Component {
     const { step } = this.state;
     const { firstName, lastName, email, occupation, city, bio } = this.state;
     const values = { firstName, lastName, email, occupation, city, bio };
+    const styles = forms;
 
     switch (step) {
     case 1:
@@ -51,6 +53,7 @@ export class UserForm extends Component {
           nextStep={this.nextStep}
           handleChange={this.handleChange}
           values={values}
+          styles = {styles}
         />
       );
     case 2:
