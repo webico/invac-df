@@ -1,34 +1,22 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
-// import Dialog from '@material-ui/core/Dialog';
-// import AppBar from '@material-ui/core/AppBar';
-// import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 
 export class Success extends Component {
-  continue = e => {
-    e.preventDefault();
-    // PROCESS FORM //
-    this.props.nextStep();
-  };
-
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  };
-
   render() {
+    const { styles } = this.props;
+    
     return (
-      <div>
-        <>
-          <div
-            // open
-            // fullWidth
-            // maxWidth='sm'
-          >
-            {/* <AppBar title="Success" /> */}
-            <h1>Thank You For Your Submission</h1>
-            <p>You will get an email with further instructions.</p>
-          </div>
-        </>
+      <div className={`${styles.form_caixa} ${styles.form_sucesso}`}>
+        <section className={styles.sucesso_info_sec}>
+          <h2>Agendamento realizado!!</h2>
+          <p>Compareça ao local agendado com documento de identidade com foto, CPF e cartão de vacina. Caso não tenha cartão de vacina, será produzido um novo na hora da vacinação.</p>
+        </section>
+
+        <section className={styles.app_info_sec}>
+          <h3>Baixe o aplicativo Invac DF para receber informações sobre vacinas e testes na sua região!</h3>
+
+          <button className={`btn_principal ${styles.btn_app}`}>Instalar Aplicativo</button>
+        </section>
       </div>
     );
   }

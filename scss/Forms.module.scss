@@ -210,6 +210,10 @@ $bold: 700;
       background: var(--200);
       color: var(--600);
     }
+
+    &[disabled] {
+      opacity: .6;
+    }
   }
 }
 
@@ -222,7 +226,7 @@ $bold: 700;
   &:not(:last-child) {
     margin-bottom: 2.5rem;
   }
-  
+
   h3 {
     color: var(--300);
     margin-bottom: 1rem;
@@ -248,7 +252,52 @@ $bold: 700;
         margin-bottom: .75rem;
       }
     }
+  }
+}
 
+.form_sucesso {
+  .sucesso_info_sec {
+    h2 {
+      font-weight: $bold;
+      line-height: 1;
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+    }
 
+    p {
+      max-width: 41.5rem;
+      color: var(--500);
+    }
+  }
+
+  .app_info_sec {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: var(--100);
+    border-radius: .5rem;
+
+    h3 {
+      line-height: 1.6;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn_app {
+      width: 100%;
+      background: var(--600);
+      color: var(--100);
+      display: flex;
+      align-items: center;
+
+      //temporario
+      &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--100);
+        margin-right: 0.5rem;
+      }
+    }
   }
 }

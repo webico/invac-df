@@ -15,7 +15,6 @@ export class FormPersonalDetails extends Component {
 
   render() {
     const { values, styles } = this.props;
-    console.log(values);
 
     return (
       <>
@@ -54,6 +53,10 @@ export class FormPersonalDetails extends Component {
               <li className={styles.progresso_completo}></li>
               <li className={styles.progresso_ativo}></li>
             </ul>
+            {/* 
+            {
+              values.nomeCompleto && values.cpf && values.telefone && values.email && values.
+            } */}
 
             <button onClick={this.continue} className={`btn_principal ${styles.progresso_btn}`}>Agendar</button>
           </section>

@@ -5,11 +5,11 @@ import { useState } from 'react';
 import VacinaForms from '@/components/VacinaForms/VacinaForms';
 
 const Agendamento = () => {
-  const [tab, setTab] = useState(true);
+  const [tab, setTab] = useState('vacina');
 
-  const switchTab = () => {
-    setTab(!tab);
-  };
+  // const switchTab = () => {
+  //   setTab(!tab);
+  // };
 
   return (
     <>
@@ -29,8 +29,8 @@ const Agendamento = () => {
       <section>
         <div className="container">
           <ul className={styles.tab_menu}>
-            <li><button className={`${styles.tab_menu__btn} ${tab ? styles.ativo : ''}`} onClick={switchTab}>Agendar Vacina</button></li>
-            <li><button className={`${styles.tab_menu__btn} ${!tab ? styles.ativo : ''}`} onClick={switchTab}>Agendar Teste</button></li>
+            <li><button className={`${styles.tab_menu__btn} ${tab == 'vacina' ? styles.ativo : ''}`} onClick={() => setTab('vacina')}>Agendar Vacina</button></li>
+            <li><button className={`${styles.tab_menu__btn} ${tab == 'teste' ? styles.ativo : ''}`} onClick={() => setTab('teste')}>Agendar Teste</button></li>
           </ul>
 
           <VacinaForms styles={forms}/>

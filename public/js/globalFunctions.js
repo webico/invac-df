@@ -9,4 +9,31 @@ export function addComma(num) {
   return str.join('.');
 }
 
-export default { addComma };
+export function checkPreenchido(props) {
+  let chaves;
+
+  // if(!vacinaTrue) {
+  chaves = {
+    ...props
+  };
+  // } else if() {
+  //   chaves = {
+  //     ...props, tipoVacina
+  //   };
+  // }
+
+  // if (!(vacinaTrue && tipoVacina.length)) {
+  //   chaves = {
+  //     ...props
+  //   };
+  // } else {
+  //   chaves = {
+  //     ...props, tipoVacina
+  //   };
+  // }
+
+
+  return Object.values(chaves).every(item => item);
+}
+
+export default { addComma, checkPreenchido };

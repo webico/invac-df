@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { Component } from 'react';
 import FormUserDetails from '@/components/VacinaForms/FormUserDetails';
 import FormLocalDetails from '@/components/VacinaForms/FormLocalDetails';
@@ -34,7 +35,18 @@ export class UserForm extends Component {
   };
 
   handleChange = input => e => {
-    this.setState({ [input]: e.target.value });
+    if (input == 'doseVacina' && this.state.vacina) {
+      this.setState({ [input]: e.target.value });
+      // const {tipo} = this.state;
+      // tipo.tipoVacina = '';
+      this.setState({ tipoVacina: '' });
+
+
+    } else {
+      this.setState({ [input]: e.target.value });
+
+    }
+    // this.setState({ [input]: e.target.value });
   };
 
   render() {
@@ -44,39 +56,39 @@ export class UserForm extends Component {
     const styles = forms;
 
     switch (step) {
-    case 1:
-      return (
-        <FormUserDetails
-          nextStep={this.nextStep}
-          handleChange={this.handleChange}
-          values={values}
-          styles={styles}
-        />
-      );
-    case 2:
-      return (
-        <FormLocalDetails
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          handleChange={this.handleChange}
-          values={values}
-          styles={styles}
-        />
-      );
-    case 3:
-      return (
-        <Confirm
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          values={values}
-          styles={styles}
-        />
-      );
-    case 4:
-      return <Success />;
-    default:
-      (console.log('This is a multi-step form built with NextJS.')
-      );
+      case 1:
+        return (
+          <FormUserDetails
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+            styles={styles}
+          />
+        );
+      case 2:
+        return (
+          <FormLocalDetails
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+            styles={styles}
+          />
+        );
+      case 3:
+        return (
+          <Confirm
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+            styles={styles}
+          />
+        );
+      case 4:
+        return <Success styles={styles} />;
+      default:
+        (console.log('This is a multi-step form built with NextJS.')
+        );
     }
   }
 }
