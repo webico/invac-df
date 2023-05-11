@@ -16,7 +16,7 @@ export class FormUserDetails extends Component {
   }
 
   render() {
-    const { values, handleChange } = this.props;
+    const { values, handleChange, styles } = this.props;
 
     let { vacina } = this.state;
 
@@ -27,8 +27,6 @@ export class FormUserDetails extends Component {
         this.setState({ vacina: false });
       }
     };
-
-    const { styles } = this.props;
 
     return (
       <div className={styles.form_caixa}>

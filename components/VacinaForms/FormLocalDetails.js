@@ -13,48 +13,122 @@ export class FormPersonalDetails extends Component {
   };
 
   render() {
-    const { values, handleChange } = this.props;
+    const { values, handleChange, styles } = this.props;
+
     return (
-      <div>
-        <>
-          <div
-          >
+      <div className={styles.form_caixa}>
 
-            <input type="text"
-              placeholder="Enter Your Occupation"
-              onChange={handleChange('occupation')}
-              defaultValue={values.occupation}
-            />
-            <br />
+        <form>
+          <section className={styles.form_section}>
+            <h2 className={styles.section__h2}>Informações do local</h2>
 
-            <input type="text"
-              placeholder="Enter Your City"
-              onChange={handleChange('city')}
-              defaultValue={values.city}
-            />
-            <br />
+            <div className={styles.label_input}>
+              <label htmlFor="telefone">Dose da vacina *</label>
 
+              <div className={styles.select}>
+                <select name="" id="" required onChange={() => { handleChange('regiao'); }}>
+                  <option value="Selecionar dose" disabled selected>Selecionar região</option>
+                  <option value="norte">Região Norte</option>
+                  <option value="oeste">Região Oeste</option>
+                  <option value="central">Região Central</option>
+                  <option value="leste">Região Leste</option>
+                  <option value="sul">Região Sul</option>
+                  <option value="centrol_sul">Região Centro-Sul</option>
+                  <option value="sudoeste">Região Sudoeste</option>
+                </select>
+              </div>
+            </div>
 
-            <input type="text"
-              placeholder="Enter Your Bio"
-              onChange={handleChange('bio')}
-              defaultValue={values.bio}
-            />
-            <br />
+            <label id="radio_select">Selecionar local *</label>
+            <ul className={styles.radio_select} >
+              <li className={styles.ubs}>
+                <input type="radio" name='ubs' id='radio1' onClick={() => { handleChange('ubs'); }} />
 
-            <button
-              // color="secondary"
-              // variant="contained"
-              onClick={this.back}
-            >Back</button>
+                <label htmlFor="radio1" className={styles.ubs_info}>
+                  <p>Drive-thru da USB 1 Asa Sul</p>
+                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
+                  <span>Endereço: SGAS 612</span>
+                </label>
+              </li>
 
-            <button
-              // color="primary"
-              // variant="contained"
-              onClick={this.continue}
-            >Continue</button>
-          </div>
-        </>
+              <li className={styles.ubs}>
+                <input type="radio" name='ubs' id='radio2' onClick={() => { handleChange('ubs'); }} />
+
+                <label htmlFor="radio2" className={styles.ubs_info}>
+                  <p>Drive-thru da USB 1 Asa Sul</p>
+                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
+                  <span>Endereço: SGAS 612</span>
+                </label>
+              </li>
+
+              <li className={styles.ubs}>
+                <input type="radio" name='ubs' id='radio3' onClick={() => { handleChange('ubs'); }} />
+
+                <label htmlFor="radio3" className={styles.ubs_info}>
+                  <p>Hospital Universitário de Brasília</p>
+                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
+                  <span>Endereço 605 - L2 Norte</span>
+                </label>
+              </li>
+
+              <li className={styles.ubs}>
+                <input type="radio" name='ubs' id='radio4' onClick={() => { handleChange('ubs'); }} />
+                <label htmlFor="radio3" className={styles.ubs_info}>
+                  <p>USB 1 Lago Norte</p>
+                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
+                  <span>Endereço: QI 3</span>
+                </label>
+              </li>
+
+              <li className={styles.ubs}>
+                <input type="radio" name='ubs' id='radio5' onClick={() => { handleChange('ubs'); }} />
+
+                <label htmlFor="radio3" className={styles.ubs_info}>
+                  <p>USB 1 Lago Norte</p>
+                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
+                  <span>Endereço: QI 3</span>
+                </label>
+              </li>
+            </ul>
+          </section>
+
+          <section className={styles.form_section}>
+            <h2 className={styles.section__h2}>Informações do local</h2>
+
+            <div className={styles.form_linha}>
+              <div className={styles.label_input}>
+                <label>Dia de agendamento *</label>
+
+                <input type="date" name='dia_agendamento' required onChange={handleChange('diaAgendamento')}/>
+              </div>
+
+              <div className={styles.label_input}>
+                <label htmlFor="horario">Horário *</label>
+
+                <div className={styles.select}>
+                  <select name="" id="horario" required onChange={handleChange('horario')}>
+                    <option value="Selecionar dose" disabled selected>Selecionar horário</option>
+                    <option value="0910" selected>9h às 10h</option>
+                    <option value="1213">12h às 13h</option>
+                    <option value="1517">15h às 17h</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.form_progresso}>
+            <button onClick={this.back} className={`btn_principal ${styles.progresso_btn} ${styles.voltar}`}>Voltar</button>
+
+            <ul aria-hidden="true">
+              <li className={styles.progresso_ativo}></li>
+              <li></li>
+              <li></li>
+            </ul>
+
+            <button onClick={this.continue} className={`btn_principal ${styles.progresso_btn}`}>Próximo</button>
+          </section>
+        </form>
       </div>
     );
   }
