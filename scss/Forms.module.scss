@@ -177,6 +177,12 @@ $bold: 700;
       border-radius: 50%;
       background: var(--100);
 
+      &.progresso_completo {
+        // width: 1.5rem;
+        background: var(--100);
+        // border-radius: 2rem;
+      }
+
       &.progresso_ativo {
         width: 1.5rem;
         background: var(--500);
@@ -198,5 +204,42 @@ $bold: 700;
       background: var(--200);
       color: var(--600);
     }
+  }
+}
+
+.section_confirm_h2 {
+  font-size: 1.25rem;
+  color: var(--300);
+}
+
+.confirm_section {
+  h3 {
+    color: var(--300);
+    margin-bottom: 1rem;
+    font-weight: $medium;
+    margin-bottom: 2rem;
+  }
+
+  div {
+    padding: 1.2rem;
+    border: 1px solid var(--100);
+    border-radius: .5rem;
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    p {
+      span {
+        display: inline-block;
+        font-weight: $semi;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: .75rem;
+      }
+    }
+    
+
   }
 }

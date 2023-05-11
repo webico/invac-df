@@ -15,6 +15,8 @@ export class FormPersonalDetails extends Component {
   render() {
     const { values, handleChange, styles } = this.props;
 
+    console.log(values);
+
     return (
       <div className={styles.form_caixa}>
 
@@ -42,7 +44,7 @@ export class FormPersonalDetails extends Component {
             <label id="radio_select">Selecionar local *</label>
             <ul className={styles.radio_select} >
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio1' onClick={() => { handleChange('ubs'); }} />
+                <input type="radio" name='ubs' id='radio1' value='Drive-thru da USB 1 Asa Norte' onInput={handleChange('ubs')} {...values.ubs == 'Drive-thru da USB 1 Asa Norte' ? {checked: true} : ''}/>
 
                 <label htmlFor="radio1" className={styles.ubs_info}>
                   <p>Drive-thru da USB 1 Asa Sul</p>
@@ -52,7 +54,7 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio2' onClick={() => { handleChange('ubs'); }} />
+                <input type="radio" name='ubs' id='radio2'  value='Drive-thru da USB 1 Asa Sul' onInput={handleChange('ubs')} {...values.ubs == 'Drive-thru da USB 1 Asa Sul' ? {checked: true} : ''}/>
 
                 <label htmlFor="radio2" className={styles.ubs_info}>
                   <p>Drive-thru da USB 1 Asa Sul</p>
@@ -62,7 +64,7 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio3' onClick={() => { handleChange('ubs'); }} />
+                <input type="radio" name='ubs' id='radio3'  value='Hospital Universitário de Brasília' onInput={handleChange('ubs')} {...values.ubs == 'Hospital Universitário de Brasília' ? {checked: true} : ''}/>
 
                 <label htmlFor="radio3" className={styles.ubs_info}>
                   <p>Hospital Universitário de Brasília</p>
@@ -72,7 +74,7 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio4' onClick={() => { handleChange('ubs'); }} />
+                <input type="radio" name='ubs' id='radio4' value='USB 1 Lago Norte' onInput={handleChange('ubs')} {...values.ubs == 'USB 1 Lago Norte' ? {checked: true} : ''}/>
                 <label htmlFor="radio3" className={styles.ubs_info}>
                   <p>USB 1 Lago Norte</p>
                   <span>Horários: de 12h às 18h - de segunda a sexta</span>
@@ -81,7 +83,7 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio5' onClick={() => { handleChange('ubs'); }} />
+                <input type="radio" name='ubs' id='radio5' value='USB 1 Lago Sul' onInput={handleChange('ubs')}  {...values.ubs == 'USB 1 Lago Sul' ? {checked: true} : ''}/>
 
                 <label htmlFor="radio3" className={styles.ubs_info}>
                   <p>USB 1 Lago Norte</p>
@@ -99,7 +101,7 @@ export class FormPersonalDetails extends Component {
               <div className={styles.label_input}>
                 <label>Dia de agendamento *</label>
 
-                <input type="date" name='dia_agendamento' required onChange={handleChange('diaAgendamento')}/>
+                <input type="date" name='dia_agendamento' value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')}/>
               </div>
 
               <div className={styles.label_input}>
@@ -107,10 +109,10 @@ export class FormPersonalDetails extends Component {
 
                 <div className={styles.select}>
                   <select name="" id="horario" required onChange={handleChange('horario')}>
-                    <option value="Selecionar dose" disabled selected>Selecionar horário</option>
-                    <option value="0910" selected>9h às 10h</option>
-                    <option value="1213">12h às 13h</option>
-                    <option value="1517">15h às 17h</option>
+                    <option value="Selecionar dose" disabled {...values.horario == '' ? {selected: true} : ''}>Selecionar horário</option>
+                    <option value="0910" {...values.horario == '0910' ? {selected: true} : ''}>9h às 10h</option>
+                    <option value="1213" {...values.horario == '1213' ? {selected: true} : ''}>12h às 13h</option>
+                    <option value="1517" {...values.horario == '1517' ? {selected: true} : ''}>15h às 17h</option>
                   </select>
                 </div>
               </div>
@@ -121,8 +123,8 @@ export class FormPersonalDetails extends Component {
             <button onClick={this.back} className={`btn_principal ${styles.progresso_btn} ${styles.voltar}`}>Voltar</button>
 
             <ul aria-hidden="true">
+              <li className={styles.progresso_completo}></li>
               <li className={styles.progresso_ativo}></li>
-              <li></li>
               <li></li>
             </ul>
 
