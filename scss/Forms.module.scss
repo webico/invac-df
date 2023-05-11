@@ -39,6 +39,12 @@ $bold: 700;
     margin-bottom: 1.5rem;
   }
 
+  .section_confirm_h2 {
+    color: var(--300);
+    margin-bottom: 2rem;
+    font-weight: $medium;
+  }
+
   .label_input {
     font-size: 1rem;
     font-weight: $semi;
@@ -213,11 +219,14 @@ $bold: 700;
 }
 
 .confirm_section {
+  &:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+  
   h3 {
     color: var(--300);
     margin-bottom: 1rem;
     font-weight: $medium;
-    margin-bottom: 2rem;
   }
 
   div {
@@ -239,7 +248,7 @@ $bold: 700;
         margin-bottom: .75rem;
       }
     }
-    
+
 
   }
 }

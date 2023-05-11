@@ -15,7 +15,6 @@ export class FormUserDetails extends Component {
 
   }
 
-
   render() {
     const { values, handleChange, styles } = this.props;
 
@@ -99,16 +98,16 @@ export class FormUserDetails extends Component {
 
                 <div className={styles.select}>
                   <select name="" id="" required
-                    onChange={ handleChange('doseVacina')}
+                    onChange={handleChange('doseVacina')}
                     onInput={e => handleVacinaBaby(e)}
                   >
-                    <option disabled selected {...values.doseVacina == '' ? {selected: true} : ''}>Selecionar dose</option>
-                    <option value="infantil" {...values.doseVacina == 'infantil' ? {selected: true} : ''}>Vacina Infantil (-12)</option>
-                    <option value="dose1" {...values.doseVacina == 'dose1' ? {selected: true} : ''}>1ª dose (+12)</option>
-                    <option value="dose2" {...values.doseVacina == 'dose2' ? {selected: true} : ''}>2ª dose (+12)</option>
-                    <option value="dose3" {...values.doseVacina == 'dose3' ? {selected: true} : ''}>3ª dose (+12)</option>
-                    <option value="reforco" {...values.doseVacina == 'reforco' ? {selected: true} : ''}>Dose de reforço (+12)</option>
-                    <option value="bivalente" {...values.doseVacina == 'bivalente' ? {selected: true} : ''}>Bivalente (grupos prioritários)</option>
+                    <option disabled selected {...values.doseVacina == '' ? { selected: true } : ''}>Selecionar dose</option>
+                    <option value="infantil" {...values.doseVacina == 'infantil' ? { selected: true } : ''}>Vacina Infantil (-12)</option>
+                    <option value="dose1" {...values.doseVacina == 'dose1' ? { selected: true } : ''}>1ª dose (+12)</option>
+                    <option value="dose2" {...values.doseVacina == 'dose2' ? { selected: true } : ''}>2ª dose (+12)</option>
+                    <option value="dose3" {...values.doseVacina == 'dose3' ? { selected: true } : ''}>3ª dose (+12)</option>
+                    <option value="reforco" {...values.doseVacina == 'reforco' ? { selected: true } : ''}>Dose de reforço (+12)</option>
+                    <option value="bivalente" {...values.doseVacina == 'bivalente' ? { selected: true } : ''}>Bivalente (grupos prioritários)</option>
                   </select>
                 </div>
               </div>
@@ -120,9 +119,10 @@ export class FormUserDetails extends Component {
 
                   <div className={styles.select}>
                     <select name="" id="" required onClick={handleChange('tipoVacina')}>
-                      <option value="coronavac" {...values.tipoVacina == 'coronavac' ? {selected: true} : ''}>Coronavac (3 a 4 anos)</option>
-                      <option value="pfizer_baby" {...values.tipoVacina == 'pfizer_baby' ? {selected: true} : ''}>Pfizer Baby (6 meses a 4 anos)</option>
-                      <option value="pfizer_pediatria" {...values.tipoVacina == 'pfizer_pediatria' ? {selected: true} : ''}>Pfizer Pediatria (5 a 11 anos)</option>
+                      <option disabled selected {...values.tipoVacina == '' ? { selected: true } : ''}>Selecionar tipo</option>
+                      <option value="coronavac" {...values.tipoVacina == 'coronavac' ? { selected: true } : ''}>Coronavac (3 a 4 anos)</option>
+                      <option value="pfizer_baby" {...values.tipoVacina == 'pfizer_baby' ? { selected: true } : ''}>Pfizer Baby (6 meses a 4 anos)</option>
+                      <option value="pfizer_pediatria" {...values.tipoVacina == 'pfizer_pediatria' ? { selected: true } : ''}>Pfizer Pediatria (5 a 11 anos)</option>
                     </select>
                   </div>
                 </div>

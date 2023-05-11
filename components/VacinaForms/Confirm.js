@@ -12,8 +12,10 @@ export class FormPersonalDetails extends Component {
     this.props.prevStep();
   };
 
+
   render() {
     const { values, styles } = this.props;
+    console.log(values);
 
     return (
       <>
@@ -36,6 +38,7 @@ export class FormPersonalDetails extends Component {
               <h3>Informações vacinais</h3>
               <div>
                 <p><span>Dose da Vacina:</span> {values.doseVacina}</p>
+                {values.doseVacina == 'infantil' ? <p><span>Tipo da Vacina:</span> {values.tipoVacina}</p> : ''}
                 <p><span>Local de agendamento:</span> {values.ubs}</p>
                 <p><span>Data:</span> {values.diaAgendamento}</p>
                 <p><span>Horário:</span> {values.horario}</p>
