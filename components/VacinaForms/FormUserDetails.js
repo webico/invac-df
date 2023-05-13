@@ -141,14 +141,8 @@ export class FormUserDetails extends Component {
 
 
           <section className={styles.form_progresso}>
-            <ul aria-hidden="true">
-              <li className={styles.progresso_ativo}></li>
-              <li></li>
-              <li></li>
-            </ul>
 
             <button onClick={this.continue} className={`btn_principal ${styles.progresso_btn}`}
-              // disabled={(this.state.vacina == false && checks) || (this.state.vacina == true && !(values.tipoVacina == '') && checks)}
             >Próximo</button>
           </section>
         </form>

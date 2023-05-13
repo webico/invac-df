@@ -181,13 +181,17 @@ $bold: 700;
 
     .card {
       background: var(--400);
-      color: var(--100);
       padding: 1.5rem .75rem;
       text-align: center;
       flex: 1 0 6rem;
 
       &:nth-child(3) {
         margin: 0 .51rem;
+      }
+
+      .card__p,
+      .card__span {
+        color: var(--100);
       }
 
       .card__p {

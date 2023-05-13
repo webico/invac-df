@@ -173,42 +173,16 @@ $bold: 700;
   align-items: center;
   justify-content: space-between;
 
-  ul {
-    display: flex;
-    align-items: center;
-
-    li {
-      height: 1rem;
-      width: 1rem;
-      border-radius: 50%;
-      background: var(--100);
-
-      &.progresso_completo {
-        // width: 1.5rem;
-        background: var(--100);
-        // border-radius: 2rem;
-      }
-
-      &.progresso_ativo {
-        width: 1.5rem;
-        background: var(--500);
-        border-radius: 2rem;
-      }
-
-      &:not(:last-child) {
-        margin-right: .25rem;
-      }
-    }
-  }
-
   .progresso_btn {
     font-weight: $bold;
     background: var(--600);
     color: var(--100);
+    margin-left: auto;
 
     &.voltar {
       background: var(--200);
       color: var(--600);
+      margin-left: 0;
     }
 
     &[disabled] {

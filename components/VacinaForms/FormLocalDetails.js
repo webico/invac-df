@@ -122,12 +122,6 @@ export class FormPersonalDetails extends Component {
           <section className={styles.form_progresso}>
             <button onClick={this.back} className={`btn_principal ${styles.progresso_btn} ${styles.voltar}`}>Voltar</button>
 
-            <ul aria-hidden="true">
-              <li className={styles.progresso_completo}></li>
-              <li className={styles.progresso_ativo}></li>
-              <li></li>
-            </ul>
-
             <button onClick={this.continue} className={`btn_principal ${styles.progresso_btn}`}>Próximo</button>
           </section>
         </form>
