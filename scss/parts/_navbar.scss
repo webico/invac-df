@@ -23,7 +23,7 @@
         background: none;
         border: none;
         color: var(--100);
-        font-weight: $semi;
+        font-weight: var(--semi);
         text-transform: uppercase;
       }
     }
@@ -54,7 +54,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          font-weight: $semi;
+          font-weight: var(--semi);
           color: var(--600);
 
           //temporario

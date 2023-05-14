@@ -1,15 +1,10 @@
-$regular: 400;
-$medium: 500;
-$semi: 600;
-$bold: 700;
-
 .main__subtitulo {
   color: var(--100);
   width: fit-content;
   margin-bottom: 2rem;
 
   .subtitulo__bold {
-    font-weight: $semi;
+    font-weight: var(--semi);
   }
 }
 
@@ -22,7 +17,7 @@ $bold: 700;
       text-transform: uppercase;
       color: var(--100);
       font-size: .875rem;
-      font-weight: $bold;
+      font-weight: var(--bold);
       display: block;
       margin-bottom: 1.5rem;
     }
