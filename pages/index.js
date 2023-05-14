@@ -1,15 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
-// import PropTypes from 'prop-types';
-// import { useState } from 'react';
-// import DisponiveisLista from '@/components/DisponiveisLista';
+import styles from '@/css/Index.module.css';
+import DisponiveisLista from '@/components/DisponiveisLista';
 import { addComma } from '@/public/js/globalFunctions';
 import useFetch from '@/public/js/useFetch';
-
-import styles from '@/css/Index.module.css';
-
 import Footer from '@/components/Footer';
-
 
 export default function Home() {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
@@ -43,9 +38,10 @@ export default function Home() {
       </main>
 
       {/* DISPONIBILIDADE DE VACINAS E TESTES */}
-      {/* {error && <div className='container'>{error}</div>}
+      {error && <div className='container'>{error}</div>}
       {isPending && <div className='container'>Loading...</div>}
-      {data && <DisponiveisLista props={data.disponibilidade} styles={styles} />} */}
+      {data && <DisponiveisLista props={data} styles={styles} />}
+
 
       <section className={styles.consulta}>
         <div className="container">

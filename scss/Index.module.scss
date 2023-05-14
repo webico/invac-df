@@ -3,6 +3,7 @@
   .disponivel_filtro {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 2rem;
 
     .disponivel_filtro__p {
@@ -12,11 +13,28 @@
     //temporario
     .disponivel_filtro__select {
       width: 9.25rem;
-      padding: .75rem 1rem;
-      font-size: 1rem;
       border: 1px solid var(--300);
       border-radius: .25rem;
-      margin-left: 1.5rem;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: url(../public/icons/arrow-down.svg);
+        right: .75rem;
+        top: 25%;
+      }
+
+      select {
+        background: transparent;
+        -webkit-appearance: none;
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        font-size: 1rem;
+        padding: .75rem 1rem;
+
+      }
     }
   }
 
@@ -80,7 +98,7 @@
     }
   }
 
-  .ver-todas {
+  .ver_todas {
     display: block;
     font-weight: var(--bold);
     text-decoration: underline;

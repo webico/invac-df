@@ -1,29 +1,21 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { addComma } from '@/public/js/globalFunctions';
-import PropTypes from 'prop-types';
 
-const DisponiveisLista = ({ props }, {styles}) => {
-  const defaultProps = PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array]);
+const DisponiveisLista = ({ props, styles }) => {
+  let dataProps = props.disponibilidade;
 
-  DisponiveisLista.propTypes = {
-    props: defaultProps,
-    vacinas: defaultProps,
-    testes: defaultProps
-  };
-
-  const [data, setData] = useState(props.vacinas),
+  const [data, setData] = useState(dataProps.vacinas),
     [nome, setNome] = useState('vacinas'),
     [itemsShow, setItemsShow] = useState(4);
 
   function handleChange(e) {
     //dá pra melhorar isso aqui, tá feio demais
     if (e.target.value == 'testes') {
-      setData(props.testes);
+      setData(dataProps.testes);
       setNome('testes');
     } else {
-      setData(props.vacinas);
+      setData(dataProps.vacinas);
       setNome('vacinas');
     }
   }
@@ -33,32 +25,34 @@ const DisponiveisLista = ({ props }, {styles}) => {
   }
 
   return (
-    <section className='disponivel'>
+    <section className={styles.disponivel}>
       <div className="container">
         <div className={styles.disponivel_filtro}>
           <p className={styles.disponivel_filtro__p}>Disponibilidade de:</p>
 
-          <select className={styles.disponivel_filtro__select} name="" id="" onClick={handleChange}>
-            <option value="vacinas">Vacinas</option>
-            <option value="testes">Testes</option>
-          </select>
+          <div className={styles.disponivel_filtro__select}>
+            <select name="" id="" onClick={handleChange}>
+              <option value="vacinas">Vacinas</option>
+              <option value="testes">Testes</option>
+            </select>
+          </div>
         </div>
 
-        <ul className='disponivel__lista'>
+        <ul className={styles.disponivel__lista}>
           {data && data.slice(0, itemsShow).map(regiao =>
-            <li key={regiao.id} className='disponivel__card'>
-              <div className='card__info'>
-                <span className='regiao'>Região</span>
-                <h2 className='regiao__nome'>{regiao.nome_regiao}</h2>
-                <p className='regiao__disponiveis'>{addComma(regiao.quantidade)} {nome} disponíveis</p>
+            <li key={regiao.id} className={styles.disponivel__card}>
+              <div className={styles.card__info}>
+                <span className={styles.regiao}>Região</span>
+                <h2 className={styles.regiao__nome}>{regiao.nome_regiao}</h2>
+                <p className={styles.regiao__disponiveis}>{addComma(regiao.quantidade)} {nome} disponíveis</p>
               </div>
 
-              <button className='card__btn'></button>
+              <button className={styles.card__btn}></button>
             </li>
           )}
         </ul>
 
-        {itemsShow == 4 ? <button className='ver-todas' onClick={handleShowMore}>Ver todas as regiões</button> : ''}
+        {itemsShow == 4 ? <button className={styles.ver_todas} onClick={handleShowMore}>Ver todas as regiões</button> : ''}
       </div>
     </section>
   );
