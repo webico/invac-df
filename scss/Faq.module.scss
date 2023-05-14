@@ -1,15 +1,17 @@
 .main__subtitulo {
-  color: var(--100);
-  width: fit-content;
   margin-bottom: 2rem;
 
-  .subtitulo__bold {
-    font-weight: var(--semi);
+  p {
+    color: var(--100);
+    width: fit-content;
+
+    &.subtitulo__bold {
+      font-weight: var(--semi);
+    }
   }
 }
 
 .main_call {
-
   .cta {
     margin-top: 2rem;
 
@@ -65,7 +67,7 @@
 
     &.ativo {
       background-color: var(--100);
-      border-radius: .5rem; 
+      border-radius: .5rem;
       padding-bottom: 1.5rem;
 
       h2::after {
