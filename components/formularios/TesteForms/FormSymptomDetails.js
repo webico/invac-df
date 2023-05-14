@@ -28,7 +28,7 @@ export class FormPersonalDetails extends Component {
     let { infectado, tempoPopup } = this.state;
 
     const handleInfectado = (e) => {
-      if (e.target.value == 'sim') {
+      if (e.target.value == 'Sim') {
         this.setState({ infectado: true });
       } else {
         this.setState({ infectado: false });
@@ -100,7 +100,7 @@ export class FormPersonalDetails extends Component {
                 <select name="" id="sintomatempo" required
                   onInput={handleChange('tempo')}
                   onChange={(e) => showAviso(e)}>
-                  <option value="Selecionar dose" disabled>Selecionar tempo</option>
+                  <option value="Selecionar dose" disabled {...values.tempo == '' ? { selected: true } : ''}>Selecionar tempo</option>
                   <option value="1 a 2 dias">1 a 2 dias</option>
                   <option value="3 a 5 dias">3 a 5 dias</option>
                   <option value="7 a 10 dias">7 a 10 dias</option>
@@ -127,12 +127,12 @@ export class FormPersonalDetails extends Component {
               <label>Você teve contato com alguém infectado? *</label>
               <ul className={styles.check_ul}>
                 <li className={styles.check_select}>
-                  <input type="radio" name='contato' id='radio1' value='sim' className={styles.radio_input} onInput={handleChange('contato')} {...values.contato == 'Sim' ? { checked: true } : ''} onChange={e => handleInfectado(e)} />
+                  <input type="radio" name='contato' id='radio1' value='Sim' className={styles.radio_input} onChange={handleChange('contato')} {...values.contato == 'Sim' ? { checked: true } : ''} onClick={e => handleInfectado(e)} />
                   <label htmlFor="radio1" className={styles.ubs_info}>Sim</label>
                 </li>
 
                 <li className={styles.check_select}>
-                  <input type="radio" name='contato' id='radio2' value='nao' className={styles.radio_input} onInput={handleChange('contato')} {...values.contato == 'Nao' ? { checked: true } : ''} onChange={e => handleInfectado(e)} />
+                  <input type="radio" name='contato' id='radio2' value='Nao' className={styles.radio_input} onChange={handleChange('contato')} {...values.contato == 'Nao' ? { checked: true } : ''} onClick={e => handleInfectado(e)} />
 
                   <label htmlFor="radio2" className={styles.ubs_info}>Não</label>
                 </li>
@@ -140,7 +140,7 @@ export class FormPersonalDetails extends Component {
             </div>
 
             {
-              (infectado || values.infectado == 'sim') &&
+              (infectado || values.contato == 'Sim') &&
               <div className={styles.label_input}>
                 <label htmlFor='infectadotempo'>Quantos dias desde que teve contato com alguém infectado? *</label>
 

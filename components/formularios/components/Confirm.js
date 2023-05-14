@@ -40,8 +40,7 @@ export class FormPersonalDetails extends Component {
                 <div className={styles.confirm_section}>
                   <h3>Informações vacinais</h3>
                   <div>
-                    <p><span>Teste:</span> {values.doseVacina}</p>
-                    {values.doseVacina == 'infantil' ? <p><span>Tipo da Vacina:</span> {values.tipoVacina}</p> : ''}
+                    <p><span>Teste:</span> {values.teste}</p>
                     <p><span>Local de agendamento:</span> {values.ubs}</p>
                     <p><span>Data:</span> {values.diaAgendamento}</p>
                     <p><span>Horário:</span> {values.horario}</p>

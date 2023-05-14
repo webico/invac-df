@@ -26,7 +26,7 @@ export class FormPersonalDetails extends Component {
               <label htmlFor="regiao">Região *</label>
 
               <div className={styles.select}>
-                <select name="" id="regiao" required onChange={() => { handleChange('regiao'); }}>
+                <select name="" id="regiao" required onChange={handleChange('regiao')}>
                   <option value="Selecionar dose" disabled {...values.regiao == '' ? { selected: true } : ''}>Selecionar região</option>
                   <option value="Norte" {...values.regiao == 'Norte' ? { selected: true } : ''}>Região Norte</option>
                   <option value="Oeste" {...values.regiao == 'Oeste' ? { selected: true } : ''}>Região Oeste</option>

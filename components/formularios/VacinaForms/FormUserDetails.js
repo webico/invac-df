@@ -100,7 +100,7 @@ export class FormUserDetails extends Component {
                     onChange={handleChange('doseVacina')}
                     onInput={e => handleVacinaBaby(e)}
                   >
-                    <option disabled {...values.doseVacina == '' ? { selected: true } : ''}>Selecionar dose</option>
+                    <option disabled  {...values.doseVacina == '' ? { selected: true } : ''}>Selecionar dose</option>
                     <option value="Vacina Infantil (-12)" {...values.doseVacina == 'Vacina Infantil (-12)' ? { selected: true } : ''}>Vacina Infantil (-12)</option>
                     <option value="1ª dose (+12)" {...values.doseVacina == '1ª dose (+12)' ? { selected: true } : ''}>1ª dose (+12)</option>
                     <option value="2ª dose (+12)" {...values.doseVacina == '2ª dose (+12)' ? { selected: true } : ''}>2ª dose (+12)</option>

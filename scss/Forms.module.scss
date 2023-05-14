@@ -117,8 +117,7 @@
         margin-right: .5rem;
 
         &:checked {
-        border: 3px solid #fff;
-
+          border: 3px solid #fff;
         }
       }
 
@@ -173,6 +172,10 @@
       input {
         padding: 0;
         margin-top: 0;
+
+        &:checked {
+          border: 3px solid #fff;
+        }
       }
 
       label {
@@ -287,6 +290,12 @@
   label {
     line-height: 1.1;
     color: var(--300);
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 }
 

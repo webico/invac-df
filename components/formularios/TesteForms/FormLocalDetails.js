@@ -15,6 +15,8 @@ export class FormPersonalDetails extends Component {
   render() {
     const { values, handleChange, styles } = this.props;
 
+    console.log(values);
+
     return (
       <div className={styles.form_caixa}>
 
@@ -26,15 +28,15 @@ export class FormPersonalDetails extends Component {
               <label htmlFor="regiao">Região *</label>
 
               <div className={styles.select}>
-                <select name="" id="regiao" required onChange={() => { handleChange('regiao'); }}>
-                  <option value="Selecionar dose" disabled {...values.regiao == '' ? {selected: true} : ''}>Selecionar região</option>
-                  <option value="norte" {...values.regiao == 'norte' ? {selected: true} : ''}>Região Norte</option>
-                  <option value="oeste" {...values.regiao == 'oeste' ? {selected: true} : ''}>Região Oeste</option>
-                  <option value="central" {...values.regiao == 'central' ? {selected: true} : ''}>Região Central</option>
-                  <option value="leste" {...values.regiao == 'leste' ? {selected: true} : ''}>Região Leste</option>
-                  <option value="sul" {...values.regiao == 'sul' ? {selected: true} : ''}>Região Sul</option>
-                  <option value="centrol_sul" {...values.regiao == 'centrol_sul' ? {selected: true} : ''}>Região Centro-Sul</option>
-                  <option value="sudoeste" {...values.regiao == 'sudoeste' ? {selected: true} : ''}>Região Sudoeste</option>
+                <select name="" id="regiao" required onChange={handleChange('regiao')}>
+                  <option value="Selecionar dose" disabled {...values.regiao == '' ? { selected: true } : ''}>Selecionar região</option>
+                  <option value="Norte" {...values.regiao == 'Norte' ? { selected: true } : ''}>Região Norte</option>
+                  <option value="Oeste" {...values.regiao == 'Oeste' ? { selected: true } : ''}>Região Oeste</option>
+                  <option value="Central" {...values.regiao == 'Central' ? { selected: true } : ''}>Região Central</option>
+                  <option value="Leste" {...values.regiao == 'Leste' ? { selected: true } : ''}>Região Leste</option>
+                  <option value="Sul" {...values.regiao == 'Sul' ? { selected: true } : ''}>Região Sul</option>
+                  <option value="Centro Sul" {...values.regiao == 'Centro Sul' ? { selected: true } : ''}>Região Centro-Sul</option>
+                  <option value="Sudoeste" {...values.regiao == 'Sudoeste' ? { selected: true } : ''}>Região Sudoeste</option>
                 </select>
               </div>
             </div>

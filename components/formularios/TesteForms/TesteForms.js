@@ -20,9 +20,10 @@ export class UserForm extends Component {
     tempoPopup: false,
     infectado: '',
     contato: '',
+    regiao: '',
+    ubs: '',
     diaAgendamento: '',
     horario: '',
-    ubs: ''
   };
 
   nextStep = () => {
@@ -60,21 +61,17 @@ export class UserForm extends Component {
   };
 
   showAviso = (e) => {
-    // e.target.value == '1 a 2 dias' ? this.setState({ tempoSuficiente: true }) : this.setState({ tempoSuficiente: false });
-
     if (e.target.value == '1 a 2 dias') {
       this.setState({ tempoPopup: true });
     } else {
       this.setState({ tempoPopup: false });
     }
-
-    // console.log(e.target.value);
   };
 
   render() {
     const { step } = this.state;
-    const { nomeCompleto, cpf, email, telefone, teste, sintomas, tempo, tempoPopup, infectado, ubs, diaAgendamento, horario } = this.state;
-    const values = { nomeCompleto, cpf, email, telefone, teste, sintomas, tempo, tempoPopup, infectado, ubs, diaAgendamento, horario };
+    const { nomeCompleto, cpf, email, telefone, teste, sintomas, tempo, tempoPopup, infectado, contato, regiao, ubs, diaAgendamento, horario } = this.state;
+    const values = { nomeCompleto, cpf, email, telefone, teste, sintomas, tempo, tempoPopup, infectado, contato, regiao, ubs, diaAgendamento, horario };
     const styles = forms;
 
     switch (step) {
