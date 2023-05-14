@@ -15,6 +15,22 @@
   }
 }
 
+.radio_input {
+  appearance: none;
+  -webkit-appearance: none;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  border-radius: .25rem;
+  border: 1px solid var(--300);
+  margin-right: 1rem;
+
+  &:checked {
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1px var(--300);
+    background: var(--500);
+  }
+}
+
 .form_caixa {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
   padding: 2.5rem 1rem;
@@ -32,6 +48,12 @@
     font-weight: var(--medium);
     color: var(--300);
     margin-bottom: 1.5rem;
+  }
+
+  .form_linha {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
   }
 
   .label_input {
@@ -112,22 +134,6 @@
     margin: 2.5rem 0 1rem;
   }
 
-  .radio_input {
-    appearance: none;
-    -webkit-appearance: none;
-    min-width: 1.5rem;
-    height: 1.5rem;
-    border-radius: .25rem;
-    border: 1px solid var(--300);
-    margin-right: 1rem;
-
-    &:checked {
-      border: 3px solid #fff;
-      box-shadow: 0 0 0 1px var(--300);
-      background: var(--500);
-    }
-  }
-
   .radio_select,
   .check_ul {
     display: flex;
@@ -139,38 +145,11 @@
 
     input[type="radio"] {
       margin-top: .25rem;
-
-      &:nth-child(even) {
-        background: rgba(224, 224, 224, 0.6);
-
-        input:checked {
-          border-color: rgba(224, 224, 224, 0.4);
-        }
-      }
     }
+  }
 
-    .ubs {
-      display: flex;
-      align-items: flex-start;
-      padding: 1.5rem 1.25rem 1rem;
-
-      label {
-        p {
-          font-weight: var(--semi);
-          color: var(--500);
-        }
-
-        span {
-          display: block;
-          font-size: .875rem;
-          color: var(--300);
-
-          &:not(:last-child) {
-            margin-bottom: .75rem 0 .5rem;
-          }
-        }
-      }
-    }
+  .radio_select li:nth-child(even) {
+    background: rgba(224, 224, 224, 0.6);
   }
 
   //estilização da etapa 2 (sintomas) do form de teste 
@@ -201,6 +180,8 @@
   //estilização da lista de UBSs
   .ubs {
     display: flex;
+    flex-direction: row;
+    height: fit-content;
     align-items: flex-start;
     padding: 1.5rem 1.25rem 1rem;
 
@@ -221,20 +202,9 @@
       }
     }
   }
-
-
-
-
-  .form_linha {
-    // display: flex;
-    // flex-direction: column;
-
-    &:not(:last-child) {
-      margin-bottom: 1rem;
-    }
-  }
 }
 
+//componente de progresso (btn de voltar e avançar)
 .form_progresso {
   display: flex;
   align-items: center;
@@ -258,6 +228,7 @@
   }
 }
 
+//componente de confirmação de envio do formulário
 .section_confirm_h2 {
   font-size: 1.25rem;
   font-weight: var(--medium);
@@ -298,6 +269,24 @@
   }
 }
 
+.confirm_lgpd {
+  display: flex;
+  align-items: flex;
+  margin-bottom: 1.5rem;
+
+  input {
+    margin-right: .5rem;
+    margin-top: .25rem;
+  }
+
+  label {
+    line-height: 1.1;
+    color: var(--300);
+  }
+}
+
+
+//componente de sucesso de envio do formulário
 .form_sucesso {
   .sucesso_info_sec {
     h2 {
@@ -345,6 +334,7 @@
   }
 }
 
+//popup de aviso (1 a 2 dias de sintomas) na etapa 2 do form de teste
 .overlay_popup {
   position: fixed;
   top: 0;

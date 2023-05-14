@@ -27,14 +27,14 @@ export class FormPersonalDetails extends Component {
 
               <div className={styles.select}>
                 <select name="" id="regiao" required onChange={() => { handleChange('regiao'); }}>
-                  <option value="Selecionar dose" disabled {...values.regiao == '' ? {selected: true} : ''}>Selecionar região</option>
-                  <option value="Norte" {...values.regiao == 'Norte' ? {selected: true} : ''}>Região Norte</option>
-                  <option value="Oeste" {...values.regiao == 'Oeste' ? {selected: true} : ''}>Região Oeste</option>
-                  <option value="Central" {...values.regiao == 'Central' ? {selected: true} : ''}>Região Central</option>
-                  <option value="Leste" {...values.regiao == 'Leste' ? {selected: true} : ''}>Região Leste</option>
-                  <option value="Sul" {...values.regiao == 'Sul' ? {selected: true} : ''}>Região Sul</option>
-                  <option value="Centro Sul" {...values.regiao == 'Centro Sul' ? {selected: true} : ''}>Região Centro-Sul</option>
-                  <option value="Sudoeste" {...values.regiao == 'Sudoeste' ? {selected: true} : ''}>Região Sudoeste</option>
+                  <option value="Selecionar dose" disabled {...values.regiao == '' ? { selected: true } : ''}>Selecionar região</option>
+                  <option value="Norte" {...values.regiao == 'Norte' ? { selected: true } : ''}>Região Norte</option>
+                  <option value="Oeste" {...values.regiao == 'Oeste' ? { selected: true } : ''}>Região Oeste</option>
+                  <option value="Central" {...values.regiao == 'Central' ? { selected: true } : ''}>Região Central</option>
+                  <option value="Leste" {...values.regiao == 'Leste' ? { selected: true } : ''}>Região Leste</option>
+                  <option value="Sul" {...values.regiao == 'Sul' ? { selected: true } : ''}>Região Sul</option>
+                  <option value="Centro Sul" {...values.regiao == 'Centro Sul' ? { selected: true } : ''}>Região Centro-Sul</option>
+                  <option value="Sudoeste" {...values.regiao == 'Sudoeste' ? { selected: true } : ''}>Região Sudoeste</option>
                 </select>
               </div>
             </div>
@@ -42,7 +42,9 @@ export class FormPersonalDetails extends Component {
             <label id="radio_select">Selecionar local *</label>
             <ul className={styles.radio_select} >
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio1' className={styles.radio_input} value='Drive-thru da USB 1 Asa Norte' onInput={handleChange('ubs')} {...values.ubs == 'Drive-thru da USB 1 Asa Norte' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio1' className={styles.radio_input} value='Drive-thru da USB 1 Asa Norte' onChange={handleChange('ubs')}
+                  {...values.ubs == 'Drive-thru da USB 1 Asa Norte' ? { checked: true } : ''}
+                />
 
                 <label htmlFor="radio1" className={styles.ubs_info}>
                   <p>Drive-thru da USB 1 Asa Sul</p>
@@ -52,7 +54,9 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio2' className={styles.radio_input}  value='Drive-thru da USB 1 Asa Sul' onInput={handleChange('ubs')} {...values.ubs == 'Drive-thru da USB 1 Asa Sul' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio2' className={styles.radio_input} value='Drive-thru da USB 1 Asa Sul' onChange={handleChange('ubs')}
+                  {...values.ubs == 'Drive-thru da USB 1 Asa Sul' ? { checked: true } : ''}
+                />
 
                 <label htmlFor="radio2" className={styles.ubs_info}>
                   <p>Drive-thru da USB 1 Asa Sul</p>
@@ -62,7 +66,9 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio3' className={styles.radio_input}  value='Hospital Universitário de Brasília' onInput={handleChange('ubs')} {...values.ubs == 'Hospital Universitário de Brasília' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio3' className={styles.radio_input} value='Hospital Universitário de Brasília' onChange={handleChange('ubs')}
+                  {...values.ubs == 'Hospital Universitário de Brasília' ? { checked: true } : ''}
+                />
 
                 <label htmlFor="radio3" className={styles.ubs_info}>
                   <p>Hospital Universitário de Brasília</p>
@@ -72,7 +78,9 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio4' className={styles.radio_input} value='USB 1 Lago Norte' onInput={handleChange('ubs')} {...values.ubs == 'USB 1 Lago Norte' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio4' className={styles.radio_input} value='USB 1 Lago Norte' onChange={handleChange('ubs')}
+                  {...values.ubs == 'USB 1 Lago Norte' ? { checked: true } : ''}
+                />
                 <label htmlFor="radio3" className={styles.ubs_info}>
                   <p>USB 1 Lago Norte</p>
                   <span>Horários: de 12h às 18h - de segunda a sexta</span>
@@ -81,7 +89,9 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio5' className={styles.radio_input} value='USB 1 Lago Sul' onInput={handleChange('ubs')}  {...values.ubs == 'USB 1 Lago Sul' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio5' className={styles.radio_input} value='USB 1 Lago Sul' onChange={handleChange('ubs')}
+                  {...values.ubs == 'USB 1 Lago Sul' ? { checked: true } : ''}
+                />
 
                 <label htmlFor="radio3" className={styles.ubs_info}>
                   <p>USB 1 Lago Norte</p>
@@ -99,7 +109,7 @@ export class FormPersonalDetails extends Component {
               <div className={styles.label_input}>
                 <label htmlFor="dia_agendamento">Dia de agendamento *</label>
 
-                <input type="date" name='dia_agendamento' id="dia_agendamento" value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')}/>
+                <input type="date" name='dia_agendamento' id="dia_agendamento" value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')} />
               </div>
 
               <div className={styles.label_input}>
@@ -107,10 +117,10 @@ export class FormPersonalDetails extends Component {
 
                 <div className={styles.select}>
                   <select name="" id="horario" required onChange={handleChange('horario')}>
-                    <option value="Selecionar dose" disabled {...values.horario == '' ? {selected: true} : ''}>Selecionar horário</option>
-                    <option value="9h às 10h" {...values.horario == '9h às 10h' ? {selected: true} : ''}>9h às 10h</option>
-                    <option value="12h às 13h" {...values.horario == '12h às 13h' ? {selected: true} : ''}>12h às 13h</option>
-                    <option value="15h às 17h" {...values.horario == '15h às 17h' ? {selected: true} : ''}>15h às 17h</option>
+                    <option value="Selecionar dose" disabled {...values.horario == '' ? { selected: true } : ''}>Selecionar horário</option>
+                    <option value="9h às 10h" {...values.horario == '9h às 10h' ? { selected: true } : ''}>9h às 10h</option>
+                    <option value="12h às 13h" {...values.horario == '12h às 13h' ? { selected: true } : ''}>12h às 13h</option>
+                    <option value="15h às 17h" {...values.horario == '15h às 17h' ? { selected: true } : ''}>15h às 17h</option>
                   </select>
                 </div>
               </div>

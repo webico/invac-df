@@ -10,13 +10,12 @@ export class Success extends Component {
         <section className={styles.sucesso_info_sec}>
           <h2>Agendamento realizado!!</h2>
           {
-            !teste &&
-            <p>Compareça ao local agendado com documento de identidade com foto, CPF e cartão de vacina. Caso não tenha cartão de vacina, será produzido um novo na hora da vacinação.</p>
-          }
+            teste ?
+              <p>Compareça ao local agendado com documento de identidade oficial e CPF, ou a certidão de nascimento, no caso de crianças e adolescentes.</p>
 
-          {
-            teste &&
-            <p>Compareça ao local agendado com documento de identidade oficial e CPF, ou a certidão de nascimento, no caso de crianças e adolescentes.</p>
+              :
+
+              <p>Compareça ao local agendado com documento de identidade com foto, CPF e cartão de vacina. Caso não tenha cartão de vacina, será produzido um novo na hora da vacinação.</p>
           }
         </section>
 
