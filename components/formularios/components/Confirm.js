@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import Link from 'next/link';
 import React, { Component } from 'react';
 
 export class FormPersonalDetails extends Component {
@@ -64,7 +65,7 @@ export class FormPersonalDetails extends Component {
 
           <div className={`${styles.check_ul} ${styles.confirm_lgpd}`}>
             <input type="radio" className={styles.radio_input} />
-            <label htmlFor="">Estou de acordo com o compartilhamento dos dados fornecidos para o agendamento, conforme estabelecido na Política de Privacidade.</label>
+            <label htmlFor="">Estou de acordo com o compartilhamento dos dados fornecidos para o agendamento, conforme estabelecido na <Link href='#'>Política de Privacidade</Link>.</label>
           </div>
 
           <section className={styles.form_progresso}>

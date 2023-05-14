@@ -115,6 +115,11 @@
       input {
         padding: 0;
         margin-right: .5rem;
+
+        &:checked {
+        border: 3px solid #fff;
+
+        }
       }
 
       label {
