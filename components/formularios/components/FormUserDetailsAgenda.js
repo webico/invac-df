@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
-import ProgressBtns from '../components/ProgressBtns';
+import ProgressBtns from './ProgressBtns';
 
 export class FormUserDetails extends Component {
   continue = e => {

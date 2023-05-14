@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import React, { Component } from 'react';
-import FormUserDetails from '@/components/formularios/components/FormUserDetails';
+import FormUserDetails from '@/components/formularios/components/FormUserDetailsAgenda';
 import FormSymptomDetails from '@/components/formularios/components/FormSymptomDetails';
 import FormLocalDetails from '@/components/formularios/components/FormLocalDetails';
 import Confirm from '@/components/formularios/components/Confirm';

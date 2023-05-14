@@ -1,8 +1,9 @@
 /* eslint-disable indent */
 import React, { Component } from 'react';
-import FormUserDetails from '@/components/formularios/ConsultaTeste/FormUserDetails';
-import ConfirmConsulta from '@/components/formularios/components/ConfirmConsulta';
-import ResultadoConsulta from '@/components/formularios/components/ResultadoConsulta';
+import FormUserDetails from '@/components/formularios/components/FormUserDetailsAgenda';
+import FormLocalDetails from '@/components/formularios/components/FormLocalDetails';
+import Confirm from '@/components/formularios/components/Confirm';
+import Success from '@/components/formularios/components/Success';
 import forms from '@/css/Forms.module.css';
 
 export class UserForm extends Component {
@@ -10,12 +11,14 @@ export class UserForm extends Component {
     step: 1,
     nomeCompleto: '',
     cpf: '',
-    dataNascimento: '',
-    cep: '',
-    endereco: '',
-    numero: '',
-    bairro: '',
-    cidade: '',
+    telefone: '',
+    email: '',
+    regiao: '',
+    doseVacina: '',
+    tipoVacina: '',
+    ubs: '',
+    diaAgendamento: '',
+    horario: '',
   };
 
   nextStep = () => {
@@ -38,8 +41,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { nomeCompleto, cpf, dataNascimento, cep, endereco, numero, bairro, cidade } = this.state;
-    const values = { nomeCompleto, cpf, dataNascimento, cep, endereco, numero, bairro, cidade };
+    const { nomeCompleto, cpf, email, telefone, doseVacina, tipoVacina, ubs, diaAgendamento, horario } = this.state;
+    const values = { nomeCompleto, cpf, email, telefone, doseVacina, tipoVacina, ubs, diaAgendamento, horario };
     const styles = forms;
 
     switch (step) {
@@ -50,23 +53,33 @@ export class UserForm extends Component {
             handleChange={this.handleChange}
             values={values}
             styles={styles}
+            teste={false}
           />
         );
       case 2:
         return (
-          <ConfirmConsulta
+          <FormLocalDetails
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+            styles={styles}
+          />
+        );
+      case 3:
+        return (
+          <Confirm
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             values={values}
             styles={styles}
-            teste={true}
+            teste={false}
           />
         );
-      case 3:
-        return <ResultadoConsulta
+      case 4:
+        return <Success
           styles={styles}
-          values={values}
-          teste={true}
+          teste={false}
         />;
       default:
         (console.log('This is a multi-step form built with NextJS.'));

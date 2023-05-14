@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import React, { Component } from 'react';
-import FormUserDetails from '@/components/formularios/ConsultaVacina/FormUserDetails';
+import FormUserDetailsConsulta from '@/components/formularios/components/FormUserDetailsConsulta';
 import ConfirmConsulta from '@/components/formularios/components/ConfirmConsulta';
 import ResultadoConsulta from '@/components/formularios/components/ResultadoConsulta';
 import forms from '@/css/Forms.module.css';
@@ -45,7 +45,7 @@ export class UserForm extends Component {
     switch (step) {
       case 1:
         return (
-          <FormUserDetails
+          <FormUserDetailsConsulta
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}

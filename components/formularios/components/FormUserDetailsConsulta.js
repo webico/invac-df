@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 
-export class FormUserDetails extends Component {
+export class FormUserDetailsConsulta extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -137,4 +137,4 @@ export class FormUserDetails extends Component {
   }
 }
 
-export default FormUserDetails;
+export default FormUserDetailsConsulta;
