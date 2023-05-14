@@ -26,19 +26,19 @@ export class FormPersonalDetails extends Component {
             <div className={styles.confirm_section}>
               <h3>Informações pessoais</h3>
               <div>
-                <p><span>Nome:</span> {values.nomeCompleto}</p>
-                <p><span>CPF:</span> {values.cpf}</p>
-                <p><span>Data de Nascimento:</span> {values.dataNascimento}</p>
+                <p><span>Nome:</span> {values.nomeCompleto ? values.nomeCompleto : 'Fulano da Silva'}</p>
+                <p><span>CPF:</span> {values.cpf ? values.cpf : '123.456.789-10'}</p>
+                <p><span>Data de Nascimento:</span> {values.dataNascimento ? values.dataNascimento : '01/02/1990'}</p>
               </div>
             </div>
 
             <div className={styles.confirm_section}>
               <h3>Endereço</h3>
               <div>
-                <p><span>CEP:</span> {values.cep}</p>
-                <p><span>Endereço e Número:</span> {values.endereco}, {values.numero}</p>
-                <p><span>Bairro:</span> {values.bairro}</p>
-                <p><span>Cidade:</span> {values.cidade}</p>
+                <p><span>CEP:</span> {values.cep ? values.cep : '12345-678'}</p>
+                <p><span>Endereço e Número:</span> {values.endereco ? values.endereco : 'Rua dos lobos'}, {values.numero ? values.numero : '123'}</p>
+                <p><span>Bairro:</span> {values.bairro ? values.bairro : 'Bairro Aos Montes'}</p>
+                <p><span>Cidade:</span> {values.cidade ? values.cidade : 'Cidade Além'}</p>
               </div>
             </div>
 

@@ -28,9 +28,9 @@ export class FormPersonalDetails extends Component {
             <div className={styles.confirm_section}>
               <h3>Informações pessoais</h3>
               <div>
-                <p><span>Nome:</span> {values.nomeCompleto}</p>
-                <p><span>CPF:</span> {values.cpf}</p>
-                <p><span>Telefone:</span> {values.telefone}</p>
+                <p><span>Nome:</span> {values.nomeCompleto ? values.nomeCompleto : 'Fulano da Silva'}</p>
+                <p><span>CPF:</span> {values.cpf ? values.cpf : '123.456.789-10'}</p>
+                <p><span>Telefone:</span> {values.dataNascimento ? values.dataNascimento : '01/02/1990'}</p>
               </div>
             </div>
 
@@ -40,10 +40,10 @@ export class FormPersonalDetails extends Component {
                 <div className={styles.confirm_section}>
                   <h3>Informações vacinais</h3>
                   <div>
-                    <p><span>Teste:</span> {values.teste}</p>
-                    <p><span>Local de agendamento:</span> {values.ubs}</p>
-                    <p><span>Data:</span> {values.diaAgendamento}</p>
-                    <p><span>Horário:</span> {values.horario}</p>
+                    <p><span>Teste:</span> {values.teste ? values.teste : 'RT-PCR'}</p>
+                    <p><span>Local de agendamento:</span> {values.ubs ? values.ubs : 'Drive-thru da USB 1 Asa Sul'}</p>
+                    <p><span>Data:</span> {values.diaAgendamento ? values.diaAgendamento : '28/05/23'}</p>
+                    <p><span>Horário:</span> {values.horario ? values.horario : '9h às 10h'}</p>
                   </div>
                 </div>
 
@@ -52,11 +52,11 @@ export class FormPersonalDetails extends Component {
                 <div className={styles.confirm_section}>
                   <h3>Informações vacinais</h3>
                   <div>
-                    <p><span>Dose da Vacina:</span> {values.doseVacina}</p>
+                    <p><span>Dose da Vacina:</span> {values.doseVacina ? values.doseVacina : '3ª dose (+12)'}</p>
                     {values.doseVacina == 'infantil' ? <p><span>Tipo da Vacina:</span> {values.tipoVacina}</p> : ''}
-                    <p><span>Local de agendamento:</span> {values.ubs}</p>
-                    <p><span>Data:</span> {values.diaAgendamento}</p>
-                    <p><span>Horário:</span> {values.horario}</p>
+                    <p><span>Local de agendamento:</span> {values.ubs ? values.ubs : 'Drive-thru da USB 1 Asa Sul'}</p>
+                    <p><span>Data:</span> {values.diaAgendamento ? values.diaAgendamento : '28/05/23'}</p>
+                    <p><span>Horário:</span> {values.horario ? values.horario : '9h às 10h'}</p>
                   </div>
                 </div>
             }

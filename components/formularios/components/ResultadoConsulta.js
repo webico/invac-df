@@ -24,14 +24,14 @@ export class FormPersonalDetails extends Component {
               {
                 !teste ?
                   <>
-                    <h2>Vacinas tomadas por <span>{values.nomeCompleto}</span></h2>
+                    <h2>Vacinas tomadas por <span>{values.nomeCompleto ? values.nomeCompleto : 'Fulano da Silva'}</span></h2>
                     <p>Aqui estão as vacinas que você tomou!</p>
                   </>
 
                   :
 
                   <>
-                    <h2>Testes realizados por <span>{values.nomeCompleto}</span></h2>
+                    <h2>Testes realizados por <span>{values.nomeCompleto ? values.nomeCompleto : 'Fulano da Silva'}</span></h2>
                     <p>Aqui estão os testes que foram realizados por você!</p>
                   </>
               }
