@@ -1,8 +1,8 @@
 /* eslint-disable indent */
 import React, { Component } from 'react';
-import FormUserDetails from '@/components/formularios/AgendaTeste/FormUserDetails';
-import FormSymptomDetails from '@/components/formularios/AgendaTeste/FormSymptomDetails';
-import FormLocalDetails from '@/components/formularios/AgendaTeste/FormLocalDetails';
+import FormUserDetails from '@/components/formularios/components/FormUserDetails';
+import FormSymptomDetails from '@/components/formularios/components/FormSymptomDetails';
+import FormLocalDetails from '@/components/formularios/components/FormLocalDetails';
 import Confirm from '@/components/formularios/components/Confirm';
 import Success from '@/components/formularios/components/Success';
 import forms from '@/css/Forms.module.css';
@@ -82,6 +82,7 @@ export class UserForm extends Component {
             handleChange={this.handleChange}
             values={values}
             styles={styles}
+            teste={true}
           />
         );
       case 2:

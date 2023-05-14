@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import React, { Component } from 'react';
-import FormUserDetails from '@/components/formularios/AgendaVacina/FormUserDetails';
-import FormLocalDetails from '@/components/formularios/AgendaVacina/FormLocalDetails';
+import FormUserDetails from '@/components/formularios/components/FormUserDetails';
+import FormLocalDetails from '@/components/formularios/components/FormLocalDetails';
 import Confirm from '@/components/formularios/components/Confirm';
 import Success from '@/components/formularios/components/Success';
 import forms from '@/css/Forms.module.css';
@@ -53,6 +53,7 @@ export class UserForm extends Component {
             handleChange={this.handleChange}
             values={values}
             styles={styles}
+            teste={false}
           />
         );
       case 2:

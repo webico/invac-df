@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import ProgressBtns from '../components/ProgressBtns';
 
-export class FormPersonalDetails extends Component {
+export class FormLocalDetails extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -140,4 +140,4 @@ export class FormPersonalDetails extends Component {
   }
 }
 
-export default FormPersonalDetails;
+export default FormLocalDetails;
