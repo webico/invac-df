@@ -26,6 +26,10 @@
         background: var(--600);
         border-color: var(--600);
       }
+
+      &.consulta_btn {
+        padding: .875rem .7rem;
+      }
     }
 
     &:last-child .tab_menu__btn {

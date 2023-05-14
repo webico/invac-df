@@ -2,8 +2,8 @@ import Head from 'next/head';
 import styles from '@/css/Agendamento.module.css';
 import forms from '@/css/Forms.module.css';
 import { useState } from 'react';
-import VacinaForms from '@/components/formularios/VacinaForms/VacinaForms';
-import TesteForms from '@/components/formularios/TesteForms/TesteForms';
+import VacinaForms from '@/components/formularios/AgendaVacina/AgendaVacina';
+import TesteForms from '@/components/formularios/AgendaTeste/AgendaTeste';
 
 const Agendamento = () => {
   const [tab, setTab] = useState('vacina');

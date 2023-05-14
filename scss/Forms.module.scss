@@ -348,6 +348,21 @@
   }
 }
 
+.resultado_section {
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 1.25;
+    font-weight: var(--regular);
+    margin-bottom: 1.5rem;
+
+    span {
+      display: inline-block;
+      font-weight: var(--bold);
+    }
+  }
+}
+
 //popup de aviso (1 a 2 dias de sintomas) na etapa 2 do form de teste
 .overlay_popup {
   position: fixed;
