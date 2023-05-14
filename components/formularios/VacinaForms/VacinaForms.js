@@ -36,17 +36,7 @@ export class UserForm extends Component {
   };
 
   handleChange = input => e => {
-    // if (input == 'doseVacina' && this.state.vacina) {
-    //   this.setState({ [input]: e.target.value });
-    //   this.setState({ tipoVacina: '' });
-    // } else {
     this.setState({ [input]: e.target.value });
-    // }
-
-    // this.setState({ 
-    //   [input]: e.target.value 
-    // }, () => console.log('State: ', this.state));
-
   };
 
   render() {

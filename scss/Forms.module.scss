@@ -34,12 +34,6 @@
     margin-bottom: 1.5rem;
   }
 
-  .section_confirm_h2 {
-    color: var(--300);
-    margin-bottom: 2rem;
-    font-weight: var(--medium);
-  }
-
   .label_input {
     font-size: 1rem;
     font-weight: var(--semi);
@@ -64,6 +58,7 @@
       line-height: 1;
     }
 
+    //estilização dos inputs de select
     .select {
       background: var(--100);
       border-radius: .25rem;
@@ -86,6 +81,7 @@
       }
     }
 
+    //estilização das checkboxes
     .checkbox {
       display: flex;
       align-items: center;
@@ -107,6 +103,8 @@
     }
   }
 
+
+  //estilização dos inputs do tipo radio e labels
   label[id="radio_select"] {
     display: block;
     font-size: 1rem;
@@ -130,54 +128,8 @@
     }
   }
 
+  .radio_select,
   .check_ul {
-    margin-top: 1rem;
-
-    .check_select {
-      display: flex;
-      align-items: center;
-  
-      &:not(:last-child) {
-        margin-bottom: 1rem;
-      }
-  
-      input {
-        padding: 0;
-      }
-  
-      label {
-        margin-bottom: 0;
-        font-weight: var(--regular);
-        color: var(--300);
-      }
-    }
-  }
-
-
-  .ubs {
-    display: flex;
-    align-items: flex-start;
-    padding: 1.5rem 1.25rem 1rem;
-
-    label {
-      p {
-        font-weight: var(--semi);
-        color: var(--500);
-      }
-
-      span {
-        display: block;
-        font-size: .875rem;
-        color: var(--300);
-
-        &:not(:last-child) {
-          margin-bottom: .75rem 0 .5rem;
-        }
-      }
-    }
-  }
-
-  .radio_select {
     display: flex;
     flex-direction: column;
     border-radius: .25rem;
@@ -221,6 +173,57 @@
     }
   }
 
+  //estilização da etapa 2 (sintomas) do form de teste 
+  .check_ul {
+    margin-top: 1rem;
+    border: none;
+
+    .check_select {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      input {
+        padding: 0;
+        margin-top: 0;
+      }
+
+      label {
+        margin: 0;
+        font-weight: var(--regular);
+      }
+    }
+  }
+
+  //estilização da lista de UBSs
+  .ubs {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem 1.25rem 1rem;
+
+    label {
+      p {
+        font-weight: var(--semi);
+        color: var(--500);
+      }
+
+      span {
+        display: block;
+        font-size: .875rem;
+        color: var(--300);
+
+        &:not(:last-child) {
+          margin-bottom: .75rem 0 .5rem;
+        }
+      }
+    }
+  }
+
+
+
 
   .form_linha {
     // display: flex;
@@ -257,7 +260,9 @@
 
 .section_confirm_h2 {
   font-size: 1.25rem;
+  font-weight: var(--medium);
   color: var(--300);
+  margin-bottom: 2rem;
 }
 
 .confirm_section {
