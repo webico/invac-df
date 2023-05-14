@@ -14,12 +14,13 @@ export class UserForm extends Component {
     telefone: '',
     email: '',
     teste: '',
-
-    infectado: '',
+    sintomas: [],
     tempo: '',
+    infectado: '',
     contato: '',
     diaAgendamento: '',
     horario: '',
+    ubs: ''
   };
 
   nextStep = () => {
@@ -40,10 +41,24 @@ export class UserForm extends Component {
       this.setState({ [input]: e.target.value });
   };
 
+  handleCheck = (e) => {
+    let input = e.target,
+      item = input.value;
+
+    if (input.checked) {
+      return this.setState({ sintomas: this.state.sintomas.concat([item]) });
+    }
+    else {
+      return this.setState({ sintomas: this.state.sintomas.filter(lixo => {
+        return lixo !== item;
+      }) });
+    }
+  };
+
   render() {
     const { step } = this.state;
-    const { nomeCompleto, cpf, email, telefone, teste, tempo, infectado, ubs, diaAgendamento, horario } = this.state;
-    const values = { nomeCompleto, cpf, email, telefone, teste, tempo, infectado, ubs, diaAgendamento, horario };
+    const { nomeCompleto, cpf, email, telefone, teste, sintomas, tempo, infectado, ubs, diaAgendamento, horario } = this.state;
+    const values = { nomeCompleto, cpf, email, telefone, teste, sintomas, tempo, infectado, ubs, diaAgendamento, horario };
     const styles = forms;
 
     switch (step) {
@@ -62,6 +77,7 @@ export class UserForm extends Component {
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
+            handleCheck={this.handleCheck}
             values={values}
             styles={styles}
           />

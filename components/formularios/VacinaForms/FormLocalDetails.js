@@ -44,7 +44,7 @@ export class FormPersonalDetails extends Component {
             <label id="radio_select">Selecionar local *</label>
             <ul className={styles.radio_select} >
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio1' value='Drive-thru da USB 1 Asa Norte' onInput={handleChange('ubs')} {...values.ubs == 'Drive-thru da USB 1 Asa Norte' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio1' className={styles.radio_input} value='Drive-thru da USB 1 Asa Norte' onInput={handleChange('ubs')} {...values.ubs == 'Drive-thru da USB 1 Asa Norte' ? {checked: true} : ''}/>
 
                 <label htmlFor="radio1" className={styles.ubs_info}>
                   <p>Drive-thru da USB 1 Asa Sul</p>
@@ -54,7 +54,7 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio2'  value='Drive-thru da USB 1 Asa Sul' onInput={handleChange('ubs')} {...values.ubs == 'Drive-thru da USB 1 Asa Sul' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio2' className={styles.radio_input}  value='Drive-thru da USB 1 Asa Sul' onInput={handleChange('ubs')} {...values.ubs == 'Drive-thru da USB 1 Asa Sul' ? {checked: true} : ''}/>
 
                 <label htmlFor="radio2" className={styles.ubs_info}>
                   <p>Drive-thru da USB 1 Asa Sul</p>
@@ -64,7 +64,7 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio3'  value='Hospital Universitário de Brasília' onInput={handleChange('ubs')} {...values.ubs == 'Hospital Universitário de Brasília' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio3' className={styles.radio_input}  value='Hospital Universitário de Brasília' onInput={handleChange('ubs')} {...values.ubs == 'Hospital Universitário de Brasília' ? {checked: true} : ''}/>
 
                 <label htmlFor="radio3" className={styles.ubs_info}>
                   <p>Hospital Universitário de Brasília</p>
@@ -74,7 +74,7 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio4' value='USB 1 Lago Norte' onInput={handleChange('ubs')} {...values.ubs == 'USB 1 Lago Norte' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio4' className={styles.radio_input} value='USB 1 Lago Norte' onInput={handleChange('ubs')} {...values.ubs == 'USB 1 Lago Norte' ? {checked: true} : ''}/>
                 <label htmlFor="radio3" className={styles.ubs_info}>
                   <p>USB 1 Lago Norte</p>
                   <span>Horários: de 12h às 18h - de segunda a sexta</span>
@@ -83,7 +83,7 @@ export class FormPersonalDetails extends Component {
               </li>
 
               <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio5' value='USB 1 Lago Sul' onInput={handleChange('ubs')}  {...values.ubs == 'USB 1 Lago Sul' ? {checked: true} : ''}/>
+                <input type="radio" name='ubs' id='radio5' className={styles.radio_input} value='USB 1 Lago Sul' onInput={handleChange('ubs')}  {...values.ubs == 'USB 1 Lago Sul' ? {checked: true} : ''}/>
 
                 <label htmlFor="radio3" className={styles.ubs_info}>
                   <p>USB 1 Lago Norte</p>
