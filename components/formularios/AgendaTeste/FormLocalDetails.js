@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import ProgressBtns from '../components/ProgressBtns';
 
 export class FormPersonalDetails extends Component {
   continue = e => {
@@ -119,11 +120,12 @@ export class FormPersonalDetails extends Component {
             </div>
           </section>
 
-          <section className={styles.form_progresso}>
-            <button onClick={this.back} className={`btn_principal ${styles.progresso_btn} ${styles.voltar}`}>Voltar</button>
-
-            <button onClick={this.continue} className={`btn_principal ${styles.progresso_btn}`}>Próximo</button>
-          </section>
+          <ProgressBtns
+            styles={styles}
+            continue={this.props.nextStep}
+            back={this.props.prevStep}
+            final={false}
+          />
         </form>
       </div>
     );

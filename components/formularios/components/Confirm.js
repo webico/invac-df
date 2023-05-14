@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import Link from 'next/link';
 import React, { Component } from 'react';
+import ProgressBtns from './ProgressBtns';
 
 export class FormPersonalDetails extends Component {
   continue = e => {
@@ -67,11 +68,12 @@ export class FormPersonalDetails extends Component {
             <label htmlFor="">Estou de acordo com o compartilhamento dos dados fornecidos para o agendamento, conforme estabelecido na <Link href='#'>Política de Privacidade</Link>.</label>
           </div>
 
-          <section className={styles.form_progresso}>
-            <button onClick={this.back} className={`btn_principal ${styles.progresso_btn} ${styles.voltar}`}>Voltar</button>
-
-            <button onClick={this.continue} className={`btn_principal ${styles.progresso_btn}`}>Agendar</button>
-          </section>
+          <ProgressBtns
+            styles={styles}
+            continue={this.props.nextStep}
+            back={this.props.prevStep}
+            final={true}
+          />
         </div>
       </>
     );
