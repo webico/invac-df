@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import Link from 'next/link';
 import React, { Component } from 'react';
 
 export class FormPersonalDetails extends Component {
@@ -22,9 +23,9 @@ export class FormPersonalDetails extends Component {
   }
 
   render() {
-    const { values, handleChange, handleCheck, styles } = this.props;
+    const { values, handleChange, handleCheck, showAviso, styles } = this.props;
 
-    let { infectado } = this.state;
+    let { infectado, tempoPopup } = this.state;
 
     const handleInfectado = (e) => {
       if (e.target.value == 'sim') {
@@ -96,14 +97,31 @@ export class FormPersonalDetails extends Component {
               <label htmlFor='sintomatempo'>Por quanto tempo você tem sentido esses sintomas? *</label>
 
               <div className={styles.select}>
-                <select name="" id="sintomatempo" required onChange={() => { handleChange('tempo'); }}>
-                  <option value="Selecionar dose" disabled selected>Selecionar tempo</option>
-                  <option value="0102">1 a 2 dias</option>
-                  <option value="0305">3 a 5 dias</option>
-                  <option value="0710">7 a 10 dias</option>
+                <select name="" id="sintomatempo" required
+                  onInput={handleChange('tempo')}
+                  onChange={(e) => showAviso(e)}>
+                  <option value="Selecionar dose" disabled>Selecionar tempo</option>
+                  <option value="1 a 2 dias">1 a 2 dias</option>
+                  <option value="3 a 5 dias">3 a 5 dias</option>
+                  <option value="7 a 10 dias">7 a 10 dias</option>
                 </select>
               </div>
             </div>
+
+            {
+              tempoPopup || values.tempoPopup &&
+              <div className={styles.overlay_popup}>
+                <div className={styles.container}>
+                  <div className={styles.overlay_div}>
+                    <h2>Você selecionou 1 a 2 dias para dias com sintomas.</h2>
+                    <p>Para o exame detectar o vírus com mais certeza, é melhor fazê-lo entre o 3º e 4º dia de sintomas.</p>
+                    <p>Por isso, escolha uma data para o agendamento do exame a partir do 3º dia de sintomas.</p>
+
+                    <Link href="#" className='btn_principal'>Seguir</Link>
+                  </div>
+                </div>
+              </div>
+            }
 
             <div className={styles.label_input}>
               <label>Você teve contato com alguém infectado? *</label>
@@ -124,7 +142,7 @@ export class FormPersonalDetails extends Component {
             {
               (infectado || values.infectado == 'sim') &&
               <div className={styles.label_input}>
-                <label htmlFor='infectadotempo'>Quantos dias faz, que teve contato com alguém infectado? *</label>
+                <label htmlFor='infectadotempo'>Quantos dias desde que teve contato com alguém infectado? *</label>
 
                 <div className={styles.select}>
                   <select name="" id="infectadotempo" required onClick={handleChange('infectado')}>
