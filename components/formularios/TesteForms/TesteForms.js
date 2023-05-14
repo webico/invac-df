@@ -104,10 +104,14 @@ export class UserForm extends Component {
             prevStep={this.prevStep}
             values={values}
             styles={styles}
+            teste={true}
           />
         );
       case 5:
-        return <Success styles={styles} />;
+        return <Success
+          styles={styles}
+          teste={true}
+        />;
       default:
         (console.log('This is a multi-step form built with NextJS.'));
     }

@@ -40,7 +40,7 @@ export class UserForm extends Component {
     //   this.setState({ [input]: e.target.value });
     //   this.setState({ tipoVacina: '' });
     // } else {
-      this.setState({ [input]: e.target.value });
+    this.setState({ [input]: e.target.value });
     // }
 
     // this.setState({ 
@@ -82,10 +82,14 @@ export class UserForm extends Component {
             prevStep={this.prevStep}
             values={values}
             styles={styles}
+            teste={false}
           />
         );
       case 4:
-        return <Success styles={styles} />;
+        return <Success
+          styles={styles}
+          teste={false}
+        />;
       default:
         (console.log('This is a multi-step form built with NextJS.'));
     }

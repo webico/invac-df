@@ -3,13 +3,21 @@ import React, { Component } from 'react';
 
 export class Success extends Component {
   render() {
-    const { styles } = this.props;
-    
+    const { styles, teste } = this.props;
+
     return (
       <div className={`${styles.form_caixa} ${styles.form_sucesso}`}>
         <section className={styles.sucesso_info_sec}>
           <h2>Agendamento realizado!!</h2>
-          <p>Compareça ao local agendado com documento de identidade com foto, CPF e cartão de vacina. Caso não tenha cartão de vacina, será produzido um novo na hora da vacinação.</p>
+          {
+            !teste &&
+            <p>Compareça ao local agendado com documento de identidade com foto, CPF e cartão de vacina. Caso não tenha cartão de vacina, será produzido um novo na hora da vacinação.</p>
+          }
+
+          {
+            teste &&
+            <p>Compareça ao local agendado com documento de identidade oficial e CPF, ou a certidão de nascimento, no caso de crianças e adolescentes.</p>
+          }
         </section>
 
         <section className={styles.app_info_sec}>

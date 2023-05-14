@@ -14,7 +14,7 @@ export class FormPersonalDetails extends Component {
 
 
   render() {
-    const { values, styles } = this.props;
+    const { values, styles, teste } = this.props;
 
     return (
       <>
@@ -33,16 +33,33 @@ export class FormPersonalDetails extends Component {
               </div>
             </div>
 
-            <div className={styles.confirm_section}>
-              <h3>Informações vacinais</h3>
-              <div>
-                <p><span>Dose da Vacina:</span> {values.doseVacina}</p>
-                {values.doseVacina == 'infantil' ? <p><span>Tipo da Vacina:</span> {values.tipoVacina}</p> : ''}
-                <p><span>Local de agendamento:</span> {values.ubs}</p>
-                <p><span>Data:</span> {values.diaAgendamento}</p>
-                <p><span>Horário:</span> {values.horario}</p>
+            {
+              teste &&
+              <div className={styles.confirm_section}>
+                <h3>Informações vacinais</h3>
+                <div>
+                  <p><span>Teste:</span> {values.doseVacina}</p>
+                  {values.doseVacina == 'infantil' ? <p><span>Tipo da Vacina:</span> {values.tipoVacina}</p> : ''}
+                  <p><span>Local de agendamento:</span> {values.ubs}</p>
+                  <p><span>Data:</span> {values.diaAgendamento}</p>
+                  <p><span>Horário:</span> {values.horario}</p>
+                </div>
               </div>
-            </div>
+            }
+
+            {
+              !teste &&
+              <div className={styles.confirm_section}>
+                <h3>Informações vacinais</h3>
+                <div>
+                  <p><span>Dose da Vacina:</span> {values.doseVacina}</p>
+                  {values.doseVacina == 'infantil' ? <p><span>Tipo da Vacina:</span> {values.tipoVacina}</p> : ''}
+                  <p><span>Local de agendamento:</span> {values.ubs}</p>
+                  <p><span>Data:</span> {values.diaAgendamento}</p>
+                  <p><span>Horário:</span> {values.horario}</p>
+                </div>
+              </div>
+            }
           </section>
 
           <section className={styles.form_progresso}>
@@ -53,10 +70,6 @@ export class FormPersonalDetails extends Component {
               <li className={styles.progresso_completo}></li>
               <li className={styles.progresso_ativo}></li>
             </ul>
-            {/* 
-            {
-              values.nomeCompleto && values.cpf && values.telefone && values.email && values.
-            } */}
 
             <button onClick={this.continue} className={`btn_principal ${styles.progresso_btn}`}>Agendar</button>
           </section>
