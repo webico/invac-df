@@ -93,10 +93,10 @@ export class FormPersonalDetails extends Component {
             </div>
 
             <div className={styles.label_input}>
-              <label>Por quanto tempo você tem sentido esses sintomas? *</label>
+              <label htmlFor='sintomatempo'>Por quanto tempo você tem sentido esses sintomas? *</label>
 
               <div className={styles.select}>
-                <select name="" id="" required onChange={() => { handleChange('tempo'); }}>
+                <select name="" id="sintomatempo" required onChange={() => { handleChange('tempo'); }}>
                   <option value="Selecionar dose" disabled selected>Selecionar tempo</option>
                   <option value="0102">1 a 2 dias</option>
                   <option value="0305">3 a 5 dias</option>
@@ -124,10 +124,10 @@ export class FormPersonalDetails extends Component {
             {
               (infectado || values.infectado == 'sim') &&
               <div className={styles.label_input}>
-                <label>Quantos dias faz, que teve contato com alguém infectado? *</label>
+                <label htmlFor='infectadotempo'>Quantos dias faz, que teve contato com alguém infectado? *</label>
 
                 <div className={styles.select}>
-                  <select name="" id="" required onClick={handleChange('infectado')}>
+                  <select name="" id="infectadotempo" required onClick={handleChange('infectado')}>
                     <option disabled {...values.tipoVacina == '' ? { selected: true } : ''}>Selecionar tempo</option>
 
                     <option value="0102" {...values.infectado == '0102' ? { selected: true } : ''}>1 a 2 dias</option>
@@ -138,31 +138,6 @@ export class FormPersonalDetails extends Component {
               </div>
             }
           </section>
-
-          {/* <section className={styles.form_section}>
-            <h2 className={styles.section__h2}>Informações do local</h2>
-
-            <div className={styles.form_linha}>
-              <div className={styles.label_input}>
-                <label>Dia de agendamento *</label>
-
-                <input type="date" name='dia_agendamento' value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')} />
-              </div>
-
-              <div className={styles.label_input}>
-                <label htmlFor="horario">Horário *</label>
-
-                <div className={styles.select}>
-                  <select name="" id="horario" required onChange={handleChange('horario')}>
-                    <option value="Selecionar dose" disabled {...values.horario == '' ? { selected: true } : ''}>Selecionar horário</option>
-                    <option value="0910" {...values.horario == '0910' ? { selected: true } : ''}>9h às 10h</option>
-                    <option value="1213" {...values.horario == '1213' ? { selected: true } : ''}>12h às 13h</option>
-                    <option value="1517" {...values.horario == '1517' ? { selected: true } : ''}>15h às 17h</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </section> */}
 
           <section className={styles.form_progresso}>
             <button onClick={this.back} className={`btn_principal ${styles.progresso_btn} ${styles.voltar}`}>Voltar</button>

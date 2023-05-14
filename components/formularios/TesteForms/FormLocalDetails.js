@@ -15,8 +15,6 @@ export class FormPersonalDetails extends Component {
   render() {
     const { values, handleChange, styles } = this.props;
 
-    console.log(values);
-
     return (
       <div className={styles.form_caixa}>
 
@@ -25,10 +23,10 @@ export class FormPersonalDetails extends Component {
             <h2 className={styles.section__h2}>Informações do local</h2>
 
             <div className={styles.label_input}>
-              <label htmlFor="telefone">Região *</label>
+              <label htmlFor="regiao">Região *</label>
 
               <div className={styles.select}>
-                <select name="" id="" required onChange={() => { handleChange('regiao'); }}>
+                <select name="" id="regiao" required onChange={() => { handleChange('regiao'); }}>
                   <option value="Selecionar dose" disabled {...values.regiao == '' ? {selected: true} : ''}>Selecionar região</option>
                   <option value="norte" {...values.regiao == 'norte' ? {selected: true} : ''}>Região Norte</option>
                   <option value="oeste" {...values.regiao == 'oeste' ? {selected: true} : ''}>Região Oeste</option>

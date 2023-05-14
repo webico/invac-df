@@ -15,8 +15,6 @@ export class FormPersonalDetails extends Component {
   render() {
     const { values, handleChange, styles } = this.props;
 
-    console.log(values);
-
     return (
       <div className={styles.form_caixa}>
 
@@ -25,18 +23,18 @@ export class FormPersonalDetails extends Component {
             <h2 className={styles.section__h2}>Informações do local</h2>
 
             <div className={styles.label_input}>
-              <label htmlFor="telefone">Região *</label>
+              <label htmlFor="regiao">Região *</label>
 
               <div className={styles.select}>
-                <select name="" id="" required onChange={() => { handleChange('regiao'); }}>
+                <select name="" id="regiao" required onChange={() => { handleChange('regiao'); }}>
                   <option value="Selecionar dose" disabled {...values.regiao == '' ? {selected: true} : ''}>Selecionar região</option>
-                  <option value="norte" {...values.regiao == 'norte' ? {selected: true} : ''}>Região Norte</option>
-                  <option value="oeste" {...values.regiao == 'oeste' ? {selected: true} : ''}>Região Oeste</option>
-                  <option value="central" {...values.regiao == 'central' ? {selected: true} : ''}>Região Central</option>
-                  <option value="leste" {...values.regiao == 'leste' ? {selected: true} : ''}>Região Leste</option>
-                  <option value="sul" {...values.regiao == 'sul' ? {selected: true} : ''}>Região Sul</option>
-                  <option value="centrol_sul" {...values.regiao == 'centrol_sul' ? {selected: true} : ''}>Região Centro-Sul</option>
-                  <option value="sudoeste" {...values.regiao == 'sudoeste' ? {selected: true} : ''}>Região Sudoeste</option>
+                  <option value="Norte" {...values.regiao == 'Norte' ? {selected: true} : ''}>Região Norte</option>
+                  <option value="Oeste" {...values.regiao == 'Oeste' ? {selected: true} : ''}>Região Oeste</option>
+                  <option value="Central" {...values.regiao == 'Central' ? {selected: true} : ''}>Região Central</option>
+                  <option value="Leste" {...values.regiao == 'Leste' ? {selected: true} : ''}>Região Leste</option>
+                  <option value="Sul" {...values.regiao == 'Sul' ? {selected: true} : ''}>Região Sul</option>
+                  <option value="Centro Sul" {...values.regiao == 'Centro Sul' ? {selected: true} : ''}>Região Centro-Sul</option>
+                  <option value="Sudoeste" {...values.regiao == 'Sudoeste' ? {selected: true} : ''}>Região Sudoeste</option>
                 </select>
               </div>
             </div>
@@ -99,9 +97,9 @@ export class FormPersonalDetails extends Component {
 
             <div className={styles.form_linha}>
               <div className={styles.label_input}>
-                <label>Dia de agendamento *</label>
+                <label htmlFor="dia_agendamento">Dia de agendamento *</label>
 
-                <input type="date" name='dia_agendamento' value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')}/>
+                <input type="date" name='dia_agendamento' id="dia_agendamento" value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')}/>
               </div>
 
               <div className={styles.label_input}>
@@ -110,9 +108,9 @@ export class FormPersonalDetails extends Component {
                 <div className={styles.select}>
                   <select name="" id="horario" required onChange={handleChange('horario')}>
                     <option value="Selecionar dose" disabled {...values.horario == '' ? {selected: true} : ''}>Selecionar horário</option>
-                    <option value="0910" {...values.horario == '0910' ? {selected: true} : ''}>9h às 10h</option>
-                    <option value="1213" {...values.horario == '1213' ? {selected: true} : ''}>12h às 13h</option>
-                    <option value="1517" {...values.horario == '1517' ? {selected: true} : ''}>15h às 17h</option>
+                    <option value="9h às 10h" {...values.horario == '9h às 10h' ? {selected: true} : ''}>9h às 10h</option>
+                    <option value="12h às 13h" {...values.horario == '12h às 13h' ? {selected: true} : ''}>12h às 13h</option>
+                    <option value="15h às 17h" {...values.horario == '15h às 17h' ? {selected: true} : ''}>15h às 17h</option>
                   </select>
                 </div>
               </div>
