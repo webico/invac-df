@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// import { checkPreenchido } from '@/public/js/globalFunctions';
 import React, { Component } from 'react';
 
 export class FormUserDetails extends Component {
@@ -18,23 +17,6 @@ export class FormUserDetails extends Component {
 
   render() {
     const { values, handleChange, styles } = this.props;
-
-    let { vacina } = this.state;
-
-    // let { checks } = this.state;
-
-    const handleVacinaBaby = (e) => {
-      if (e.target.value == 'infantil') {
-        this.setState({ vacina: true });
-      } else {
-        this.setState({ vacina: false });
-      }
-    };
-
-    // let checks = checkPreenchido([values.nomeCompleto, values.cpf, values.telefone, values.email, values.doseVacina]);
-    // console.log('sem tipo:', this.state.vacina == false && checks);
-    // console.log('com tipo:', this.state.vacina == true && !(values.tipoVacina == '') && checks);
-    // console.log(values.tipoVacina);
 
     return (
       <div className={styles.form_caixa}>
@@ -102,46 +84,20 @@ export class FormUserDetails extends Component {
 
             <div className={styles.form_linha}>
               <div className={styles.label_input}>
-                <label>Dose da vacina *</label>
+                <label>Teste *</label>
 
                 <div className={styles.select}>
-                  <select name="" id="" required
-                    onChange={handleChange('doseVacina')}
-                    onInput={e => handleVacinaBaby(e)}
-                  >
-                    <option disabled {...values.doseVacina == '' ? { selected: true } : ''}>Selecionar dose</option>
-                    <option value="infantil" {...values.doseVacina == 'infantil' ? { selected: true } : ''}>Vacina Infantil (-12)</option>
-                    <option value="dose1" {...values.doseVacina == 'dose1' ? { selected: true } : ''}>1ª dose (+12)</option>
-                    <option value="dose2" {...values.doseVacina == 'dose2' ? { selected: true } : ''}>2ª dose (+12)</option>
-                    <option value="dose3" {...values.doseVacina == 'dose3' ? { selected: true } : ''}>3ª dose (+12)</option>
-                    <option value="reforco" {...values.doseVacina == 'reforco' ? { selected: true } : ''}>Dose de reforço (+12)</option>
-                    <option value="bivalente" {...values.doseVacina == 'bivalente' ? { selected: true } : ''}>Bivalente (grupos prioritários)</option>
+                  <select name="" id="" required onChange={handleChange('teste')} >
+                    <option disabled {...values.teste == '' ? { selected: true } : ''}>Selecionar teste</option>
+                    <option value="rtpcr" {...values.teste == 'rtpcr' ? { selected: true } : ''}>RT-PCR</option>
+                    <option value="teste_rapido" {...values.teste == 'teste_rapido' ? { selected: true } : ''}>Teste Rápido Antígeno</option>
                   </select>
                 </div>
               </div>
-
-              {
-                (vacina || values.doseVacina == 'infantil') &&
-                <div className={styles.label_input}>
-                  <label>Tipo por idade *</label>
-
-                  <div className={styles.select}>
-                    <select name="" id="" required onClick={handleChange('tipoVacina')}>
-                      <option disabled {...values.tipoVacina == '' ? { selected: true } : ''}>Selecionar tipo</option>
-                      <option value="coronavac" {...values.tipoVacina == 'coronavac' ? { selected: true } : ''}>Coronavac (3 a 4 anos)</option>
-                      <option value="pfizer_baby" {...values.tipoVacina == 'pfizer_baby' ? { selected: true } : ''}>Pfizer Baby (6 meses a 4 anos)</option>
-                      <option value="pfizer_pediatria" {...values.tipoVacina == 'pfizer_pediatria' ? { selected: true } : ''}>Pfizer Pediatria (5 a 11 anos)</option>
-                    </select>
-                  </div>
-                </div>
-              }
-
             </div>
           </section>
 
-
           <section className={styles.form_progresso}>
-
             <button onClick={this.continue} className={`btn_principal ${styles.progresso_btn}`}
             >Próximo</button>
           </section>

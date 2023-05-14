@@ -25,18 +25,18 @@ export class FormPersonalDetails extends Component {
             <h2 className={styles.section__h2}>Informações do local</h2>
 
             <div className={styles.label_input}>
-              <label htmlFor="telefone">Dose da vacina *</label>
+              <label htmlFor="telefone">Região *</label>
 
               <div className={styles.select}>
                 <select name="" id="" required onChange={() => { handleChange('regiao'); }}>
-                  <option value="Selecionar dose" disabled selected>Selecionar região</option>
-                  <option value="norte">Região Norte</option>
-                  <option value="oeste">Região Oeste</option>
-                  <option value="central">Região Central</option>
-                  <option value="leste">Região Leste</option>
-                  <option value="sul">Região Sul</option>
-                  <option value="centrol_sul">Região Centro-Sul</option>
-                  <option value="sudoeste">Região Sudoeste</option>
+                  <option value="Selecionar dose" disabled {...values.regiao == '' ? {selected: true} : ''}>Selecionar região</option>
+                  <option value="norte" {...values.regiao == 'norte' ? {selected: true} : ''}>Região Norte</option>
+                  <option value="oeste" {...values.regiao == 'oeste' ? {selected: true} : ''}>Região Oeste</option>
+                  <option value="central" {...values.regiao == 'central' ? {selected: true} : ''}>Região Central</option>
+                  <option value="leste" {...values.regiao == 'leste' ? {selected: true} : ''}>Região Leste</option>
+                  <option value="sul" {...values.regiao == 'sul' ? {selected: true} : ''}>Região Sul</option>
+                  <option value="centrol_sul" {...values.regiao == 'centrol_sul' ? {selected: true} : ''}>Região Centro-Sul</option>
+                  <option value="sudoeste" {...values.regiao == 'sudoeste' ? {selected: true} : ''}>Região Sudoeste</option>
                 </select>
               </div>
             </div>

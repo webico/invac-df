@@ -2,14 +2,11 @@ import Head from 'next/head';
 import styles from '@/css/Agendamento.module.css';
 import forms from '@/css/Forms.module.css';
 import { useState } from 'react';
-import VacinaForms from '@/components/VacinaForms/VacinaForms';
+import VacinaForms from '@/components/formularios/VacinaForms/VacinaForms';
+import TesteForms from '@/components/formularios/TesteForms/TesteForms';
 
 const Agendamento = () => {
   const [tab, setTab] = useState('vacina');
-
-  // const switchTab = () => {
-  //   setTab(!tab);
-  // };
 
   return (
     <>
@@ -33,7 +30,9 @@ const Agendamento = () => {
             <li><button className={`${styles.tab_menu__btn} ${tab == 'teste' ? styles.ativo : ''}`} onClick={() => setTab('teste')}>Agendar Teste</button></li>
           </ul>
 
-          <VacinaForms styles={forms}/>
+          {
+            tab == 'vacina' ? <VacinaForms styles={forms}/> : <TesteForms styles={forms}/>
+          }
         </div>
       </section>
     </>
