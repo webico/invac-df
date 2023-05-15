@@ -30,4 +30,43 @@
       }
     }
   }
+
+  .perc__lista {
+    display: flex;
+    flex-direction: column;
+
+    .perc__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+
+      .perc__info {
+        span, p {
+          line-height: 1;
+        }
+
+        span {
+          display: block;
+          margin-bottom: .75rem;
+          font-weight: var(--medium);
+        }
+
+        p {
+          font-size: 2rem;
+          font-weight: var(--semi);
+        }
+      }
+
+      .perc__graph {
+        width: 13rem;
+        height: 1.375rem;
+        background: var(--100);
+      }
+
+    }
+  }
 }

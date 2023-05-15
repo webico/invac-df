@@ -1,3 +1,27 @@
+// export function checkPreenchido(props) {
+//   let chaves;
+//   // if(!vacinaTrue) {
+//   chaves = {
+//     ...props
+//   };
+//   // } else if() {
+//   //   chaves = {
+//   //     ...props, tipoVacina
+//   //   };
+//   // }
+
+//   // if (!(vacinaTrue && tipoVacina.length)) {
+//   //   chaves = {
+//   //     ...props
+//   //   };
+//   // } else {
+//   //   chaves = {
+//   //     ...props, tipoVacina
+//   //   };
+//   // }
+//   return Object.values(chaves).every(item => item);
+// }
+
 export function addComma(num) {
   var str = num.toString().split('.');
   if (str[0].length >= 4) { //era >=5 antes
@@ -9,31 +33,12 @@ export function addComma(num) {
   return str.join('.');
 }
 
-export function checkPreenchido(props) {
-  let chaves;
+export const Soma = array => {
+  return array.reduce((partialSum, a) => partialSum + a, 0);
+};
 
-  // if(!vacinaTrue) {
-  chaves = {
-    ...props
-  };
-  // } else if() {
-  //   chaves = {
-  //     ...props, tipoVacina
-  //   };
-  // }
+export const Percentual = (item, total) => {
+  return Math. ceil((item/total) * 100);
+};
 
-  // if (!(vacinaTrue && tipoVacina.length)) {
-  //   chaves = {
-  //     ...props
-  //   };
-  // } else {
-  //   chaves = {
-  //     ...props, tipoVacina
-  //   };
-  // }
-
-
-  return Object.values(chaves).every(item => item);
-}
-
-export default { addComma, checkPreenchido };
+export default { addComma, Soma, Percentual };
