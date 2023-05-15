@@ -130,50 +130,80 @@
 }
 
 // CASOS DE COVID NO ULTIMO MES
-// .casos-covid {
-//   text-align: center;
-//   margin-bottom: 4rem;
+.casos_covid {
+  text-align: center;
+  margin-bottom: 4rem;
 
-//   .casos__div {
-//     background: var(--600);
-//     border-radius: .5rem;
-//     padding: 2.5rem 1.5rem 2rem;
-//     margin-top: 2rem;
+  .casos__div {
+    background: var(--600);
+    border-radius: .5rem;
+    padding: 2.5rem 1.5rem 2rem;
+    margin-top: 2rem;
 
-//     .casos__filtro {
-//       width: 100%;
-//       padding: .75rem 1rem;
-//       font-size: 1rem;
-//       border: 1px solid var(--300);
-//       border-radius: .25rem;
-//       margin-bottom: 2rem;
-//     }
+    .casos__filtro {
+      margin-bottom: 2rem;
+      width: 100%;
+      background: var(--100);
+      border: 1px solid var(--300);
+      border-radius: .25rem;
+      position: relative;
 
-//     .dado__card {
-//       background: rgba(51, 51, 51, 0.81);
+      &::after {
+        position: absolute;
+        display: block;
+        content: url(../public/icons/arrow-down.svg);
+        right: .75rem;
+        top: 25%;
+      }
 
-//       p {
-//         font-size: 1.25rem;
-//         font-weight: $semi;
-//       }
+      select {
+        background: transparent;
+        -webkit-appearance: none;
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        font-size: 1rem;
+        padding: .75rem 1rem;
 
-//       span {
-//         font-weight: $medium;
-//       }
+      }
+    }
 
-//       &:not(:last-child) {
-//         margin-bottom: .375rem;
-//       }
-//     }
+    .dado__card {
+      background: rgba(51, 51, 51, 0.81);
+      padding: .75rem 1rem;
+      border-radius: .25rem;
 
-//     .atualizado-em {
-//       text-align: right;
-//       margin-top: 1.5rem;
-//       color: var(--200);
-//       font-size: .875rem;
-//     }
-//   }
-// }
+      &:not(:last-child) {
+        margin-bottom: .375rem;
+      }
+
+      p,
+      span {
+        color: var(--100);
+      }
+
+      p {
+        font-size: 1.25rem;
+        font-weight: var(--semi);
+        margin-bottom: .375rem;
+      }
+
+      span {
+        font-size: 1.125rem;
+        font-weight: var(--medium);
+      }
+
+
+    }
+
+    .atualizado_em {
+      text-align: right;
+      margin-top: 1.5rem;
+      color: var(--200);
+      font-size: .875rem;
+    }
+  }
+}
 
 // DADOS VACINAIS DF
 .dados_vacinais {

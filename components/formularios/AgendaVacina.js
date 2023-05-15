@@ -41,8 +41,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { nomeCompleto, cpf, email, telefone, doseVacina, tipoVacina, ubs, diaAgendamento, horario } = this.state;
-    const values = { nomeCompleto, cpf, email, telefone, doseVacina, tipoVacina, ubs, diaAgendamento, horario };
+    const { nomeCompleto, cpf, email, telefone, doseVacina, tipoVacina, regiao, ubs, diaAgendamento, horario } = this.state;
+    const values = { nomeCompleto, cpf, email, telefone, doseVacina, tipoVacina, regiao, ubs, diaAgendamento, horario };
     const styles = forms;
 
     switch (step) {

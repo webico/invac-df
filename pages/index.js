@@ -5,19 +5,10 @@ import DisponiveisLista from '@/components/DisponiveisLista';
 import { addComma } from '@/public/js/globalFunctions';
 import useFetch from '@/public/js/useFetch';
 import Footer from '@/components/Footer';
+import CasosLista from '@/components/CasosLista';
 
 export default function Home() {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
-
-  // const dataCasosInicial = data.casos[1][0];
-  // const [casos, setCasos] = useState(data.casos);
-
-  // function handleCasos(e) {
-  //   // setCasos(props.casos[1][e.target.value]);
-  //   console.log('jfshjkfsdhkjfsd');
-  // }
-
-  // console.log(dataCasosInicial);
 
   return (
     <>
@@ -51,43 +42,13 @@ export default function Home() {
       </section>
 
       {/* CASOS DE COVID NO ULTIMO MES */}
-      {/* <section className='casos-covid'>
+      <section className={styles.casos_covid}>
         <div className="container">
           <h2>Veja casos da COVID do último mês na sua região!</h2>
 
-          <div className='casos__div'>
-            <select name="" id="" onChange={handleCasos} className='casos__filtro'>
-              {
-                data && data.casos[1].map(regiao => (
-                  <option key={regiao.id} value={regiao.id}>{regiao.nome_regiao}</option>
-                ))
-              }
-            </select>
-
-            {
-              data &&
-              <ul>
-                <li className='dado__card'>
-                  <p>Casos Ativos</p>
-                  <span>{addComma(casos.casos_ativos)}</span>
-                </li>
-
-                <li className='dado__card'>
-                  <p>Casos confirmados</p>
-                  <span>{addComma(casos.casos_confirmados)}</span>
-                </li>
-
-                <li className='dado__card'>
-                  <p>Óbitos Confirmados</p>
-                  <span>{addComma(casos.obitos_confirmados)}</span>
-                </li>
-              </ul>
-            }
-
-            <p className='atualizado-em'>Atualizado em: {props.casos[0].atualizado_em}</p>
-          </div>
+          {data && <CasosLista data={data} styles={styles}/>} 
         </div>
-      </section> */}
+      </section>
 
       {/* DADOS VACINAIS DF */}
       <section className={styles.dados_vacinais}>
