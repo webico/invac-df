@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '@/css/Index.module.css';
 import DisponiveisLista from '@/components/Index/DisponiveisLista';
-import { addComma } from '@/public/js/globalFunctions';
+import { addComma, Soma } from '@/public/js/globalFunctions';
 import useFetch from '@/public/js/useFetch';
 import Footer from '@/components/Footer';
 import CasosLista from '@/components/Index/CasosLista';
@@ -46,7 +46,7 @@ export default function Home() {
         <div className="container">
           <h2>Veja casos da COVID do último mês na sua região!</h2>
 
-          {data && <CasosLista data={data} styles={styles}/>} 
+          {data && <CasosLista data={data} styles={styles} />}
         </div>
       </section>
 
@@ -59,22 +59,26 @@ export default function Home() {
 
             <li className={styles.card}>
               <p className={styles.card__p}>Total de Doses Aplicadas</p>
-              <span className={styles.card__span}>{data && addComma(data.dados_vacinais_df.total_doses)}</span>
+              <span className={styles.card__span}>
+                {data && addComma(
+                  Soma(data.dados_vacinais_df.dose_1) + Soma(data.dados_vacinais_df.dose_2) + Soma(data.dados_vacinais_df.reforco_1) + Soma(data.dados_vacinais_df.reforco_2)
+                )}
+              </span>
             </li>
 
             <li className={styles.card}>
               <p className={styles.card__p}>1ª Dose</p>
-              <span className={styles.card__span}>{data && addComma(data.dados_vacinais_df.dose_1)}</span>
+              <span className={styles.card__span}>{data && addComma(Soma(data.dados_vacinais_df.dose_1))}</span>
             </li>
 
             <li className={styles.card}>
               <p className={styles.card__p}>2ª Dose</p>
-              <span className={styles.card__span}>{data && addComma(data.dados_vacinais_df.dose_2)}</span>
+              <span className={styles.card__span}>{data && addComma(Soma(data.dados_vacinais_df.dose_2))}</span>
             </li>
 
             <li className={styles.card}>
               <p className={styles.card__p}>3ª Dose</p>
-              <span className={styles.card__span}>{data && addComma(data.dados_vacinais_df.reforco_1)}</span>
+              <span className={styles.card__span}>{data && addComma(Soma(data.dados_vacinais_df.reforco_1))}</span>
             </li>
           </ul>
 
