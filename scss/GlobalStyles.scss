@@ -106,6 +106,34 @@ button {
     background: var(--100);
     color: var(--600);
   }
+
+  .main__subtitulo {
+    margin-bottom: 2rem;
+  
+    p {
+      color: var(--100);
+      width: fit-content;
+  
+      &.subtitulo__bold {
+        font-weight: var(--semi);
+      }
+    }
+  }
+  
+  .main_call {
+    .cta {
+      margin-top: 2rem;
+  
+      .cta__span {
+        text-transform: uppercase;
+        color: var(--100);
+        font-size: .875rem;
+        font-weight: var(--bold);
+        display: block;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
 }
 
 .page {
