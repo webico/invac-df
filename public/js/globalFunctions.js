@@ -1,27 +1,3 @@
-// export function checkPreenchido(props) {
-//   let chaves;
-//   // if(!vacinaTrue) {
-//   chaves = {
-//     ...props
-//   };
-//   // } else if() {
-//   //   chaves = {
-//   //     ...props, tipoVacina
-//   //   };
-//   // }
-
-//   // if (!(vacinaTrue && tipoVacina.length)) {
-//   //   chaves = {
-//   //     ...props
-//   //   };
-//   // } else {
-//   //   chaves = {
-//   //     ...props, tipoVacina
-//   //   };
-//   // }
-//   return Object.values(chaves).every(item => item);
-// }
-
 export function addComma(num) {
   var str = num.toString().split('.');
   if (str[0].length >= 4) { //era >=5 antes

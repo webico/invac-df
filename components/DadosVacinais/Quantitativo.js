@@ -1,10 +1,123 @@
-import { addComma, Soma, Percentual } from '@/public/js/globalFunctions';
-
 /* eslint-disable react/prop-types */
+
+import { addComma, Soma, Percentual } from '@/public/js/globalFunctions';
+import { Bar, Doughnut } from 'react-chartjs-2';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
 const Quantitativo = ({ data, styles }) => {
   const dados = data.dados_vacinais_df;
 
   let totalDoses = Soma(dados.dose_1) + Soma(dados.dose_2) + Soma(dados.reforco_1) + Soma(dados.reforco_2);
+
+  //GRÁFICO DE DOSES TOTAIS ====================================================
+  const options = {
+    options: {
+      legend: {
+        display: false
+      },
+      tooltips: {
+        callbacks: {
+          label: function (tooltipItem) {
+            return tooltipItem.yLabel;
+          }
+        }
+      }
+    }
+  };
+
+  let dosesEmOrdemNumerica = [Soma(dados.dose_1), Soma(dados.dose_2), Soma(dados.reforco_1), Soma(dados.reforco_2)].sort(function (a, b) {
+    return b - a;
+  });
+
+  const dataPie = {
+    datasets: [
+      {
+        label: '# Vacinas',
+        data: [...dosesEmOrdemNumerica],
+        backgroundColor: [
+          '#001535',
+          '#093893',
+          '#2561D3',
+          '#528BF4',
+        ],
+        borderColor: [
+          '#001535',
+          '#093893',
+          '#2561D3',
+          '#528BF4',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  //GRÁFICO DE DOSES SEPARADAS ====================================================
+  let dosesBarLista = [dados.dose_1, dados.dose_2, dados.reforco_1, dados.reforco_2];
+
+  const optionsBar = {
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    tooltips: {
+      enabled: false,
+    },
+    legend: {
+      display: false
+    },
+    responsive: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: {
+          display: false
+        },
+        ticks: {
+          display: false
+        }
+      },
+      x: {
+        beginAtZero: true,
+        grid: {
+          display: false
+        },
+        ticks: {
+          display: false
+        }
+      }
+    }
+
+  };
+
+  let BartCharts = [];
+  for (let i = 0; i < dosesBarLista.length; i++) {
+    const dataBar = {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+      datasets: [
+        {
+          label: 'First set',
+          data: [...dosesBarLista[i]],
+          backgroundColor: [
+            '#001535',
+            '#093893',
+            '#2561D3',
+            '#528BF4',
+          ],
+          borderColor: [
+            '#001535',
+            '#093893',
+            '#2561D3',
+            '#528BF4',
+          ],
+          borderWidth: 1,
+          borderRadius: 4
+        }
+      ]
+    };
+    BartCharts.push(<Bar data={dataBar} options={optionsBar} />);
+  }
 
   return (
     <>
@@ -14,7 +127,8 @@ const Quantitativo = ({ data, styles }) => {
 
           <section className={styles.quantitativo_graphs}>
             <article className={styles.total_doses}>
-              <div className={styles.total_grafico}></div>
+              <Doughnut data={dataPie} options={options} />
+
               <p>Total de Doses Aplicadas</p>
               <h3 className={styles.total}>{addComma(totalDoses)}</h3>
             </article>
@@ -28,7 +142,7 @@ const Quantitativo = ({ data, styles }) => {
                     <p>{Percentual(Soma(dados.dose_1), totalDoses) + '%'}</p>
                   </div>
 
-                  <div className={styles.perc__graph}></div>
+                  {BartCharts[0]}
                 </li>
 
                 <li className={styles.perc__item}>
@@ -37,7 +151,7 @@ const Quantitativo = ({ data, styles }) => {
                     <p>{Percentual(Soma(dados.dose_2), totalDoses) + '%'}</p>
                   </div>
 
-                  <div className={styles.perc__graph}></div>
+                  {BartCharts[1]}
                 </li>
 
                 <li className={styles.perc__item}>
@@ -46,16 +160,21 @@ const Quantitativo = ({ data, styles }) => {
                     <p>{Percentual(Soma(dados.reforco_1), totalDoses) + '%'}</p>
                   </div>
 
-                  <div className={styles.perc__graph}></div>
+                  {BartCharts[2]}
                 </li>
 
                 <li className={styles.perc__item}>
                   <div className={styles.perc__info}>
                     <span>2ª Reforço</span>
-                    <p>{Percentual(Soma(dados.reforco_2), totalDoses) + '%'}</p>
+                    <p>{
+                      100 - Percentual(Soma(dados.dose_1), totalDoses)
+                      - Percentual(Soma(dados.dose_2), totalDoses)
+                      - Percentual(Soma(dados.reforco_1), totalDoses)
+                      + '%'
+                    }</p>
                   </div>
 
-                  <div className={styles.perc__graph}></div>
+                  {BartCharts[3]}
                 </li>
               </ul>
             </article>
