@@ -37,7 +37,7 @@ export default function Home() {
       <section className={styles.consulta}>
         <div className="container">
           <h2>Consulte os resultados dos seus testes e a sua carteira de vacinação contra a COVID-19.</h2>
-          <Link href='/consulta' className={`btn_principal ${styles.consulta_btn}`}>Consultar!</Link>
+          <a href="https://conectesus-paciente.saude.gov.br/login" target="_blank" rel="noopener noreferrer" className={`btn_principal ${styles.consulta_btn}`}>Consultar</a>
         </div>
       </section>
 
