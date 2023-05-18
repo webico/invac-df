@@ -11,45 +11,41 @@ const Quantitativo = ({ data, styles }) => {
   let totalDoses = Soma(dados.dose_1) + Soma(dados.dose_2) + Soma(dados.reforco_1) + Soma(dados.reforco_2);
 
   //GRÁFICO DE DOSES TOTAIS ====================================================
-  const options = {
-    options: {
-      legend: {
-        display: false
-      },
-      tooltips: {
-        callbacks: {
-          label: function (tooltipItem) {
-            return tooltipItem.yLabel;
-          }
-        }
-      }
-    }
-  };
+  let totalDF = dados.populacao_total;
 
-  let dosesEmOrdemNumerica = [Soma(dados.dose_1), Soma(dados.dose_2), Soma(dados.reforco_1), Soma(dados.reforco_2)].sort(function (a, b) {
-    return b - a;
-  });
-
-  const dataPie = {
+  let configData = {
+    labels: ['Vacinados', 'Não Vacinados'],
     datasets: [
       {
-        label: '# Vacinas',
-        data: [...dosesEmOrdemNumerica],
-        backgroundColor: [
-          '#001535',
-          '#093893',
-          '#2561D3',
-          '#528BF4',
-        ],
-        borderColor: [
-          '#001535',
-          '#093893',
-          '#2561D3',
-          '#528BF4',
-        ],
-        borderWidth: 1,
+        backgroundColor: ['#001535', '#E0E0E0'],
+        data: [Soma(dados.dose_1), totalDF - Soma(dados.dose_1)],
+        label: '1ª dose',
       },
+      {
+        backgroundColor: ['#093893', '#E0E0E0'],
+        data: [Soma(dados.dose_2), totalDF - Soma(dados.dose_2)],
+        label: '2ª dose',
+      },
+      {
+        backgroundColor: ['#2561D3', '#E0E0E0'],
+        data: [Soma(dados.reforco_1), totalDF - Soma(dados.reforco_1)],
+        label: '1° reforço',
+      },
+      {
+        backgroundColor: ['#528BF4', '#E0E0E0'],
+        data: [Soma(dados.reforco_2), totalDF - Soma(dados.reforco_1)],
+        label: '2° reforço',
+      }
     ],
+  };
+
+  let config = {
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    responsive: true,
   };
 
   //GRÁFICO DE DOSES SEPARADAS ====================================================
@@ -127,7 +123,7 @@ const Quantitativo = ({ data, styles }) => {
 
           <section className={styles.quantitativo_graphs}>
             <article className={styles.total_doses}>
-              <Doughnut data={dataPie} options={options} />
+              <Doughnut data={configData} options={config} />
 
               <p>Total de Doses Aplicadas</p>
               <h3 className={styles.total}>{addComma(totalDoses)}</h3>
@@ -176,7 +172,11 @@ const Quantitativo = ({ data, styles }) => {
 
                   {BartCharts[3]}
                 </li>
+                <li className={styles.legenda}>
+                  Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez
+                </li>
               </ul>
+
             </article>
           </section>
 
