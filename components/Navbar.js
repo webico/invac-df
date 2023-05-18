@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import UserHelpLinks from './UserHelpLinks';
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -11,7 +10,7 @@ const Navbar = () => {
 
         <div className="header-logo">
           <Link href='/'><img src='/logo.svg' /></Link>
-          <button className='header__button' onClick={() => setMenu(!menu)}>menu</button>
+          <button className='header__button' onClick={() => setMenu(!menu)}><div></div><span>menu</span></button>
         </div>
 
         <div className="menu">
@@ -29,7 +28,6 @@ const Navbar = () => {
             <button>Instalar Aplicativo</button>
           </div>
 
-          <UserHelpLinks />
         </div>
       </div>
     </header>

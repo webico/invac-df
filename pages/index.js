@@ -35,7 +35,7 @@ export default function Home() {
 
 
       {/* SEÇÃO DE CONSULTA */}
-      <section className={`${styles.consulta} ${styles.secao_index}`}>
+      <section className={styles.secao_index}>
         <div className={`container ${styles.container}`}>
           <img src="/img/consulta_img.png" alt="" />
 
@@ -49,7 +49,7 @@ export default function Home() {
 
 
       {/* MAPA DE CASOS */}
-      <section className={`${styles.mapa_casos} ${styles.secao_index}`}>
+      <section className={styles.secao_index}>
         <div className={`container ${styles.container}`}>
           <img src="/img/mapa_casos_img.png" alt="" />
 

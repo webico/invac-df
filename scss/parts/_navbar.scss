@@ -4,35 +4,85 @@
   top: 0;
   width: 100%;
   z-index: 5;
-  // transition: .3s background-color ease-in-out;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -18.75rem;
+    background-color: #fff;
+    width: 18.75rem;
+    height: 4.4rem;
+    visibility: hidden;
+    opacity: 0;
+  }
 
   .header__container {
-    padding: 1rem;
+    position: relative;
+    z-index: 6;
 
     .header-logo {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 1.2rem;
 
       a {
         display: flex;
       }
 
       .header__button {
-        //codigo temporario
-        background: none;
-        border: none;
-        color: var(--100);
-        font-weight: var(--semi);
-        text-transform: uppercase;
+        width: 2rem;
+        height: 1.4rem;
+
+        span {
+          position: absolute;
+          left: -999999999px;
+        }
+
+        div {
+          width: 2rem;
+          height: .25rem;
+          margin: 0 auto;
+          background: var(--100);
+          transition: all 0.2s ease-in-out;
+          position: relative;
+          display: flex;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            width: 2rem;
+            height: .25rem;
+            background: var(--100);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &::before {
+            transform: translateY(-10px);
+            display: block;
+          }
+
+          &::after {
+            transform: translateY(10px);
+            display: block;
+          }
+        }
       }
     }
 
     .menu {
+      position: fixed;
+      bottom: 0;
+      left: -18.75rem;
+      width: 18.75rem;
+      height: 100%;
+      background: #fff;
       padding: 0;
       visibility: hidden;
       opacity: 0;
-      height: 0;
       // transition: .3s opacity background-color ease-in-out;
 
       .menu__item {
@@ -74,19 +124,40 @@
   &.--open {
     height: 100vh;
     overflow-y: auto;
-    background-color: var(--200);
-    transition: .2s background-color linear;
+    background-color: rgba(25, 27, 32, 0.56);
+    transition: .1s background-color linear;
+
+    &::before {
+      left: 0;
+      visibility: visible;
+      opacity: 1;
+      transition: .15s background-color linear;
+    }
 
     .header-logo .header__button {
       color: var(--600);
+
+      div {
+        transform: translateX(-50px);
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg) translate(35px, -35px);
+        }
+
+        &::after {
+          transform: rotate(-45deg) translate(35px, 35px);
+        }
+      }
     }
 
     .menu {
-      padding: 2rem 0 1rem;
+      padding: 3.125rem 2.25rem 0 1.375rem;
+      height: calc(100vh - 4rem);
+      left: 0;
       visibility: visible;
       opacity: 1;
-      height: auto;
-      transition: .2s opacity background-color linear;
+      transition: .15s background-color linear;
     }
   }
 }
