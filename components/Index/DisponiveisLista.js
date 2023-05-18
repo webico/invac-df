@@ -27,6 +27,8 @@ const DisponiveisLista = ({ props, styles }) => {
   return (
     <section className={styles.disponivel}>
       <div className="container">
+        <h2 className='section__h2'>Veja os lugares com vacinas e testes disponíveis na sua região.</h2>
+
         <div className={styles.disponivel_filtro}>
           <p className={styles.disponivel_filtro__p}>Disponibilidade de:</p>
 

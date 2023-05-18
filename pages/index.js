@@ -2,10 +2,10 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '@/css/Index.module.css';
 import DisponiveisLista from '@/components/Index/DisponiveisLista';
-import { addComma, Soma } from '@/public/js/globalFunctions';
+// import { addComma, Soma } from '@/public/js/globalFunctions';
 import useFetch from '@/public/js/useFetch';
 import Footer from '@/components/Footer';
-import CasosLista from '@/components/Index/CasosLista';
+// import CasosLista from '@/components/Index/CasosLista';
 
 export default function Home() {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
@@ -34,62 +34,50 @@ export default function Home() {
       {data && <DisponiveisLista props={data} styles={styles} />}
 
 
-      <section className={styles.consulta}>
-        <div className="container">
-          <h2>Consulte os resultados dos seus testes e a sua carteira de vacinação contra a COVID-19.</h2>
-          <a href="https://conectesus-paciente.saude.gov.br/login" target="_blank" rel="noopener noreferrer" className={`btn_principal ${styles.consulta_btn}`}>Consultar</a>
+      {/* SEÇÃO DE CONSULTA */}
+      <section className={`${styles.consulta} ${styles.secao_index}`}>
+        <div className={`container ${styles.container}`}>
+          <img src="/img/consulta_img.png" alt="" />
+
+          <div className={styles.section__info}>
+            <h2 className='section__h2'>Não sabe qual dose precisa?</h2>
+            <p>Você pode consultar sua carteira de vacinação online no ConectaSUS.</p>
+            <a href="https://conectesus-paciente.saude.gov.br/login" target="_blank" rel="noopener noreferrer" className={`btn_principal ${styles.consulta_btn}`}>Consultar</a>
+          </div>
         </div>
       </section>
 
-      {/* CASOS DE COVID NO ULTIMO MES */}
-      <section className={styles.casos_covid}>
-        <div className="container">
-          <h2>Veja casos da COVID do último mês na sua região!</h2>
 
-          {data && <CasosLista data={data} styles={styles} />}
+      {/* MAPA DE CASOS */}
+      <section className={`${styles.mapa_casos} ${styles.secao_index}`}>
+        <div className={`container ${styles.container}`}>
+          <img src="/img/mapa_casos_img.png" alt="" />
+
+          <div className={styles.section__info}>
+            <h2 className='section__h2'>Veja casos da COVID do último mês na sua região!</h2>
+            <p>Saiba quando o número de pessoas infectadas próximas a vocês aumentar para se prevenir</p>
+            <Link href='/mapa-de-casos' className={`btn_principal ${styles.mapa_casos_btn}`}>Mapa de casos</Link>
+          </div>
         </div>
       </section>
 
       {/* DADOS VACINAIS DF */}
-      <section className={styles.dados_vacinais}>
-        <div className="container">
-          <h2 className={styles.dados_vacinais__h2}>Dados vacinais do Distrito Federal</h2>
+      <section className={`${styles.dados_vacinais} ${styles.secao_index}`}>
+        <div className='container'>
+          <div className={styles.dados_container}>
+            <h2 className={styles.dados_vacinais__h2}>Outras pessoas já se preveniram contra a COVID</h2>
 
-          <ul className={styles.dados_lista}>
+            <p>Veja quantas de pessoas já tomaram a vacina.</p>
 
-            <li className={styles.card}>
-              <p className={styles.card__p}>Total de Doses Aplicadas</p>
-              <span className={styles.card__span}>
-                {data && addComma(
-                  Soma(data.dados_vacinais_df.dose_1) + Soma(data.dados_vacinais_df.dose_2) + Soma(data.dados_vacinais_df.reforco_1) + Soma(data.dados_vacinais_df.reforco_2)
-                )}
-              </span>
-            </li>
-
-            <li className={styles.card}>
-              <p className={styles.card__p}>1ª Dose</p>
-              <span className={styles.card__span}>{data && addComma(Soma(data.dados_vacinais_df.dose_1))}</span>
-            </li>
-
-            <li className={styles.card}>
-              <p className={styles.card__p}>2ª Dose</p>
-              <span className={styles.card__span}>{data && addComma(Soma(data.dados_vacinais_df.dose_2))}</span>
-            </li>
-
-            <li className={styles.card}>
-              <p className={styles.card__p}>3ª Dose</p>
-              <span className={styles.card__span}>{data && addComma(Soma(data.dados_vacinais_df.reforco_1))}</span>
-            </li>
-          </ul>
-
-          <Link href='/dados-vacinais' className={`btn_principal ${styles.ver_todas_doses}`}>Ver todas as doses aplicadas</Link>
+            <Link href='/dados-vacinais' className={`btn_principal ${styles.dados_vacinais__btn}`}>Dados vacinais</Link>
+          </div>
         </div>
       </section>
 
-      <section className={styles.secao_duvidas}>
-        <div className="container">
-          <h2>Dúvidas sobre a vacina?</h2>
-          <p className={styles.secao_duvidas__p}>Separamos todas as frequentes dúvidas  que as pessoas possuem sobre a vacina e respondemos para que você se manter informado!</p>
+      <section className={`${styles.secao_duvidas} ${styles.secao_index}`}>
+        <div className={`container ${styles.container}`}>
+          <h2>Dúvidas sobre a <span>vacina</span>?</h2>
+          <p className={styles.secao_duvidas__p}>Respondemos frequentes dúvidas que as pessoas possuem para que você se manter informado!</p>
           <Link href='/faq' className={`btn_principal ${styles.secao_duvidas__btn}`}>Dúvidas frequentes</Link>
         </div>
       </section>
