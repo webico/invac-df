@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 // import CasosLista from '@/components/Index/CasosLista';
 
 export default function Home() {
-  const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
+  // const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
 
   return (
     <>
@@ -29,9 +29,9 @@ export default function Home() {
       </main>
 
       {/* DISPONIBILIDADE DE VACINAS E TESTES */}
-      {error && <div className='container'>{error}</div>}
+      {/* {error && <div className='container'>{error}</div>}
       {isPending && <div className='container'>Loading...</div>}
-      {data && <DisponiveisLista props={data} styles={styles} />}
+      {data && <DisponiveisLista props={data} styles={styles} />} */}
 
 
       {/* SEÇÃO DE CONSULTA */}

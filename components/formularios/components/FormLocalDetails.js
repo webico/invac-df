@@ -13,8 +13,57 @@ export class FormLocalDetails extends Component {
     this.props.prevStep();
   };
 
+  constructor() {
+    super();
+    this.state = {
+      vacina: false,
+      data: null,
+      isPending: true,
+      error: null,
+      unidades: []
+    };
+  }
+
+  findUBS = (e, data) => {
+    let regiaoSelecionada = data.find(item => item.nome == e),
+      unidades = regiaoSelecionada.unidades;
+
+    return unidades;
+  };
+
+  //useFetch em "javascript antigo"
+  //>> useFetch usa useState, e esse Class Componente não permite, então tive que usar estado
+  fetchData = async () => {
+    try {
+      const response = await fetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas'),
+        json = await response.json();
+      this.setState({ data: json });
+      // this.setState({ unidades: json[0].unidades });
+      this.setState({ unidades: this.props.values.regiao ? this.findUBS(this.props.values.regiao, json) : json[0].unidades });
+
+      this.setState({ isPending: false });
+    } catch (error) {
+      this.setState({ error: error.message });
+      this.setState({ isPending: false });
+    }
+
+  };
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
   render() {
     const { values, handleChange, styles } = this.props;
+
+    let { data, isPending, error, unidades } = this.state;
+
+    const handleUBS = (e) => {
+      let regiaoSelecionada = data.find(item => item.nome == e.currentTarget.value),
+        unidades = regiaoSelecionada.unidades;
+
+      this.setState({ unidades: unidades });
+    };
 
     return (
       <div className={styles.form_caixa}>
@@ -26,80 +75,42 @@ export class FormLocalDetails extends Component {
             <div className={styles.label_input}>
               <label htmlFor="regiao">Região *</label>
 
-              <div className={styles.select}>
-                <select name="" id="regiao" required onChange={handleChange('regiao')}>
-                  <option value="Selecionar dose" disabled {...values.regiao == '' ? { selected: true } : ''}>Selecionar região</option>
-                  <option value="Norte" {...values.regiao == 'Norte' ? { selected: true } : ''}>Região Norte</option>
-                  <option value="Oeste" {...values.regiao == 'Oeste' ? { selected: true } : ''}>Região Oeste</option>
-                  <option value="Central" {...values.regiao == 'Central' ? { selected: true } : ''}>Região Central</option>
-                  <option value="Leste" {...values.regiao == 'Leste' ? { selected: true } : ''}>Região Leste</option>
-                  <option value="Sul" {...values.regiao == 'Sul' ? { selected: true } : ''}>Região Sul</option>
-                  <option value="Centro Sul" {...values.regiao == 'Centro Sul' ? { selected: true } : ''}>Região Centro-Sul</option>
-                  <option value="Sudoeste" {...values.regiao == 'Sudoeste' ? { selected: true } : ''}>Região Sudoeste</option>
-                </select>
-              </div>
+              {isPending && <p>Carregando...</p>}
+              {error && <p>{error}</p>}
+
+              {
+                data &&
+                <div className={styles.select}>
+                  <select name="" id="regiao" required
+                    onChange={handleChange('regiao')}
+                    onInput={e => handleUBS(e)}
+                  >
+                    {data.map(regiao => (
+                      <option key={regiao.nome} value={regiao.nome} {...values.regiao == regiao.nome ? { selected: true } : ''}>{regiao.nome}</option>
+                    ))}
+                  </select>
+                </div>
+              }
             </div>
 
             <label id="radio_select">Selecionar local *</label>
             <ul className={styles.radio_select} >
-              <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio1' className={styles.radio_input} value='Drive-thru da USB 1 Asa Norte' onChange={handleChange('ubs')}
-                  {...values.ubs == 'Drive-thru da USB 1 Asa Norte' ? { checked: true } : ''}
-                />
 
-                <label htmlFor="radio1" className={styles.ubs_info}>
-                  <p>Drive-thru da USB 1 Asa Sul</p>
-                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
-                  <span>Endereço: SGAS 612</span>
-                </label>
-              </li>
+              {data && unidades && unidades.map(unidade => (
+                <li key={unidade.nome} className={styles.ubs}>
+                  <input type="radio" name='ubs' id='radio1' className={styles.radio_input} value={unidade.nome} onChange={handleChange('ubs')}
+                    {...values.ubs == unidade.nome ? { checked: true } : ''}
+                  />
 
-              <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio2' className={styles.radio_input} value='Drive-thru da USB 1 Asa Sul' onChange={handleChange('ubs')}
-                  {...values.ubs == 'Drive-thru da USB 1 Asa Sul' ? { checked: true } : ''}
-                />
+                  <label htmlFor="radio1" className={styles.ubs_info}>
+                    <p>{unidade.nome}</p>
+                    <span>Horários: {unidade.horario}</span>
+                    <span>Endereço: {unidade.endereco}</span>
+                  </label>
+                </li>
+              ))
+              }
 
-                <label htmlFor="radio2" className={styles.ubs_info}>
-                  <p>Drive-thru da USB 1 Asa Sul</p>
-                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
-                  <span>Endereço: SGAS 612</span>
-                </label>
-              </li>
-
-              <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio3' className={styles.radio_input} value='Hospital Universitário de Brasília' onChange={handleChange('ubs')}
-                  {...values.ubs == 'Hospital Universitário de Brasília' ? { checked: true } : ''}
-                />
-
-                <label htmlFor="radio3" className={styles.ubs_info}>
-                  <p>Hospital Universitário de Brasília</p>
-                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
-                  <span>Endereço 605 - L2 Norte</span>
-                </label>
-              </li>
-
-              <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio4' className={styles.radio_input} value='USB 1 Lago Norte' onChange={handleChange('ubs')}
-                  {...values.ubs == 'USB 1 Lago Norte' ? { checked: true } : ''}
-                />
-                <label htmlFor="radio3" className={styles.ubs_info}>
-                  <p>USB 1 Lago Norte</p>
-                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
-                  <span>Endereço: QI 3</span>
-                </label>
-              </li>
-
-              <li className={styles.ubs}>
-                <input type="radio" name='ubs' id='radio5' className={styles.radio_input} value='USB 1 Lago Sul' onChange={handleChange('ubs')}
-                  {...values.ubs == 'USB 1 Lago Sul' ? { checked: true } : ''}
-                />
-
-                <label htmlFor="radio3" className={styles.ubs_info}>
-                  <p>USB 1 Lago Norte</p>
-                  <span>Horários: de 12h às 18h - de segunda a sexta</span>
-                  <span>Endereço: QI 3</span>
-                </label>
-              </li>
             </ul>
           </section>
 

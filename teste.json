@@ -1,221 +1,611 @@
 {
-  "disponibilidade": {
-    "vacinas": [
-      {
-        "id": 0,
-        "nome_regiao": "Central",
-        "quantidade": 1111
-      },
-      {
-        "id": 1,
-        "nome_regiao": "Centro-Sul",
-        "quantidade": 1111
-      },
-      {
-        "id": 2,
-        "nome_regiao": "Leste",
-        "quantidade": 1111
-      },
-      {
-        "id": 3,
-        "nome_regiao": "Norte",
-        "quantidade": 1111
-      },
-      {
-        "id": 4,
-        "nome_regiao": "Sudoeste",
-        "quantidade": 1111
-      },
-      {
-        "id": 5,
-        "nome_regiao": "Sul",
-        "quantidade": 1111
-      },
-      {
-        "id": 6,
-        "nome_regiao": "Oeste",
-        "quantidade": 1111
-      }
-    ],
-    "testes": [
-      {
-        "id": 0,
-        "nome_regiao": "Central",
-        "quantidade": 2222
-      },
-      {
-        "id": 1,
-        "nome_regiao": "Centro-Sul",
-        "quantidade": 2222
-      },
-      {
-        "id": 2,
-        "nome_regiao": "Leste",
-        "quantidade": 2222
-      },
-      {
-        "id": 3,
-        "nome_regiao": "Norte",
-        "quantidade": 2222
-      },
-      {
-        "id": 4,
-        "nome_regiao": "Sudoeste",
-        "quantidade": 2222
-      },
-      {
-        "id": 5,
-        "nome_regiao": "Sul",
-        "quantidade": 2222
-      },
-      {
-        "id": 6,
-        "nome_regiao": "Oeste",
-        "quantidade": 2222
-      }
-    ]
-  },
-  "casos": [
+  "regioes_administrativas": [
     {
-      "atualizado_em": "20/03/2023"
+      "nome": "Águas Claras",
+      "quantidade_vacinas": 3250,
+      "quantidade_testes": 3430,
+      "unidades": [
+        {
+          "nome": "UBS 1 Águas Claras - Areal",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "QS 5 - Av. Areal",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)",
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        }
+      ]
     },
-    [
-      {
-        "id": 0,
-        "nome_regiao": "Norte",
-        "casos_ativos": 100000,
-        "casos_confirmados": 200000,
-        "obitos_confirmados": 300000
-      },
-      {
-        "id": 1,
-        "nome_regiao": "Oeste",
-        "casos_ativos": 400000,
-        "casos_confirmados": 500000,
-        "obitos_confirmados": 600000
-      },
-      {
-        "id": 2,
-        "nome_regiao": "Central",
-        "casos_ativos": 700000,
-        "casos_confirmados": 800000,
-        "obitos_confirmados": 900000
-      },
-      {
-        "id": 3,
-        "nome_regiao": "Leste",
-        "casos_ativos": 110000,
-        "casos_confirmados": 220000,
-        "obitos_confirmados": 330000
-      },
-      {
-        "id": 4,
-        "nome_regiao": "Sul",
-        "casos_ativos": 440000,
-        "casos_confirmados": 550000,
-        "obitos_confirmados": 660000
-      },
-      {
-        "id": 5,
-        "nome_regiao": "Centro-Sul",
-        "casos_ativos": 770000,
-        "casos_confirmados": 880000,
-        "obitos_confirmados": 990000
-      },
-      {
-        "id": 6,
-        "nome_regiao": "Sudoeste",
-        "casos_ativos": 111000,
-        "casos_confirmados": 222000,
-        "obitos_confirmados": 333000
-      }
-    ]
-  ],
-  "dados_vacinais_df": {
-    "dose_1": [
-      2556299,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "dose_2": [
-      2384873,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "reforco_1": [
-      1488695,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "reforco_2": [
-      641860,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  "regioes": [
     {
-      "nome": "Região Central",
-      "ubs": [],
-      "estoque_vacinal": [
+      "nome": "Brasília",
+      "quantidade_vacinas": 3433,
+      "quantidade_testes": 2129,
+      "unidades": [
         {
-          "astrazeneca": 12332
+          "nome": "Drive-thru da UBS 1 Asa Sul",
+          "horario": "18h às 22h – De segunda a sexta",
+          "endereco": "SGAS 612",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente"
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
         },
         {
-          "coronavac": 12332
+          "nome": "UBS 1 Asa Sul",
+          "horario": "8h às 12h e 13h às 17h – De segunda a sexta",
+          "endereco": "SGAS 612",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)",
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
         },
         {
-          "janssen": 12332
+          "nome": "UBS 1 Asa Norte",
+          "horario": "8h às 12h e 13h às 17h – De segunda a sexta",
+          "endereco": "SGAN 905",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
         },
         {
-          "pfizer": 12332
+          "nome": "UBS 2 Asa Norte",
+          "horario": "8h às 12h e 13h às 17h – De segunda a sexta",
+          "endereco": "EQN 114/115",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                [
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
         },
         {
-          "pfizer_infantil": 12332
+          "nome": "UBS 3 Vila Planalto",
+          "horario": "8h às 12h e 13h às 17h – De segunda a sexta",
+          "endereco": "Rua Piau – Acampamento Pacheco",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente"
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Brazlândia",
+      "quantidade_vacinas": 3238,
+      "quantidade_testes": 3212,
+      "unidades": [
+        {
+          "nome": "UBS 1 Brazlândia",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "Entrequadra 6/8 Área Especial 3 - Setor Norte",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)",
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
         },
         {
-          "pfizer_baby": 12332
+          "nome": "UBS 2 Brazlândia - Vila São José",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "Quadra 45 - Vila São José",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
         },
         {
-          "bivalente": 12332
+          "nome": "UBS 4 Brazlândia - Veredas",
+          "horario": "8h às 17h – Às quartas- feiras",
+          "endereco": "Área Especial 1 - Setor Veredas II",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)",
+                  "Pfizer pediatria (5 a 11 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "UBS 5 Brazlândia ",
+          "horario": "8h às 17h – Às segundas-feiras",
+          "endereco": "DF 240 / DF 008 / DF 445 Km 4 Reserva A",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)",
+                  "Pfizer pediatria (5 a 11 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "UBS 6 Brazlândia",
+          "horario": "8h às 17h – Às sextas-feiras",
+          "endereco": "DF 180/DF 205 Km 5 – Fazenda Almécegas",
+          "vacinas": [
+            {
+              "tipos": [
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Candangolândia",
+      "quantidade_vacinas": 2715,
+      "quantidade_testes": 2098,
+      "unidades": [
+        {
+          "nome": "UBS 1 Candangolândia",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "EQ 5/7",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Ceilândia",
+      "quantidade_vacinas": 1536,
+      "quantidade_testes": 1612,
+      "unidades": [
+        {
+          "nome": "UBS 1 Ceilândia",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "EQNP 7/11",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "UBS 2 Ceilândia",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "QNN 15 LOTE F",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "UBS 3 Ceilândia",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "QNM 15 Lote D",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "UBS 5 Ceilândia",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "QNM 16 Lote F",
+          "vacinas": [
+            {
+              "tipos": [
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "UBS 6 Ceilândia",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "EQNP 10/14",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer pediatria (5 a 11 anos)",
+                  "Coronavac (3 a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "UBS 9 Ceilândia ",
+          "horario": "8h às 17h – De segunda a sexta",
+          "endereco": "EQNP 28/32",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Cruzeiro",
+      "quantidade_vacinas": 3250,
+      "quantidade_testes": 3430,
+      "unidades": [
+        {
+          "nome": "UBS 1 Cruzeiro ",
+          "horario": "8h às 12h e 13h às 17h – De segunda a sexta",
+          "endereco": "SHCES 601 - Lote 01 - Cruzeiro Novo",
+          "vacinas": [
+            {
+              "tipos": [
+                "1ª dose (+12)",
+                "2ª dose (+12)",
+                "1ª reforço (+12)",
+                "Pfizer Bivalente",
+                "Vacinação Infantil",
+                [
+                  "Pfizer baby (6 meses a 4 anos)",
+                  "Pfizer pediatria (5 a 11 anos)"
+                ]
+              ]
+            }
+          ],
+          "testes": [
+            {
+              "tipos": [
+                "RT-PCR",
+                "Teste Rápido Antígeno"
+              ]
+            }
+          ]
         }
       ]
     }
-  ]
+  ],
+  "dados_vacinais_df": {
+    "dose_1": [
+      2091680,
+      57720,
+      159152,
+      209525,
+      14905,
+      3000,
+      13005,
+      770,
+      3331,
+      2503,
+      378,
+      330
+    ],
+    "dose_2": [
+      1011853,
+      651767,
+      661470,
+      15258,
+      22612,
+      14017,
+      622,
+      926,
+      3459,
+      1773,
+      265,
+      851
+    ],
+    "reforco_1": [
+      1087263,
+      28309,
+      191623,
+      98634,
+      27735,
+      21792,
+      1668,
+      9489,
+      6042,
+      347,
+      950,
+      14843
+    ],
+    "reforco_2": [
+      186122,
+      10971,
+      155111,
+      192447,
+      51063,
+      27997,
+      2686,
+      2953,
+      5282,
+      2294,
+      4706,
+      228
+    ]
+  }
 }
