@@ -17,4 +17,8 @@ export const Percentual = (item, total) => {
   return Math. ceil((item/total) * 100);
 };
 
-export default { addComma, Soma, Percentual };
+export function cleanString(string) {
+  return string.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(' ', '_').toLowerCase();
+}
+
+export default { addComma, Soma, Percentual, cleanString };

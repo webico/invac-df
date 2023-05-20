@@ -187,6 +187,8 @@ footer {
   text-align: center;
 }
 
+
+// menu filtro dos dados vacinais e mapa de casos
 .menu_filtro {
   margin-top: 2.5rem;
   padding: 2rem 1.375rem;
@@ -244,6 +246,41 @@ footer {
       &:not(:last-child) {
         margin-bottom: 1.5rem;
       }
+    }
+  }
+}
+
+//tab-menu: index, vacinas e agendamento
+.tab_menu {
+  display: flex;
+  border-bottom: .25rem solid var(--600);
+
+  li {
+    width: 100%;
+    max-width: 11.25rem;
+
+    .tab_menu__btn {
+      background: none;
+      height: fit-content;
+      border-top: 1px solid var(--100);
+      border-left: 1px solid var(--100);
+      width: 100%;
+      font-size: 1rem;
+      padding: .875rem 1rem;
+      font-weight: var(--bold);
+      border-radius: .5rem 0 0 0;
+
+      &.ativo {
+        color: var(--100);
+        background: var(--600);
+        border-color: var(--600);
+      }
+    }
+
+    &:last-child .tab_menu__btn {
+      border-radius: 0 .5rem 0 0;
+      border-right: 1px solid var(--100);
+      border-left: none;
     }
   }
 }

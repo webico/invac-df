@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 // import CasosLista from '@/components/Index/CasosLista';
 
 export default function Home() {
-  // const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
+  const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas');
 
   return (
     <>
@@ -22,16 +22,16 @@ export default function Home() {
       {/* SEÇÃO INICIAL */}
       <main className='main'>
         <div className="container">
-          <h1 className='main__titulo'>Marque suas vacinas e testes de COVID.</h1>
+          <h1 className='main__titulo'>A vacinação é uma das formas mais eficazes de prevenir e proteger a saúde!</h1>
 
-          <Link href='/agendamento' className="btn_principal index_main__btn">Fazer agendamento</Link>
+          <Link href='/agendamento' className="btn_principal index_main__btn">Quero me vacinar</Link>
         </div>
       </main>
 
       {/* DISPONIBILIDADE DE VACINAS E TESTES */}
-      {/* {error && <div className='container'>{error}</div>}
+      {error && <div className='container'>{error}</div>}
       {isPending && <div className='container'>Loading...</div>}
-      {data && <DisponiveisLista props={data} styles={styles} />} */}
+      {data && <DisponiveisLista data={data} styles={styles} />}
 
 
       {/* SEÇÃO DE CONSULTA */}

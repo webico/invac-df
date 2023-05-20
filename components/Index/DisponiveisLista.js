@@ -1,24 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import { addComma } from '@/public/js/globalFunctions';
+import { addComma, cleanString } from '@/public/js/globalFunctions';
+import Link from 'next/link';
 
-const DisponiveisLista = ({ props, styles }) => {
-  let dataProps = props.disponibilidade;
-
-  const [data, setData] = useState(dataProps.vacinas),
-    [nome, setNome] = useState('vacinas'),
-    [itemsShow, setItemsShow] = useState(4);
-
-  function handleChange(e) {
-    //dá pra melhorar isso aqui, tá feio demais
-    if (e.target.value == 'testes') {
-      setData(dataProps.testes);
-      setNome('testes');
-    } else {
-      setData(dataProps.vacinas);
-      setNome('vacinas');
-    }
-  }
+const DisponiveisLista = ({ data, styles }) => {
+  const [tab, setTab] = useState('vacina');
+  const [itemsShow, setItemsShow] = useState(4);
 
   function handleShowMore() {
     setItemsShow(data.length);
@@ -27,34 +14,42 @@ const DisponiveisLista = ({ props, styles }) => {
   return (
     <section className={styles.disponivel}>
       <div className="container">
-        <h2 className='section__h2'>Veja os lugares com vacinas e testes disponíveis na sua região.</h2>
+        <h2 className='section__h2'>Veja os lugares com vacinas e testes disponíveis na sua região e faça seu agendamento.</h2>
 
-        <div className={styles.disponivel_filtro}>
-          <p className={styles.disponivel_filtro__p}>Disponibilidade de:</p>
+        <section>
+          <ul className='tab_menu'>
+            <li><button className={`tab_menu__btn ${tab == 'vacina' ? 'ativo' : ''}`} onClick={() => setTab('vacina')}>Vacina</button></li>
+            <li><button className={`tab_menu__btn ${tab == 'teste' ? 'ativo' : ''}`} onClick={() => setTab('teste')}>Teste</button></li>
+          </ul>
 
-          <div className={styles.disponivel_filtro__select}>
-            <select name="" id="" onClick={handleChange}>
-              <option value="vacinas">Vacinas</option>
-              <option value="testes">Testes</option>
-            </select>
+          <div className={styles.disponivel_caixa}>
+            <ul className={styles.disponivel__lista}>
+              {
+                data.slice(0, itemsShow).map(regiao => (
+                  <li key={regiao.nome} className={styles.disponivel__card}>
+                    <Link href={`/disponibilidade?r=${cleanString(regiao.nome)}&t=${tab}`}>
+                      <div>
+                        <span className={styles.regiao_span}>Região</span>
+                        <p className={styles.regiao_nome}>{regiao.nome}</p>
+                        <span className={styles.regiao_disp}>
+                          {
+                            tab == 'vacina' ? `${addComma(regiao.quantidade_vacinas)} vacinas` : `${addComma(regiao.quantidade_testes)} testes`
+                          }
+                        </span>
+                      </div>
+
+                      <button></button>
+                    </Link>
+                  </li>
+                ))
+              }
+            </ul>
+
+            {itemsShow == 4 ? <button className={styles.ver_todas} onClick={handleShowMore}>Ver todas as regiões</button> : ''}
           </div>
-        </div>
 
-        <ul className={styles.disponivel__lista}>
-          {data && data.slice(0, itemsShow).map(regiao =>
-            <li key={regiao.id} className={styles.disponivel__card}>
-              <div className={styles.card__info}>
-                <span className={styles.regiao}>Região</span>
-                <h2 className={styles.regiao__nome}>{regiao.nome_regiao}</h2>
-                <p className={styles.regiao__disponiveis}>{addComma(regiao.quantidade)} {nome} disponíveis</p>
-              </div>
 
-              <button className={styles.card__btn}></button>
-            </li>
-          )}
-        </ul>
-
-        {itemsShow == 4 ? <button className={styles.ver_todas} onClick={handleShowMore}>Ver todas as regiões</button> : ''}
+        </section>
       </div>
     </section>
   );
