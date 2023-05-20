@@ -41,6 +41,8 @@ const FAQs = ({ styles }) => {
             </div>
           </li>
 
+          
+
           <li className={`${styles.faq_item} ${ativo === 'item3' ? activeClass : ''}`} onClick={() => toggleClass('item3')}>
             <button className={styles.faq_item__btn}><h2>Doses de reforço</h2></button>
             <div className={styles.faq_item__texto}>

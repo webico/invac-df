@@ -34,7 +34,12 @@
       visibility: hidden;
       opacity: 0;
       height: 0;
-      padding: 0 1.375rem;
+      padding: 0;
+
+      p {
+        height: 0;
+
+      }
     }
 
     &.ativo {
@@ -50,10 +55,17 @@
         visibility: visible;
         opacity: 1;
         height: auto;
+        padding: 0 1.375rem;
 
-        p:not(:last-child) {
-          margin-bottom: 1rem;
+        p {
+          height: auto;
+
+          &:not(:last-child) {
+            margin-bottom: 1rem;
+          }
         }
+
+
       }
     }
   }

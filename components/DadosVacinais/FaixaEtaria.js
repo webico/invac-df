@@ -9,8 +9,6 @@ const FaixaEtaria = ({ data, styles }) => {
   const [faixa, setFaixa] = useState(data.faixas[0]);
   const [dose, setDose] = useState(faixa.doses[0]);
 
-  console.log(faixa);
-
   function handleSetFaixa(e) {
     let valor = e.currentTarget.value,
       novaFaixa = data.faixas.filter(item => item.faixa == valor);
