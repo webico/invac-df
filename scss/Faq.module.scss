@@ -30,7 +30,7 @@
       }
     }
 
-    .faq_item__p {
+    .faq_item__texto {
       visibility: hidden;
       opacity: 0;
       height: 0;
@@ -46,10 +46,14 @@
         content: url('../public/icons/aberto.svg');
       }
 
-      .faq_item__p {
+      .faq_item__texto {
         visibility: visible;
         opacity: 1;
         height: auto;
+
+        p:not(:last-child) {
+          margin-bottom: 1rem;
+        }
       }
     }
   }

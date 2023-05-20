@@ -26,7 +26,7 @@ const MapaDeCasos = () => {
 
       <section>
         <div className="container">
-          <img src="/img/mapa_casos_img.png" alt="" />
+          <img src="/img/mapa_casos2_img.png" alt="" />
 
 
           {error && <div className='container'>{error}</div>}
