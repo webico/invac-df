@@ -8,7 +8,7 @@
         {
           "nome": "UBS 1 Águas Claras - Areal",
           "horario": "8h às 17h – De segunda a sexta",
-          "endereco": "QS 5 - Av. Areal",
+          "endereco": "QS 5 - Av Areal",
           "vacinas": [
             {
               "tipos": [
@@ -663,64 +663,279 @@
           "doses": [
             {
               "dose": "1ª Dose",
-              "dose_1": 11813
+              "quantidade": 11813,
+              "df": 100
             },
             {
               "dose": "2ª Dose",
-              "dose_2": 6310
+              "quantidade": 6310,
+              "df": 200
             }
           ],
-          "populacao_faixa": 104549
+          "populacao_faixa": 104549,
+          "vacinacao_semanal": 104
         },
         {
           "faixa": "3 a 4 anos",
           "doses": [
             {
               "dose": "1ª Dose",
-              "dose_1": 19683
+              "quantidade": 19683,
+              "df": 300
             },
             {
               "dose": "2ª Dose",
-              "dose_2": 10937
+              "quantidade": 10937,
+              "df": 400
             }
           ],
-          "populacao_faixa": 80041
+          "populacao_faixa": 80041,
+          "vacinacao_semanal": 800
         },
         {
           "faixa": "5 a 11 anos",
           "doses": [
             {
               "dose": "1ª Dose",
-              "dose_1": 193415
+              "quantidade": 193415,
+              "df": 500
             },
             {
               "dose": "2ª Dose",
-              "dose_2": 146204
+              "quantidade": 146204,
+              "df": 600
             },
             {
               "dose": "1° Reforço",
-              "reforco_1": 17720
+              "quantidade": 17720,
+              "df": 700
             }
           ],
-          "populacao_faixa": 271115
+          "populacao_faixa": 271115,
+          "vacinacao_semanal": 271
         },
         {
           "faixa": "12-17 anos",
           "doses": [
             {
               "dose": "1ª Dose",
-              "dose_1": 193415
+              "quantidade": 193415,
+              "df": 800
             },
             {
               "dose": "2ª Dose",
-              "dose_2": 204102
+              "quantidade": 204102,
+              "df": 900
             },
             {
               "dose": "1° Reforço",
-              "reforco_1": 80635
+              "quantidade": 80635,
+              "df": 1000
             }
           ],
-          "populacao_faixa": 251365
+          "populacao_faixa": 251365,
+          "vacinacao_semanal": 251
+        },
+        {
+          "faixa": "18-19 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "quantidade": 86068,
+              "df": 800
+            },
+            {
+              "dose": "2ª Dose",
+              "quantidade": 77991,
+              "df": 900
+            },
+            {
+              "dose": "1° Reforço",
+              "quantidade": 38858,
+              "df": 1000
+            }
+          ],
+          "populacao_faixa": 251365,
+          "vacinacao_semanal": 251
+        },
+        {
+          "faixa": "20-29 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "quantidade": 465563,
+              "df": 800
+            },
+            {
+              "dose": "2ª Dose",
+              "quantidade": 436073,
+              "df": 900
+            },
+            {
+              "dose": "1° Reforço",
+              "quantidade": 226504,
+              "df": 1000
+            }
+          ],
+          "populacao_faixa": 251365,
+          "vacinacao_semanal": 251
+        },
+        {
+          "faixa": "30-39 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "quantidade": 444609,
+              "df": 800
+            },
+            {
+              "dose": "2ª Dose",
+              "quantidade": 454970,
+              "df": 900
+            },
+            {
+              "dose": "1° Reforço",
+              "quantidade": 275711,
+              "df": 1000
+            }
+          ],
+          "populacao_faixa": 251365,
+          "vacinacao_semanal": 251
+        },
+        {
+          "faixa": "40-49 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "quantidade": 413244,
+              "df": 800
+            },
+            {
+              "dose": "2ª Dose",
+              "quantidade": 434095,
+              "df": 900
+            },
+            {
+              "dose": "1° Reforço",
+              "quantidade": 306107,
+              "df": 1000
+            },
+            {
+              "dose": "2° Reforço",
+              "quantidade": 162546,
+              "df": 1000
+            }
+          ],
+          "populacao_faixa": 251365,
+          "vacinacao_semanal": 251
+        },
+        {
+          "faixa": "50-59 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "quantidade": 327176,
+              "df": 800
+            },
+            {
+              "dose": "2ª Dose",
+              "quantidade": 328300,
+              "df": 900
+            },
+            {
+              "dose": "1° Reforço",
+              "quantidade": 248849,
+              "df": 1000
+            },
+            {
+              "dose": "2° Reforço",
+              "quantidade": 158760,
+              "df": 1000
+            }
+          ],
+          "populacao_faixa": 251365,
+          "vacinacao_semanal": 251
+        },
+        {
+          "faixa": "60-69 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "quantidade": 200488,
+              "df": 800
+            },
+            {
+              "dose": "2ª Dose",
+              "quantidade": 204234,
+              "df": 900
+            },
+            {
+              "dose": "1° Reforço",
+              "quantidade": 167816,
+              "df": 1000
+            },
+            {
+              "dose": "2° Reforço",
+              "quantidade": 126116,
+              "df": 1000
+            }
+          ],
+          "populacao_faixa": 251365,
+          "vacinacao_semanal": 251
+        },
+        {
+          "faixa": "70-79 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "quantidade": 105408,
+              "df": 800
+            },
+            {
+              "dose": "2ª Dose",
+              "quantidade": 105262,
+              "df": 900
+            },
+            {
+              "dose": "1° Reforço",
+              "quantidade": 92881,
+              "df": 1000
+            },
+            {
+              "dose": "2° Reforço",
+              "quantidade": 74234,
+              "df": 1000
+            }
+          ],
+          "populacao_faixa": 251365,
+          "vacinacao_semanal": 251
+        },
+        {
+          "faixa": "Maior que 80 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "quantidade": 50049,
+              "df": 800
+            },
+            {
+              "dose": "2ª Dose",
+              "quantidade": 49234,
+              "df": 900
+            },
+            {
+              "dose": "1° Reforço",
+              "quantidade": 42387,
+              "df": 1000
+            },
+            {
+              "dose": "2° Reforço",
+              "quantidade": 33263,
+              "df": 1000
+            }
+          ],
+          "populacao_faixa": 251365,
+          "vacinacao_semanal": 251
         }
       ]
     }

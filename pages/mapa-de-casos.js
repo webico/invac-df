@@ -6,7 +6,6 @@ import Footer from '@/components/Footer';
 const MapaDeCasos = () => {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas');
 
-
   return (
     <>
       <Head>

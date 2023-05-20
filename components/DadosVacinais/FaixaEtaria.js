@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { addComma, Soma, Percentual } from '@/public/js/globalFunctions';
+import { addComma } from '@/public/js/globalFunctions';
 import { Bar } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 import { useState } from 'react';
@@ -7,10 +7,9 @@ Chart.register(...registerables);
 
 const FaixaEtaria = ({ data, styles }) => {
   const [faixa, setFaixa] = useState(data.faixas[0]);
-  const [dose, setDose] = useState(faixa.doses[0].dose[1]);
+  const [dose, setDose] = useState(faixa.doses[0]);
 
-  // console.log(faixa.doses);
-  // console.log(dose);
+  console.log(faixa);
 
   function handleSetFaixa(e) {
     let valor = e.currentTarget.value,
@@ -20,50 +19,47 @@ const FaixaEtaria = ({ data, styles }) => {
   }
 
   function handleSetDado(e) {
-    let valor = e.currentTarget.value;
+    let valor = e.currentTarget.value,
+      doseObj = faixa.doses.filter(item => item.dose == valor);
 
-    setDose(faixa.doses.filter(item => item.dose[0].dose[0] == valor));
+    setDose(doseObj[0]);
   }
 
-  // let dataBar = {
-  //   labels: ['dose', 'df'],
-  //   datasets: [{
-  //     label: 'My First Dataset',
-  //     // data: [0, dose[0].df],
-  //     data: [faixa.doses[0].dose[1], faixa.doses[0].df],
-  //     backgroundColor: [
-  //       'rgba(255, 99, 132, 0.2)',
-  //       'rgba(255, 159, 64, 0.2)',
-  //       'rgba(255, 205, 86, 0.2)',
-  //       'rgba(75, 192, 192, 0.2)',
-  //       'rgba(54, 162, 235, 0.2)',
-  //       'rgba(153, 102, 255, 0.2)',
-  //       'rgba(201, 203, 207, 0.2)'
-  //     ],
-  //     borderColor: [
-  //       'rgb(255, 99, 132)',
-  //       'rgb(255, 159, 64)',
-  //       'rgb(255, 205, 86)',
-  //       'rgb(75, 192, 192)',
-  //       'rgb(54, 162, 235)',
-  //       'rgb(153, 102, 255)',
-  //       'rgb(201, 203, 207)'
-  //     ],
-  //     borderWidth: 1
-  //   }]
-  // };
+  let dataBar = {
+    labels: [faixa.faixa, 'Distrito Federal'],
+    datasets: [{
+      label: dose.dose,
+      data: [dose.quantidade, dose.df],
+      backgroundColor: [
+        '#528BF4',
+        '#191B20',
+      ],
+      borderColor: [
+        '#528BF4',
+        '#191B20',
+      ],
+      borderWidth: 1
+    }]
+  };
 
-  // console.log(dose[0]);
+  let options = {
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    responsive: true,
+  };
 
   return (
     <section className={styles.faixa_etaria}>
       <div className="container">
-        {/* <Bar data={dataBar}></Bar> */}
+        <Bar data={dataBar} options={options}></Bar>
 
         <div className='menu_filtro'>
           <div className='filtro_actions'>
             <div className='filtro_select'>
-              <select name="" id="" onChange={(e) => handleSetFaixa(e)}>
+              <select name="" id="" defaultValue='6 meses a 2 anos' onChange={(e) => handleSetFaixa(e)}>
                 {
                   data.faixas.map(item => (
                     <option key={item.faixa} value={item.faixa}>{item.faixa}</option>
@@ -76,7 +72,7 @@ const FaixaEtaria = ({ data, styles }) => {
               <select name="" id="" defaultValue='1ª Dose' onChange={(e) => handleSetDado(e)}>
                 {
                   faixa.doses.map(item => (
-                    <option key={item.dose[0]} value={item.dose[0]}>{item.dose[0]}</option>
+                    <option key={item.dose} value={item.dose}>{item.dose}</option>
                   ))
                 }
               </select>
@@ -85,19 +81,18 @@ const FaixaEtaria = ({ data, styles }) => {
 
           <ul className="filtro_info">
             <li>
+              <p>{addComma(dose.quantidade)}</p>
               <span>Total de vacinados</span>
-              {/* <p>{dose && dose[0].dose[1]}</p> */}
-              <p>{dose}</p>
             </li>
 
             <li>
+              <p>{addComma(faixa.populacao_faixa)}</p>
               <span>População (Faixa etária)</span>
-              <p>{faixa.populacao_faixa}</p>
             </li>
 
             <li>
+              <p>{addComma(faixa.vacinacao_semanal)}</p>
               <span>Vacinação por semana</span>
-              <p>{faixa.populacao_faixa}</p>
             </li>
           </ul>
         </div>
