@@ -4,6 +4,8 @@ import styles from '@/css/DadosVacinais.module.css';
 import Footer from '@/components/Footer';
 import Quantitativo from '@/components/DadosVacinais/Quantitativo';
 import useFetch from '@/public/js/useFetch';
+import Estoque from '@/components/DadosVacinais/Estoque';
+import FaixaEtaria from '@/components/DadosVacinais/FaixaEtaria';
 
 const DadosVacinais = () => {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
@@ -35,11 +37,16 @@ const DadosVacinais = () => {
           </div>
         </div>
       </main>
-      
+
       {error && <div className='container'>{error}</div>}
       {isPending && <div className='container'>Loading...</div>}
       {data && <Quantitativo styles={styles} data={data} />}
 
+
+      {data && <Estoque styles={styles} data={data.dados_vacinais_df.estoque_vacinal} />}
+
+      {data && <FaixaEtaria styles={styles} data={data.dados_vacinais_df.faixa_etaria} />}
+      
       <Footer />
     </>
   );

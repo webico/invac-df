@@ -1,13 +1,13 @@
+.section__h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
 .quantitativo {
   margin-bottom: 6rem;
 
-  h2 {
-    text-align: center;
-  }
-
   .quantitativo_graphs {
-    margin-top: 2rem;
-
     .total_doses {
       margin-bottom: 2rem;
       display: flex;
@@ -67,6 +67,39 @@
       text-align: right;
       font-size: .54rem;
       margin-top: -1.5rem;
+    }
+  }
+}
+
+.estoque {
+  padding-bottom: 4.5rem;
+
+  .estoque_lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .estoque_item {
+      width: 9.125rem;
+      // flex: 1 0 9.125rem;
+      padding: 1.5rem .75rem;
+      border-radius: .25rem;
+      border: 1px solid var(--200);
+      text-align: center;
+      margin-bottom: 1.5rem;
+
+      h3 {
+        font-size: 1rem;
+        color: var(--300);
+        margin-bottom: .75rem;
+      }
+
+      p {
+        color: var(--600);
+        font-size: 1.25rem;
+        font-weight: var(--semi);
+      }
     }
   }
 }

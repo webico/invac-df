@@ -119,7 +119,7 @@ const Quantitativo = ({ data, styles }) => {
     <>
       <section className={styles.quantitativo}>
         <div className="container">
-          <h2>Quantitativo de doses e reforços total do Distrito Federal</h2>
+          <h2 className={`section__h2 ${styles.section__h2}`}>Quantitativo de doses e reforços total do Distrito Federal</h2>
 
           <section className={styles.quantitativo_graphs}>
             <article className={styles.total_doses}>
@@ -178,11 +178,6 @@ const Quantitativo = ({ data, styles }) => {
               </ul>
 
             </article>
-          </section>
-
-          <section className={styles.estoque}>
-            <div className="container">
-            </div>
           </section>
         </div>
       </section>

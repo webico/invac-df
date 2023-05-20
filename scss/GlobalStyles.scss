@@ -185,3 +185,39 @@ footer {
   letter-spacing: -0.01em;
   text-align: center;
 }
+
+.menu_filtro {
+  padding: 2rem 1.375rem;
+  border-radius: .25rem;
+  border: 1px solid var(--200);
+
+  .filtro_select {
+    // width: 9.25rem;
+    width: 100%;
+    border: 1px solid var(--200);
+    border-radius: .25rem;
+    position: relative;
+  
+    &:not(:last-child) {
+      margin-bottom: .5rem;
+    }
+  
+    &::after {
+      position: absolute;
+      display: block;
+      content: url(../public/icons/arrow-down.svg);
+      right: .9rem;
+      top: 25%;
+    }
+  
+    select {
+      background: transparent;
+      -webkit-appearance: none;
+      border: none;
+      border-radius: 0;
+      width: 100%;
+      font-size: 1rem;
+      padding: .875rem 1rem;
+    }
+  }
+}

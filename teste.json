@@ -607,6 +607,104 @@
       158760,
       52920,
       126116
-    ]
+    ],
+    "estoque_vacinal": [
+      {
+        "nome": "Astrazeneca",
+        "quantidade": 0
+      },
+      {
+        "nome": "Coronavac",
+        "quantidade": 0
+      },
+      {
+        "nome": "Janssen",
+        "quantidade": 0
+      },
+      {
+        "nome": "Pfizer",
+        "quantidade": 22062
+      },
+      {
+        "nome": "Pfizer Infantil",
+        "quantidade": 3600
+      },
+      {
+        "nome": "Pfizer Baby",
+        "quantidade": 12850
+      },
+      {
+        "nome": "Bivalente",
+        "quantidade": 163878
+      }
+    ],
+    "faixa_etaria": {
+      "faixas": [
+        {
+          "faixa": "6 meses a 2 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "dose_1": 11813
+            },
+            {
+              "dose": "2ª Dose",
+              "dose_2": 6310
+            }
+          ],
+          "populacao_faixa": 104549
+        },
+        {
+          "faixa": "3 a 4 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "dose_1": 19683
+            },
+            {
+              "dose": "2ª Dose",
+              "dose_2": 10937
+            }
+          ],
+          "populacao_faixa": 80041
+        },
+        {
+          "faixa": "5 a 11 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "dose_1": 193415
+            },
+            {
+              "dose": "2ª Dose",
+              "dose_2": 146204
+            },
+            {
+              "dose": "1° Reforço",
+              "reforco_1": 17720
+            }
+          ],
+          "populacao_faixa": 271115
+        },
+        {
+          "faixa": "12-17 anos",
+          "doses": [
+            {
+              "dose": "1ª Dose",
+              "dose_1": 193415
+            },
+            {
+              "dose": "2ª Dose",
+              "dose_2": 204102
+            },
+            {
+              "dose": "1° Reforço",
+              "reforco_1": 80635
+            }
+          ],
+          "populacao_faixa": 251365
+        }
+      ]
+    }
   }
 }
