@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import Link from 'next/link';
 import React, { Component } from 'react';
 import ProgressBtns from '../components/ProgressBtns';
 
@@ -118,7 +117,7 @@ export class FormPersonalDetails extends Component {
                     <p>Para o exame detectar o vírus com mais certeza, é melhor fazê-lo entre o 3º e 4º dia de sintomas.</p>
                     <p>Por isso, escolha uma data para o agendamento do exame a partir do 3º dia de sintomas.</p>
 
-                    <Link href="#" className='btn_principal'>Seguir</Link>
+                    <button className='btn_principal' onClick={this.props.nextStep}>Seguir</button>
                   </div>
                 </div>
               </div>
