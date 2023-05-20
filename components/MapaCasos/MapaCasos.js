@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { addComma } from '@/public/js/globalFunctions';
+import { Percentual, addComma } from '@/public/js/globalFunctions';
 import { useState } from 'react';
 
-const MapaCasos = ({ data }) => {
+const MapaCasos = ({ data, styles }) => {
   const [regiao, setRegiao] = useState(data[0]);
   const [filtro, setFiltro] = useState(true);
 
@@ -19,6 +19,8 @@ const MapaCasos = ({ data }) => {
   let incidencia = (filtro) => {
     return (100000 * filtro / regiao.populacao_total).toFixed(2);
   };
+
+  let estado = Percentual(regiao.casos_mensais, regiao.populacao_total) < 40;
 
   return (
     <>
@@ -61,6 +63,12 @@ const MapaCasos = ({ data }) => {
           <li>
             <p>{filtro ? incidencia(regiao.casos_mensais) : incidencia(regiao.obitos_mensais)}</p>
             <span>Incidência (100 mil hab.)</span>
+          </li>
+
+          
+          <li>
+            <p className={`${styles.filtro_estado} ${estado ? 'controlado' : 'alerta'}`}>{estado ? 'controlado' : 'alerta'}</p>
+            <span>Estado atual</span>
           </li>
         </ul>
       </div>

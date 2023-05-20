@@ -1,0 +1,17 @@
+.filtro_estado {
+  font-size: .75rem !important;
+  text-transform: uppercase;
+  padding: 1rem;
+  width: fit-content;
+  margin: auto;
+  color: var(--300);
+  border: 1px solid currentColor;
+  border-radius: 100rem;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: url(../public/icons/help.svg);
+    margin-left: .5rem;
+  }
+}
