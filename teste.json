@@ -34,7 +34,10 @@
             }
           ]
         }
-      ]
+      ],
+      "casos_mensais": 11008,
+      "obitos_mensais": 141,
+      "populacao_total": 78124
     },
     {
       "nome": "Brasília",
@@ -168,7 +171,10 @@
             }
           ]
         }
-      ]
+      ],
+      "casos_mensais": 14997,
+      "obitos_mensais": 476,
+      "populacao_total": 78124
     },
     {
       "nome": "Brazlândia",
@@ -311,7 +317,10 @@
             }
           ]
         }
-      ]
+      ],
+      "casos_mensais": 12829,
+      "obitos_mensais": 394,
+      "populacao_total": 62157
     },
     {
       "nome": "Candangolândia",
@@ -346,7 +355,10 @@
             }
           ]
         }
-      ]
+      ],
+      "casos_mensais": 5758,
+      "obitos_mensais": 387,
+      "populacao_total": 67999
     },
     {
       "nome": "Ceilândia",
@@ -512,7 +524,10 @@
             }
           ]
         }
-      ]
+      ],
+      "casos_mensais": 9577,
+      "obitos_mensais": 188,
+      "populacao_total": 46404
     },
     {
       "nome": "Cruzeiro",
@@ -547,7 +562,10 @@
             }
           ]
         }
-      ]
+      ],
+      "casos_mensais": 13154,
+      "obitos_mensais": 239,
+      "populacao_total": 60409
     }
   ],
   "dados_vacinais_df": {

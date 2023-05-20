@@ -166,6 +166,7 @@ button {
 footer {
   background: var(--600);
   padding: 3rem 0 2rem;
+  margin-top: 6rem;
 
   .menu_info .menu_info__item {
     font-size: 1.125rem;
@@ -187,6 +188,7 @@ footer {
 }
 
 .menu_filtro {
+  margin-top: 2.5rem;
   padding: 2rem 1.375rem;
   border-radius: .25rem;
   border: 1px solid var(--200);
@@ -218,6 +220,30 @@ footer {
       width: 100%;
       font-size: 1rem;
       padding: .875rem 1rem;
+    }
+  }
+
+  .filtro_info {
+    margin-top: 3rem;
+
+    li {
+      text-align: center;
+
+      p {
+        font-size: 1.25rem;
+        font-weight: var(--semi);
+        line-height: 1;
+      }
+
+      span {
+        color: var(--300);
+        margin-top: .5rem;
+        font-size: .875rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }
