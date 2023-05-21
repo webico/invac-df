@@ -1,17 +1,16 @@
 import Head from 'next/head';
-import { useState } from 'react';
 import styles from '@/css/Disponibilidade.module.css';
 import Link from 'next/link';
-import { addComma, cleanString } from '@/public/js/globalFunctions';
 import { useRouter } from 'next/router';
 import useFetch from '@/public/js/useFetch';
+import DisponiveisLista from '@/components/Disponibilidade/DisponibilidadeLista';
+import Footer from '@/components/Footer';
 
 const Disponibilidade = () => {
   const { query } = useRouter();
 
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas');
 
-  const [tab, setTab] = useState(query.t ? query.t : 'vacina');
 
   return (
     <>
@@ -32,34 +31,14 @@ const Disponibilidade = () => {
 
       <section>
         <div className="container">
-          <ul className='tab_menu'>
-            <li><button className={`tab_menu__btn ${tab == 'vacina' ? 'ativo' : ''}`} onClick={() => setTab('vacina')}>Vacina</button></li>
-            <li><button className={`tab_menu__btn ${tab == 'teste' ? 'ativo' : ''}`} onClick={() => setTab('teste')}>Teste</button></li>
-          </ul>
-
-          <div className={styles.disponivel_caixa}>
-            <ul className={styles.disponivel__lista}>
-              {data &&
-                data.map(regiao => (
-                  <li key={regiao.nome} className={styles.disponivel__btn}>
-                    <div>
-                      <span className={styles.regiao_span}>Região</span>
-                      <p className={styles.regiao_nome}>{regiao.nome}</p>
-                      <span className={styles.regiao_disp}>
-                        {
-                          tab == 'vacina' ? `${addComma(regiao.quantidade_vacinas)} vacinas` : `${addComma(regiao.quantidade_testes)} testes`
-                        }
-                      </span>
-                    </div>
-                  </li>
-                ))
-              }
-            </ul>
-
-          </div>
+          {error && <div className='container'>{error}</div>}
+          {isPending && <div className='container'>Loading...</div>}
+          {data && <DisponiveisLista data={data} styles={styles} query={query}/>}
+  
         </div>
       </section>
 
+      <Footer />
     </>
   );
 };

@@ -27,7 +27,9 @@ const DisponiveisLista = ({ data, styles }) => {
               {
                 data.slice(0, itemsShow).map(regiao => (
                   <li key={regiao.nome} className={styles.disponivel__card}>
-                    <Link href={`/disponibilidade?r=${cleanString(regiao.nome)}&t=${tab}`}>
+                    <Link
+                      href={{pathname: '/disponibilidade', query: {r: cleanString(regiao.nome), t: tab}}}
+                    >
                       <div>
                         <span className={styles.regiao_span}>Região</span>
                         <p className={styles.regiao_nome}>{regiao.nome}</p>
