@@ -45,7 +45,7 @@
           width: 2rem;
           height: .25rem;
           margin: 0 auto;
-          background: var(--100);
+          background: var(--INVAC_Neutra_fff);
           transition: all 0.2s ease-in-out;
           position: relative;
           display: flex;
@@ -56,7 +56,7 @@
             position: absolute;
             width: 2rem;
             height: .25rem;
-            background: var(--100);
+            background: var(--INVAC_Neutra_fff);
             transition: all 0.2s ease-in-out;
           }
 
@@ -80,14 +80,14 @@
       width: 18.75rem;
       height: 100%;
       overflow-y: auto;
-      background: #fff;
+      background: var(--INVAC_Neutra_fff);
       padding: 0;
       visibility: hidden;
       opacity: 0;
 
       .divisoria {
         padding-bottom: 1.25rem;
-        border-bottom: 1px solid #DCE1EB;
+        border-bottom: 1px solid var(--INVAC_Neutra_200);
         margin-bottom: 1rem;
         display: flex;
         align-items: center;
@@ -95,7 +95,7 @@
         .divisoria_menu {
           width: .75rem;
           height: 2px;
-          background: #96A6C7;
+          background: var(--INVAC_Neutra_300);
 
           &::before,
           &::after {
@@ -103,7 +103,7 @@
             position: absolute;
             width: 1rem;
             height: 2px;
-            background: #96A6C7;
+            background: var(--INVAC_Neutra_300);
             transition: all 0.2s ease-in-out;
           }
 
@@ -120,7 +120,7 @@
 
         span {
           text-transform: uppercase;
-          color: #96A6C7;
+          color: var(--INVAC_Neutra_300);
           line-height: 1.3;
           letter-spacing: 0.25px;
           font-size: .75rem;
@@ -147,32 +147,46 @@
         display: flex;
         align-items: center;
         padding: .75rem 0 .75rem .75rem;
+        transition: .3s ease-in-out;
 
         svg {
           margin-right: .75rem;
 
           path {
-            fill: #96A6C7;
+            fill: var(--INVAC_Neutra_300);
           }
         }
 
         span {
           font-size: 1rem;
           font-weight: var(--semi);
-          color: #6F7D9A;
+          color: var(--INVAC_Neutra_400);
           line-height: 1.66;
           letter-spacing: -0.25px;
         }
 
-        &.btn__menu_ativo {
+        &:hover {
+          text-decoration: none;
+          transition: .3s ease-in-out;
 
-          //teste
           svg path {
-            fill: #00ff00;
+            fill: var(--INVAC_Azul_600);
           }
 
           span {
-            color: red;
+            color: var(--INVAC_Azul_600);
+          }
+        }
+
+        &.btn__menu_ativo {
+          background: var(--INVAC_Azul_100);
+
+          svg path {
+            fill: var(--INVAC_Azul_600);
+          }
+
+          span {
+            color: var(--INVAC_Azul_600);
           }
         }
       }
@@ -180,12 +194,10 @@
       .menu_instalacao {
         margin: 1.5rem 0 4rem;
         padding-top: 2rem;
-        border-top: 1px solid #DCE1EB;
+        border-top: 1px solid var(--INVAC_Neutra_200);
 
         button {
           width: 100%;
-          background: var(--500);
-          color: var(--100);
 
           &::after {
             content: url(../public/icons/btn_instalar.svg);
@@ -199,7 +211,6 @@
     height: 100vh;
     overflow-y: auto;
     background-color: rgba(25, 27, 32, 0.56);
-    // transition: .1s background-color linear;
 
     &::before {
       left: 0;
@@ -226,8 +237,6 @@
     }
 
     .menu {
-      // padding: 3.125rem 2.25rem 0 1.375rem;
-      // padding: 2rem 2.25rem 2rem 1.375rem;
       padding: 2rem;
       height: calc(100vh - 4rem);
       left: 0;

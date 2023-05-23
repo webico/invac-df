@@ -55,16 +55,23 @@ button {
   border-radius: .25rem;
   font-weight: var(--semi);
   letter-spacing: -0.25px;
+  background: var(--INVAC_Azul_600);
+  color: var(--branco);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .3s ease-in-out;
 
-  //temporario
+  &:hover {
+    background: var(--INVAC_Azul_700);
+    transition: .3s ease-in-out;
+  }
+
   &::after {
     content: '';
     width: 1rem;
     height: 1.2rem;
-    // background: var(--100);
+
     margin-left: 1.125rem;
   }
 }
@@ -157,22 +164,25 @@ button {
 
 .menu_info {
   li:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
 
   .menu_info__item {
     line-height: 1.2;
     font-weight: var(--medium);
-    color: var(--400);
+    color: var(--navbar_texto);
     letter-spacing: -0.25px;
     text-decoration: underline;
     text-underline-offset: .275rem;
+
+    &:hover {
+      color: var(--INVAC_Azul_600);
+    }
   }
 }
 
 .copyright {
-  color: var(--600);
-  // text-align: center;
+  color: #1E3150;
   margin-top: 2.5rem;
   font-size: .875rem;
 }
