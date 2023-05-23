@@ -2,10 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '@/css/Index.module.css';
 import DisponiveisLista from '@/components/Index/DisponiveisLista';
-// import { addComma, Soma } from '@/public/js/globalFunctions';
 import useFetch from '@/public/js/useFetch';
 import Footer from '@/components/Footer';
-// import CasosLista from '@/components/Index/CasosLista';
 
 export default function Home() {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas');
