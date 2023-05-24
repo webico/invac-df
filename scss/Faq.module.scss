@@ -4,10 +4,10 @@
   .faq_item {
     transition: .15s linear;
     border-radius: 0;
-    color: var(--600);
+    color: var(--INVAC_Preto_texto);
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--100);
+      border-bottom: 1px solid var(--INVAC_Neutra_200);
     }
 
     .faq_item__btn {
@@ -38,17 +38,21 @@
 
       p {
         height: 0;
-
+        color: var(--INVAC_Cinza_texto);
       }
     }
 
     &.ativo {
-      background-color: var(--100);
+      background-color: var(--INVAC_Neutra_fff);
       border-radius: .5rem;
       padding-bottom: 1.5rem;
 
-      h2::after {
-        content: url('../public/icons/aberto.svg');
+      h2 {
+        color: var(--INVAC_Azul_600);
+
+        &::after {
+          content: url('../public/icons/aberto.svg');
+        }
       }
 
       .faq_item__texto {

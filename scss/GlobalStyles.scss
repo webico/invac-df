@@ -12,7 +12,7 @@ html {
   box-sizing: border-box;
   // line-height: 1.5;
   font-family: 'Inter', sans-serif;
-  color: var(--600);
+  // color: var(--600);
 }
 
 img {
@@ -26,6 +26,7 @@ ul {
 body {
   font-size: 16px;
   position: relative;
+  background: #F0F2F5;
 }
 
 a,
@@ -113,17 +114,6 @@ button {
     font-size: 1.5rem;
   }
 
-  .main__btn {
-    color: var(--INVAC_Neutra_fff);
-    text-decoration: underline;
-    text-underline-offset: 0.375rem;
-
-    &::before {
-      background: var(--300);
-      margin-right: .75rem;
-    }
-  }
-
   .index_main__btn {
     margin-top: 2rem;
     background: var(--INVAC_Neutra_fff);
@@ -134,12 +124,23 @@ button {
     margin-bottom: 2rem;
   
     p {
-      color: var(--100);
+      color: var(--INVAC_Neutra_fff);
       width: fit-content;
   
       &.subtitulo__bold {
         font-weight: var(--semi);
       }
+    }
+  }
+
+  .main__btn {
+    color: var(--INVAC_Neutra_fff);
+    text-decoration: underline;
+    text-underline-offset: 0.375rem;
+
+    &::before {
+      background: var(--300);
+      margin-right: .75rem;
     }
   }
   
@@ -149,7 +150,7 @@ button {
   
       .cta__span {
         text-transform: uppercase;
-        color: var(--100);
+        color: var(--INVAC_Neutra_fff);
         font-size: .875rem;
         font-weight: var(--bold);
         display: block;
@@ -303,6 +304,7 @@ footer {
       font-weight: var(--bold);
       border-radius: .5rem 0 0 0;
       color: var(--INVAC_Neutra_400);
+      background: var(--INVAC_Neutra_fff);
 
       &.ativo {
         color: var(--INVAC_Neutra_fff);

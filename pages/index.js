@@ -53,7 +53,7 @@ export default function Home() {
 
           <div className={styles.section__info}>
             <h2 className='section__h2'>Veja casos da COVID do último mês na sua região!</h2>
-            <p>Saiba quando o número de pessoas infectadas próximas a vocês aumentar para se prevenir</p>
+            <p>Saiba quando o número de pessoas infectadas próximas a vocês aumentar para se prevenir.</p>
             <Link href='/mapa-de-casos' className={`btn_principal ${styles.mapa_casos_btn}`}>Mapa de casos</Link>
           </div>
         </div>

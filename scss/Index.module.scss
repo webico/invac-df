@@ -40,6 +40,7 @@
 
   .disponivel_caixa {
     border-radius: 0 0 .5rem .5rem;
+    background: var(--INVAC_Neutra_fff);
     box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.16);
     padding: 2rem 1rem;
 
@@ -178,6 +179,7 @@
     .secao_duvidas__p {
       margin: .75rem 0 2rem;
       text-align: center;
+      color: var(--INVAC_Cinza_textos);
     }
   
     // .secao_duvidas__btn {
