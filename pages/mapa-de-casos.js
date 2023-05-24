@@ -3,6 +3,7 @@ import Head from 'next/head';
 import useFetch from '@/public/js/useFetch';
 import Footer from '@/components/Footer';
 import styles from '@/css/MapaCasos.module.css';
+import BannerInformativo from '@/components/BannerInformativo';
 
 const MapaDeCasos = () => {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas');
@@ -36,6 +37,10 @@ const MapaDeCasos = () => {
 
         </div>
       </section >
+
+      <BannerInformativo titulo='Mapa de Casos'>
+        <li><a href="https://www.saude.df.gov.br/boletinsinformativos-divep-cieves" target="_blank" rel="noopener noreferrer">Voletins Covid-19 - Divep/SVS/SES-DF</a></li>
+      </BannerInformativo>
 
       <Footer />
     </>

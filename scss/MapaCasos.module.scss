@@ -4,7 +4,6 @@
   padding: 1rem;
   width: fit-content;
   margin: auto;
-  color: var(--300);
   border: 1px solid currentColor;
   border-radius: 100rem;
   display: flex;
@@ -13,5 +12,13 @@
   &::after {
     content: url(../public/icons/help.svg);
     margin-left: .5rem;
+  }
+
+  &.controlado {
+    color: var(--INVAC_Verde_700) !important;
+  }
+
+  &.alerta {
+    color: var(--INVAC_Amarelo_700) !important;
   }
 }

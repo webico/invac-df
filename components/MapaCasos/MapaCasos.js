@@ -67,7 +67,7 @@ const MapaCasos = ({ data, styles }) => {
 
           
           <li>
-            <p className={`${styles.filtro_estado} ${estado ? 'controlado' : 'alerta'}`}>{estado ? 'controlado' : 'alerta'}</p>
+            <p className={`${styles.filtro_estado} ${estado ? styles.controlado : styles.alerta}`}>{estado ? 'controlado' : 'alerta'}</p>
             <span>Estado atual</span>
           </li>
         </ul>
