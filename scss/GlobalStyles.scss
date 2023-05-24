@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
 
 @import "parts/tema";
 
@@ -120,19 +120,6 @@ button {
     color: var(--INVAC_Azul_escuro);
   }
 
-  .main__subtitulo {
-    margin-bottom: 2rem;
-  
-    p {
-      color: var(--INVAC_Neutra_fff);
-      width: fit-content;
-  
-      &.subtitulo__bold {
-        font-weight: var(--semi);
-      }
-    }
-  }
-
   .main__btn {
     color: var(--INVAC_Neutra_fff);
     text-decoration: underline;
@@ -141,21 +128,6 @@ button {
     &::before {
       background: var(--300);
       margin-right: .75rem;
-    }
-  }
-  
-  .main_call {
-    .cta {
-      margin-top: 2rem;
-  
-      .cta__span {
-        text-transform: uppercase;
-        color: var(--INVAC_Neutra_fff);
-        font-size: .875rem;
-        font-weight: var(--bold);
-        display: block;
-        margin-bottom: 1.5rem;
-      }
     }
   }
 }
@@ -227,12 +199,12 @@ footer {
   margin-top: 2.5rem;
   padding: 2rem 1.375rem;
   border-radius: .25rem;
-  border: 1px solid var(--200);
+  border: 1px solid var(--INVAC_Neutra_300);
 
   .filtro_select {
     // width: 9.25rem;
     width: 100%;
-    border: 1px solid var(--200);
+    border: 1px solid var(--INVAC_Neutra_300);
     border-radius: .25rem;
     position: relative;
   
@@ -269,10 +241,11 @@ footer {
         font-size: 1.25rem;
         font-weight: var(--semi);
         line-height: 1;
+        color: var(--INVAC_Preto_texto);
       }
 
       span {
-        color: var(--300);
+        color: var(--INVAC_Cinza_info);
         margin-top: .5rem;
         font-size: .875rem;
       }

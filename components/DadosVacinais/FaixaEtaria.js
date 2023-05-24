@@ -52,6 +52,9 @@ const FaixaEtaria = ({ data, styles }) => {
   return (
     <section className={styles.faixa_etaria}>
       <div className="container">
+        <h2 className='section__h2'>Cobertura vacinal por faixa etária </h2>
+        <h3>{faixa.faixa}</h3>
+
         <Bar data={dataBar} options={options}></Bar>
 
         <div className='menu_filtro'>

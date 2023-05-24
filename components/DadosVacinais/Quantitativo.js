@@ -57,13 +57,14 @@ const Quantitativo = ({ data, styles }) => {
         display: false
       }
     },
-    tooltips: {
-      enabled: false,
-    },
-    legend: {
-      display: false
-    },
-    responsive: false,
+    // tooltips: {
+    //   enabled: false,
+    // },
+    // legend: {
+    //   display: false
+    // },
+    devicePixelRatio: 4,
+    responsive: true,
     scales: {
       y: {
         beginAtZero: true,
@@ -74,15 +75,15 @@ const Quantitativo = ({ data, styles }) => {
           display: false
         }
       },
-      x: {
-        beginAtZero: true,
-        grid: {
-          display: false
-        },
-        ticks: {
-          display: false
-        }
-      }
+      // x: {
+      //   beginAtZero: true,
+      //   grid: {
+      //     display: false
+      //   },
+      //   ticks: {
+      //     display: false
+      //   }
+      // }
     }
 
   };
@@ -90,10 +91,11 @@ const Quantitativo = ({ data, styles }) => {
   let BartCharts = [];
   for (let i = 0; i < dosesBarLista.length; i++) {
     const dataBar = {
-      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+      // labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+      labels: ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
       datasets: [
         {
-          label: 'First set',
+          label: 'Vacinados',
           data: [...dosesBarLista[i]],
           backgroundColor: [
             '#001535',
@@ -171,9 +173,6 @@ const Quantitativo = ({ data, styles }) => {
                   </div>
 
                   {BartCharts[3]}
-                </li>
-                <li className={styles.legenda}>
-                  Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez
                 </li>
               </ul>
 

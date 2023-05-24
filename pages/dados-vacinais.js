@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import styles from '@/css/DadosVacinais.module.css';
 import Footer from '@/components/Footer';
 import Quantitativo from '@/components/DadosVacinais/Quantitativo';
 import useFetch from '@/public/js/useFetch';
 import Estoque from '@/components/DadosVacinais/Estoque';
 import FaixaEtaria from '@/components/DadosVacinais/FaixaEtaria';
+import BannerInformativo from '@/components/BannerInformativo';
 
 const DadosVacinais = () => {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
@@ -22,18 +22,8 @@ const DadosVacinais = () => {
       {/* SEÇÃO INICIAL */}
       <main className='main'>
         <div className="container">
-          <div className='main__subtitulo'>
-            <p className='subtitulo__bold'>Dúvidas Frequentes</p>
-            <p>Vacinas e Testes de Covid-19</p>
-          </div>
-
           <div className='main_call'>
-            <h1 className='main__titulo_secundario'>Tire suas dúvidas em relação as vacinas e aos testes de Covid-19.</h1>
-
-            <div className='cta'>
-              <span className='cta__span'>Mais Informações</span>
-              <Link href='#' className="btn_secundario main__btn">Sobre a Covid-19</Link>
-            </div>
+            <h1 className='main__titulo_secundario'>Acompanhe os dados parciais da Campanha Nacional de Vacinação contra a COVID-19 no Distrito Federal!</h1>
           </div>
         </div>
       </main>
@@ -42,11 +32,16 @@ const DadosVacinais = () => {
       {isPending && <div className='container'>Loading...</div>}
       {data && <Quantitativo styles={styles} data={data} />}
 
-
       {data && <Estoque styles={styles} data={data.dados_vacinais_df.estoque_vacinal} />}
 
       {data && <FaixaEtaria styles={styles} data={data.dados_vacinais_df.faixa_etaria} />}
-      
+
+      <BannerInformativo titulo='Dados Vacinais'>
+        <li><a href="https://www.saude.df.gov.br/coronavirus" target="_blank" rel="noopener noreferrer">Boletins semanais de vacinação - SES/DF</a></li>
+
+        <li><a href="https://www.saude.df.gov.br/vacinometro" target="_blank" rel="noopener noreferrer">Vacinômetro - SES/DF</a></li>
+      </BannerInformativo>
+
       <Footer />
     </>
   );

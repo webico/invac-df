@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Soma, addComma } from '@/public/js/globalFunctions';
+import Link from 'next/link';
 
 const Estoque = ({ data, styles }) => {
 
@@ -12,7 +13,9 @@ const Estoque = ({ data, styles }) => {
   return (
     <section className={styles.estoque}>
       <div className="container">
-        <h2 className={`section__h2 ${styles.section__h2}`}>Estoque de Vacinas disponíveis</h2>
+        <h2 className={`section__h2 ${styles.section__h2}`}>Vacinas disponíveis</h2>
+
+        <Link href='/agendamento' className={`btn_principal ${styles.estoque_btn}`}>Agendar Vacina</Link>
 
         <ul className={styles.estoque_lista}>
           {

@@ -2,6 +2,7 @@
   margin-bottom: 2rem;
   font-size: 1.5rem;
   line-height: 1.5;
+  color: var(--INVAC_Preto_texto);
 }
 
 .quantitativo {
@@ -21,6 +22,7 @@
 
       .total {
         font-size: 2rem;
+        color: var(--INVAC_Preto_texto);
       }
     }
   }
@@ -31,14 +33,19 @@
 
     .perc__item {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: flex-end;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--INVAC_Neutra_100);
 
       &:not(:last-child) {
-        margin-bottom: 3rem;
+        margin-bottom: 2.25rem;
       }
 
       .perc__info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.25rem;
 
         span,
         p {
@@ -47,32 +54,40 @@
 
         span {
           display: block;
-          margin-bottom: .75rem;
+          font-size: 1rem;
           font-weight: var(--medium);
+          color: var(--INVAC_Cinza_info);
+          margin-right: 1rem;
         }
 
         p {
-          font-size: 2rem;
+          font-size: 1.125rem;
           font-weight: var(--semi);
+          color: var(--INVAC_Preto_texto);
         }
       }
-
-      canvas {
-        height: 1.375rem !important;
-        width: 12.75rem !important;
-      }
-    }
-
-    .legenda {
-      text-align: right;
-      font-size: .54rem;
-      margin-top: -1.5rem;
     }
   }
 }
 
 .estoque {
-  padding-bottom: 4.5rem;
+  margin-bottom: 2.5rem;
+
+  .section__h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .estoque_btn {
+    margin: 0 auto 2rem;
+
+    &::after {
+      content: '';
+      background: #fff;
+      width: 1rem;
+      height: 1rem;
+      margin-left: 1.125rem;
+    }
+  }
 
   .estoque_lista {
     display: flex;
@@ -82,24 +97,35 @@
 
     .estoque_item {
       width: 9.125rem;
-      // flex: 1 0 9.125rem;
       padding: 1.5rem .75rem;
       border-radius: .25rem;
-      border: 1px solid var(--200);
+      border: 1px solid #9a9da2;
       text-align: center;
       margin-bottom: 1.5rem;
 
       h3 {
         font-size: 1rem;
-        color: var(--300);
+        color: var(--INVAC_Cinza_info);
         margin-bottom: .75rem;
       }
 
       p {
-        color: var(--600);
+        color: var(--INVAC_Preto_texto);
         font-size: 1.25rem;
         font-weight: var(--semi);
       }
     }
+  }
+}
+
+.faixa_etaria {
+
+  h2, h3 {
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    text-align: center;
+    color: var(--INVAC_Azul_600);
   }
 }

@@ -1,0 +1,66 @@
+.banner {
+  margin-top: 4rem;
+
+  .banner_container {
+    padding: 2.5rem 1.5rem;
+    border: 1px solid var(--INVAC_Neutra_300);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+
+    .banner_covid {
+      padding-bottom: 1.5rem;
+      border-bottom: 4px solid var(--INVAC_Azul_500);
+
+      h2, p {
+        text-align: center;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 3rem;
+        color: var(--INVAC_Azul_500);
+        line-height: 1.4;
+        font-weight: 900;
+      }
+
+      p {
+        color: var(--INVAC_Cinza_info);
+        font-weight: 900;
+        font-size: 1.25rem;
+      }
+    }
+
+    .banner_info {
+      margin-top: 1.5rem;
+
+      p {
+        color: var(--INVAC_Cinza_texto);
+        font-weight: var(--semi);
+        font-size: 1.125rem;
+        margin-bottom: .75rem;
+      }
+
+      ul {
+        li {
+          display: flex;
+          align-items: center;
+
+          &:not(:last-child) {
+            margin-bottom: .75rem;
+          }
+
+          &::before {
+            content: url(../public/icons/engrenagem.svg);
+            margin-right: .875rem;
+          }
+
+          a {
+            color: var(--INVAC_Azul_600);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
