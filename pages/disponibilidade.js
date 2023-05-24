@@ -3,7 +3,7 @@ import styles from '@/css/Disponibilidade.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import useFetch from '@/public/js/useFetch';
-import DisponiveisLista from '@/components/Disponibilidade/DisponibilidadeLista';
+import DisponibilidadeLista from '@/components/Disponibilidade/DisponibilidadeLista';
 import Footer from '@/components/Footer';
 
 const Disponibilidade = () => {
@@ -25,7 +25,7 @@ const Disponibilidade = () => {
         <div className="container">
           <h1 className='main__titulo'>Confira os lugares com disponibilidade e faça o agendamento.</h1>
 
-          <Link href='/agendamento'>Quero agendar</Link>
+          <Link href='/agendamento' className={`btn_principal ${styles.main_btn}`}>Quero agendar</Link>
         </div>
       </main>
 
@@ -33,7 +33,7 @@ const Disponibilidade = () => {
         <div className="container">
           {error && <div className='container'>{error}</div>}
           {isPending && <div className='container'>Loading...</div>}
-          {data && <DisponiveisLista data={data} styles={styles} query={query}/>}
+          {data && <DisponibilidadeLista data={data} styles={styles} query={query}/>}
   
         </div>
       </section>

@@ -295,8 +295,8 @@ footer {
     .tab_menu__btn {
       background: none;
       height: fit-content;
-      border-top: 1px solid var(--INVAC_Neutra_100);
-      border-left: 1px solid var(--INVAC_Neutra_100);
+      border-top: 2px solid var(--INVAC_Neutra_100);
+      border-left: 2px solid var(--INVAC_Neutra_100);
       width: 100%;
       font-size: 1rem;
       padding: .875rem 1rem;
@@ -313,7 +313,7 @@ footer {
 
     &:last-child .tab_menu__btn {
       border-radius: 0 .5rem 0 0;
-      border-right: 1px solid var(--100);
+      border-right: 2px solid var(--INVAC_Neutra_100);
       border-left: none;
     }
   }

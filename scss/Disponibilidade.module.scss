@@ -1,10 +1,16 @@
+.main_btn {
+  color: var(--INVAC_Azul_escuro);
+  background: var(--INVAC_Neutra_fff);
+  margin-top: 2.5rem;
+}
+
 .disponivel_caixa {
   border-radius: 0 0 .5rem .5rem;
   box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.16);
   padding: 2rem 1rem;
 
   .disponivel_item {
-    border: 2px solid #ededed;
+    border: 2px solid var(--INVAC_Neutra_100);
     border-radius: .5rem;
 
     &:not(:last-child) {
@@ -13,7 +19,7 @@
 
     .disponivel_btn {
       width: 100%;
-      background: var(--400);
+      background: var(--INVAC_Neutra_100);
       padding: .75rem .75rem .75rem 1rem;
       border-radius: .5rem .5rem 0 0;
       display: flex;
@@ -21,7 +27,7 @@
       justify-content: space-between;
 
       * {
-        color: var(--100);
+        color: var(--INVAC_Preto_texto);
       }
 
       h3 {
@@ -34,12 +40,11 @@
         display: flex;
         align-items: center;
 
-        &::after {
-          content: '';
+        &::before {
+          content: url(../public/icons/vacina.svg);
           width: 1rem;
           height: 1rem;
-          background: var(--300);
-          margin-left: .5rem;
+          margin-right: .5rem;
         }
 
         .numero {
@@ -48,6 +53,7 @@
 
         p {
           font-weight: var(--medium);
+          margin-right: .875rem;
         }
       }
     }
@@ -68,18 +74,19 @@
           height: 0;
 
           &:not(:last-child) {
-            border-bottom: 1px solid var(--100);
+            border-bottom: 1px solid var(--INVAC_Neutra_100);
           }
 
           span,
           p {
-            color: var(--400);
+            color: var(--INVAC_Cinza_info);
           }
 
           .ubs {
             h4 {
               font-size: 1rem;
               font-weight: var(--medium);
+              color: var(--INVAC_Preto_texto);
               line-height: 1;
               margin-bottom: 1rem;
             }
@@ -96,12 +103,16 @@
                 font-weight: var(--medium);
 
                 &::before {
-                  content: '';
-                  width: .875rem;
-                  height: .875rem;
-                  background: var(--200);
-                  border-radius: 45%;
                   margin-right: .375rem;
+                }
+
+                &.ubs_horario::before {
+                  content: url(../public/icons/horario.svg);
+                }
+
+                &.ubs_endereco::before {
+                  content: url(../public/icons/endereco.svg);
+                  margin-top: 3px;
                 }
               }
 
@@ -114,7 +125,7 @@
           .doses {
             margin-top: 1.5rem;
             padding: 1.5rem 1.25rem;
-            border: 2px solid var(--100);
+            border: 2px solid var(--INVAC_Neutra_100);
             border-radius: .5rem;
 
             li {
@@ -129,7 +140,7 @@
                 content: '';
                 width: .375rem;
                 height: .375rem;
-                background: var(--200);
+                background: var(--INVAC_Azul_400);
                 border-radius: 50%;
                 margin-right: .5rem;
               }
@@ -140,6 +151,22 @@
     }
 
     &.ativo {
+
+      .disponivel_btn {
+        background: var(--INVAC_Azul_600);
+
+        * {
+          color: var(--INVAC_Neutra_fff);
+        }
+
+        svg {
+          transform: rotate(180deg);
+
+          path {
+            fill: var(--INVAC_Neutra_fff);
+          }
+        }
+      }
 
       .disponivel_info {
         visibility: visible;
