@@ -20,11 +20,7 @@
       p {
         margin: .75rem 0 2rem;
         text-align: center;
-      }
-
-      a {
-        background: var(--600);
-        color: var(--100);
+        color: var(--INVAC_Cinza_texto);
       }
     }
   }
@@ -33,10 +29,11 @@
 
 // DISPONIBILIDADE DE VACINAS E TESTES
 .disponivel {
-
   h2 {
     font-size: 1.125rem;
     font-weight: var(--semi);
+    color: var(--INVAC_Preto_texto);
+    line-height: 1.4;
     letter-spacing: 0;
     margin-bottom: 2.5rem;
   }
@@ -51,7 +48,7 @@
       flex-direction: column;
 
       .disponivel__card {
-        background: #f3f3f3;
+        background: var(--INVAC_Neutra_100);
         border-radius: .5rem;
         padding-left: 1.25rem;
 
@@ -74,13 +71,14 @@
             .regiao_span {
               text-transform: uppercase;
               letter-spacing: 1px;
-              color: var(--200);
+              color: var(--INVAC_Neutra_300);
               font-size: .75rem;
               font-weight: var(--semi);
             }
 
             .regiao_nome {
               font-weight: var(--semi);
+              color: var(--INVAC_Preto_texto);
               font-size: 1.125rem;
               letter-spacing: -0.01em;
               margin: .5rem 0 .75rem;
@@ -89,13 +87,14 @@
             .regiao_disp {
               display: flex;
               align-items: center;
+              color: var(--INVAC_Preto_texto);
 
               &::before {
-                content: '';
+                content: url(../public/icons/medical_services.svg);
                 width: 1rem;
                 height: 1rem;
                 margin-right: .625rem;
-                background: var(--300);
+                margin-bottom: 3px;
               }
             }
           }
@@ -104,7 +103,14 @@
             width: 2.5rem;
             height: 2.5rem;
             border-radius: .5rem 0;
-            background: var(--500);
+            background: var(--INVAC_Azul_600);
+
+            &::before {
+              content: url(../public/icons/right_arrow.svg);
+              width: 1rem;
+              height: 1rem;
+              margin: auto;
+            }
           }
         }
       }
@@ -114,7 +120,7 @@
       display: block;
       font-weight: var(--bold);
       background: none;
-      color: var(--400);
+      color: var(--INVAC_Azul_600);
       width: fit-content;
       margin: 2rem auto 0;
     }
@@ -126,12 +132,12 @@
   .dados_container {
     display: flex;
     flex-direction: column;
-    background: var(--500);
+    background: var(--Gradiente_Azul-ltr-Azul);
     padding: 2rem 1.5rem;
     border-radius: .5rem;
 
     * {
-      color: var(--100);
+      color: var(--INVAC_Neutra_fff);
     }
 
     .dados_vacinais__h2 {
@@ -142,35 +148,41 @@
     }
 
     p {
-      color: var(--200);
       margin: .75rem 0 2rem;
     }
 
     .dados_vacinais__btn {
-      background: var(--100);
-      color: var(--600);
+      background: var(--INVAC_Neutra_fff);
+      color: var(--INVAC_Azul_texto);
     }
   }
 }
 
 //secão de duvidas frequentes
 .secao_duvidas {
-  h2 {
-    font-size: 1.5rem;
+  .duvidas_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    span {
-      display: inline-block;
-      text-transform: uppercase;
+    h2 {
+      font-size: 1.5rem;
+  
+      span {
+        display: inline-block;
+        text-transform: uppercase;
+        color: var(--INVAC_Preto_texto);
+      }
     }
-  }
-
-  .secao_duvidas__p {
-    margin: .75rem 0 2rem;
-    text-align: center;
-  }
-
-  .secao_duvidas__btn {
-    background: var(--600);
-    color: var(--100);
+  
+    .secao_duvidas__p {
+      margin: .75rem 0 2rem;
+      text-align: center;
+    }
+  
+    // .secao_duvidas__btn {
+    //   background: var(--600);
+    //   color: var(--100);
+    // }
   }
 }

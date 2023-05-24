@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--600);
+  background: var(--Gradiente_Azul-ltr-Azul);
   position: fixed;
   top: 0;
   width: 100%;
@@ -214,7 +214,7 @@
   &.__open {
     height: 100vh;
     overflow-y: auto;
-    background-color: rgba(25, 27, 32, 0.56);
+    background: rgba(25, 27, 32, 0.56);
 
     &::before {
       left: 0;
@@ -223,9 +223,9 @@
       transition: .15s background-color linear;
     }
 
-    .header_logo { 
+    .header_logo {
       a svg {
-        #nvac path{
+        #nvac path {
           fill: #32363F;
         }
 
@@ -237,17 +237,18 @@
           fill: #2561D3;
         }
       }
+
       .header__button {
         color: var(--600);
-  
+
         div {
           transform: translateX(-50px);
           background: transparent;
-  
+
           &::before {
             transform: rotate(45deg) translate(35px, -35px);
           }
-  
+
           &::after {
             transform: rotate(-45deg) translate(35px, 35px);
           }
@@ -261,7 +262,16 @@
       left: 0;
       visibility: visible;
       opacity: 1;
-      transition: .15s background-color linear;
+      // transition: .15s background ease-in-out;
+
+      &::after {
+        content: '';
+        position: relative;
+        background: red;
+        height: calc(100vh - 4rem);
+        width: 300px;
+        right: 0;
+      }
     }
   }
 }

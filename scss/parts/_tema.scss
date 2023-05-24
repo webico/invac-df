@@ -1,81 +1,90 @@
 .tema {
   //WIREFRAMES
---600: #111111;
---500: #333333;
---400: #4F4F4F;
---300: #828282;
---200: #BDBDBD;
---100: #E0E0E0;
+  --600: #111111;
+  --500: #333333;
+  --400: #4F4F4F;
+  --300: #828282;
+  --200: #BDBDBD;
+  --100: #E0E0E0;
 
-//[UI]
-//INVAC
-// // neutra
---INVAC_Neutra_fff: #fff;
---INVAC_Neutra_100: #F2F8FF;
---INVAC_Neutra_200: #DCE1EB;
---INVAC_Neutra_300: #96A6C7;
---INVAC_Neutra_400: #6F7D9A;
---INVAC_Neutra_500: #4E5F81;
---INVAC_Neutra_600: #354669;
---INVAC_Neutra_700: #1C2840;
---INVAC_Neutra_800: #121929;
+  --INVAC_Preto_texto: #32363F;
+  --INVAC_Cinza_texto: #515661;
+  --INVAC_Azul_escuro: #032860;
 
-// // azul
---INVAC_Azul_100: #F2F8FF;
---INVAC_Azul_200: #E9F3FF;
---INVAC_Azul_300: #AECAFF;
---INVAC_Azul_400: #73A3FF;
---INVAC_Azul_500: #528BF4;
---INVAC_Azul_600: #2561D3;
---INVAC_Azul_700: #0A45B4;
---INVAC_Azul_800: #093893;
+  //[UI]
+  //INVAC
+  // // neutra
+  --INVAC_Neutra_fff: #fff;
+  --INVAC_Neutra_100: #F2F8FF;
+  --INVAC_Neutra_200: #DCE1EB;
+  --INVAC_Neutra_300: #96A6C7;
+  --INVAC_Neutra_400: #6F7D9A;
+  --INVAC_Neutra_500: #4E5F81;
+  --INVAC_Neutra_600: #354669;
+  --INVAC_Neutra_700: #1C2840;
+  --INVAC_Neutra_800: #121929;
 
-// // verde
---INVAC_Verde_100: #EAFAFC;
---INVAC_Verde_200: #DAFBFF;
---INVAC_Verde_300: #BFF7FF;
---INVAC_Verde_400: #8DF8FF;
---INVAC_Verde_500: #56ECF5;
---INVAC_Verde_600: #2DCDE2;
---INVAC_Verde_700: #0CB5CC;
---INVAC_Verde_800: #0091B1;
---INVAC_Verde_900: #01789D;
+  // // azul
+  --INVAC_Azul_100: #F2F8FF;
+  --INVAC_Azul_200: #E9F3FF;
+  --INVAC_Azul_300: #AECAFF;
+  --INVAC_Azul_400: #73A3FF;
+  --INVAC_Azul_500: #528BF4;
+  --INVAC_Azul_600: #2561D3;
+  --INVAC_Azul_700: #0A45B4;
+  --INVAC_Azul_800: #093893;
 
-// // amarelo
---INVAC_Amarelo_100: #FFF8E8;
---INVAC_Amarelo_200: #FFF1D1;
---INVAC_Amarelo_300: #FFE9BA;
---INVAC_Amarelo_400: #FFE2A3;
---INVAC_Amarelo_500: #FFD475;
---INVAC_Amarelo_600: #FFC547;
---INVAC_Amarelo_700: #FFB719;
---INVAC_Amarelo_800: #CC9214;
---INVAC_Amarelo_900: #996E0F;
+  // // verde
+  --INVAC_Verde_100: #EAFAFC;
+  --INVAC_Verde_200: #DAFBFF;
+  --INVAC_Verde_300: #BFF7FF;
+  --INVAC_Verde_400: #8DF8FF;
+  --INVAC_Verde_500: #56ECF5;
+  --INVAC_Verde_600: #2DCDE2;
+  --INVAC_Verde_700: #0CB5CC;
+  --INVAC_Verde_800: #0091B1;
+  --INVAC_Verde_900: #01789D;
 
-// // verde
---INVAC_Verde_100: #EAFAFC;
---INVAC_Verde_200: #DAFBFF;
---INVAC_Verde_300: #BFF7FF;
---INVAC_Verde_400: #8DF8FF;
---INVAC_Verde_500: #56ECF5;
---INVAC_Verde_600: #2DCDE2;
---INVAC_Verde_700: #0CB5CC;
---INVAC_Verde_800: #0091B1;
---INVAC_Verde_900: #01789D;
+  // // amarelo
+  --INVAC_Amarelo_100: #FFF8E8;
+  --INVAC_Amarelo_200: #FFF1D1;
+  --INVAC_Amarelo_300: #FFE9BA;
+  --INVAC_Amarelo_400: #FFE2A3;
+  --INVAC_Amarelo_500: #FFD475;
+  --INVAC_Amarelo_600: #FFC547;
+  --INVAC_Amarelo_700: #FFB719;
+  --INVAC_Amarelo_800: #CC9214;
+  --INVAC_Amarelo_900: #996E0F;
 
-//AUXILIAR
---Auxiliar_Amarelo_100: #FFF1BF;
---Auxiliar_Amarelo_500: #ECBC10;
---Auxiliar_Vermelho_100: #FFC5C8;
---Auxiliar_Vermelho_500: #BC272F;
---Auxiliar_Laranja_100: #FFE3CF;
---Auxiliar_Vermelho_500: #E36C17;
---Auxiliar_Verde_100: #D2FFDF;
---Auxiliar_Verde_500: #0F9335;
+  // // verde
+  --INVAC_Verde_100: #EAFAFC;
+  --INVAC_Verde_200: #DAFBFF;
+  --INVAC_Verde_300: #BFF7FF;
+  --INVAC_Verde_400: #8DF8FF;
+  --INVAC_Verde_500: #56ECF5;
+  --INVAC_Verde_600: #2DCDE2;
+  --INVAC_Verde_700: #0CB5CC;
+  --INVAC_Verde_800: #0091B1;
+  --INVAC_Verde_900: #01789D;
 
-//TIPOGRAFIA
---regular: 400;
---medium: 500;
---semi: 600;
---bold: 700;
+  //AUXILIAR
+  --Auxiliar_Amarelo_100: #FFF1BF;
+  --Auxiliar_Amarelo_500: #ECBC10;
+  --Auxiliar_Vermelho_100: #FFC5C8;
+  --Auxiliar_Vermelho_500: #BC272F;
+  --Auxiliar_Laranja_100: #FFE3CF;
+  --Auxiliar_Vermelho_500: #E36C17;
+  --Auxiliar_Verde_100: #D2FFDF;
+  --Auxiliar_Verde_500: #0F9335;
+
+  //GRADIENTE
+  --Gradiente_Azul-ttb-Azul: linear-gradient(180deg, #3078FF 0%, #2561D3 100.94%);
+  --Gradiente_Azul-ltr-Azul: linear-gradient(90deg, #2B6CE4 0%, #2561D3 100%) --Gradiente_Azul-ttb-Verde: linear-gradient(180deg, #3B76E4 0%, #1D9FD5 83.33%, #0CB5CC 100%);
+  --Gradiente_Azul-ltr-Azul: linear-gradient(90deg, #3B76E4 0%, #1D9FD5 83.33%, #0CB5CC 100%);
+
+  //TIPOGRAFIA
+  --regular: 400;
+  --medium: 500;
+  --semi: 600;
+  --bold: 700;
 }

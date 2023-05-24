@@ -74,9 +74,11 @@ export default function Home() {
 
       <section className={`${styles.secao_duvidas} ${styles.secao_index}`}>
         <div className={`container ${styles.container}`}>
-          <h2>Dúvidas sobre a <span>vacina</span>?</h2>
-          <p className={styles.secao_duvidas__p}>Respondemos frequentes dúvidas que as pessoas possuem para que você se manter informado!</p>
-          <Link href='/faq' className={`btn_principal ${styles.secao_duvidas__btn}`}>Dúvidas frequentes</Link>
+          <div className={styles.duvidas_container}>
+            <h2 className='section__h2'>Dúvidas sobre a <span>vacina</span>?</h2>
+            <p className={styles.secao_duvidas__p}>Respondemos frequentes dúvidas que as pessoas possuem para que você se manter informado!</p>
+            <Link href='/faq' className={`btn_principal ${styles.secao_duvidas__btn}`}>Dúvidas frequentes</Link>
+          </div>
         </div>
       </section>
 
