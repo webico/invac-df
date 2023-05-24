@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import styles from '@/css/Agendamento.module.css';
 import forms from '@/css/Forms.module.css';
 import { useState } from 'react';
 import VacinaForms from '@/components/formularios/AgendaVacina';
@@ -19,7 +18,8 @@ const Agendamento = () => {
 
       <main className='main'>
         <div className="container">
-          <h1 className={`main__titulo_secundario ${styles.main__titulo_agenda}`}>Não deixe para depois e cuide da sua saúde. Agende suas vacinas e testes.</h1>
+          <h1 className='main__titulo'>Não deixe para depois!</h1>
+          <h2 className='main__titulo_secundario'>Cuide da sua saúde agendando suas vacinas e testes de COVID.</h2>
         </div>
       </main>
 

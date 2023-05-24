@@ -113,7 +113,8 @@ export class FormPersonalDetails extends Component {
               <div className={styles.overlay_popup}>
                 <div className={styles.container}>
                   <div className={styles.overlay_div}>
-                    <h2>Você selecionou 1 a 2 dias para dias com sintomas.</h2>
+                    <span>Você selecionou</span>
+                    <h2> 1 a 2 dias de sintomas.</h2>
                     <p>Para o exame detectar o vírus com mais certeza, é melhor fazê-lo entre o 3º e 4º dia de sintomas.</p>
                     <p>Por isso, escolha uma data para o agendamento do exame a partir do 3º dia de sintomas.</p>
 

@@ -10,9 +10,7 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  // line-height: 1.5;
   font-family: 'Inter', sans-serif;
-  // color: var(--600);
 }
 
 img {
@@ -103,15 +101,19 @@ button {
   background: var(--Gradiente_Azul-ltr-Azul);
   margin-bottom: 4rem;
 
-  .main__titulo, .main__titulo_secundario {
+  .main__titulo {
     font-weight: var(--bold);
-    font-size: 1.75rem;
-    line-height: 1.4;
+    font-size: 1.5rem;
+    line-height: 1.2;
     color: var(--INVAC_Neutra_fff);
   }
 
   .main__titulo_secundario {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: var(--medium);
+    color: var(--INVAC_Neutra_fff);
+    margin-top: 1rem;
   }
 
   .index_main__btn {
@@ -278,6 +280,7 @@ footer {
       border-radius: .5rem 0 0 0;
       color: var(--INVAC_Neutra_400);
       background: var(--INVAC_Neutra_fff);
+      white-space: nowrap;
 
       &.ativo {
         color: var(--INVAC_Neutra_fff);

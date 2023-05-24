@@ -1,10 +1,10 @@
 .aviso {
-  background: var(--100);
+  background: var(--INVAC_Amarelo_300);
   padding: .75rem;
   border-radius: .5rem;
-  border: 1px solid var(--200);
   display: flex;
   margin-bottom: 2rem;
+  color: #723E01;
 
   &::before {
     content: url(../public/icons/aviso.svg);
@@ -26,13 +26,14 @@
 
   &:checked {
     border: 3px solid #fff;
-    box-shadow: 0 0 0 1px var(--300);
-    background: var(--500);
+    box-shadow: 0 0 0 1px var(--INVAC_Neutra_400);
+    background: var(--INVAC_Azul_600);
   }
 }
 
 .form_caixa {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+  background: var(--INVAC_Neutra_fff);
   padding: 2.5rem 1rem;
   margin-bottom: 6rem;
   border-radius: 0 0 .5rem .5rem;
@@ -46,7 +47,7 @@
   .section__h2 {
     font-size: 1rem;
     font-weight: var(--medium);
-    color: var(--300);
+    color: var(--INVAC_Cinza_info);
     margin-bottom: 1.5rem;
   }
 
@@ -59,7 +60,7 @@
   .label_input {
     font-size: 1rem;
     font-weight: var(--semi);
-    color: var(--500);
+    color: var(--INVAC_Preto_texto);
     display: flex;
     flex-direction: column;
 
@@ -74,15 +75,19 @@
     input,
     select {
       padding: 1rem .75rem;
-      border: 1px solid var(--200);
+      border: 1px solid var(--INVAC_Neutra_300);
       border-radius: .25rem;
       font-size: 1rem;
       line-height: 1;
+
+      &::placeholder {
+        color: var(--INVAC_Neutra_300);
+      }
     }
 
     //estilização dos inputs de select
     .select {
-      background: var(--100);
+      background: var(--INVAC_Neutra_200);
       border-radius: .25rem;
       position: relative;
 
@@ -220,18 +225,26 @@
 
   .progresso_btn {
     font-weight: var(--bold);
-    background: var(--600);
-    color: var(--100);
     margin-left: auto;
+    display: flex;
+    align-items: center;
 
-    &.voltar {
-      background: var(--200);
-      color: var(--600);
-      margin-left: 0;
+    svg {
+      margin-left: .5rem;
+      width: .5rem;
+      height: .875rem;
     }
 
-    &[disabled] {
-      opacity: .6;
+    &.voltar {
+      background: none;
+      color: var(--INVAC_Azul_600);
+      margin-left: 0;
+
+      svg {
+        transform: rotate(180deg);
+        margin-right: .5rem;
+        margin-left: 0;
+      }
     }
   }
 }
@@ -240,7 +253,7 @@
 .section_confirm_h2 {
   font-size: 1.25rem;
   font-weight: var(--medium);
-  color: var(--300);
+  color: var(--INVAC_Cinza_texto);
   margin-bottom: 2rem;
 }
 
@@ -250,14 +263,14 @@
   }
 
   h3 {
-    color: var(--300);
+    color: var(--INVAC_Cinza_texto);
     margin-bottom: 1rem;
     font-weight: var(--medium);
   }
 
   div {
     padding: 1.2rem;
-    border: 1px solid var(--100);
+    border: 1px solid var(--INVAC_Neutra_300);
     border-radius: .5rem;
 
     &:not(:last-child) {
@@ -265,9 +278,13 @@
     }
 
     p {
+      color: var(--INVAC_Cinza_info);
+
       span {
         display: inline-block;
         font-weight: var(--semi);
+        color: var(--INVAC_Preto_texto);
+
       }
 
       &:not(:last-child) {
@@ -289,13 +306,14 @@
 
   label {
     line-height: 1.1;
-    color: var(--300);
+    color: var(--INVAC_Cinza_info);
   }
 
   a {
     display: inline-block;
     text-decoration: underline;
     text-underline-offset: 3px;
+    color: var(--INVAC_Cinza_info);
   }
 }
 
@@ -308,41 +326,38 @@
       line-height: 1;
       font-size: 1.3rem;
       margin-bottom: 2.5rem;
+      color: var(--INVAC_Preto_texto);
     }
 
     p {
       max-width: 41.5rem;
-      color: var(--500);
+      color: var(--INVAC_Cinza_texto);
     }
   }
 
   .app_info_sec {
     margin-top: 3rem;
     padding: 2.5rem;
-    background: var(--100);
+    background: var(--Gradiente_Azul-ttb-Azul);
     border-radius: .5rem;
 
     h3 {
       line-height: 1.6;
       font-size: 1.2rem;
       margin-bottom: 2rem;
+      color: var(--INVAC_Neutra_fff);
     }
 
     .btn_app {
       width: 100%;
-      background: var(--600);
-      color: var(--100);
-      display: flex;
-      align-items: center;
+      background: var(--INVAC_Neutra_fff);
+      color: var(--INVAC_Azul_600);
 
       //temporario
-      &::before {
-        content: "";
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: var(--100);
-        margin-right: 0.5rem;
+      &::after {
+        content: url(../public/icons/download.svg);
+        margin-left: 1.125rem;
+        margin-top: 4px;
       }
     }
   }
@@ -368,7 +383,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(51, 51, 51, 0.24);
+  background: rgba(51, 51, 51, 0.5);
   width: 100vw;
   height: 100vh;
   z-index: 6;
@@ -390,15 +405,24 @@
     max-width: 36rem;
     padding: 3rem;
 
+    span {
+      display: block;
+      font-size: .75rem;
+      color: var(--INVAC_Preto_texto);
+      text-transform: uppercase;
+      margin-bottom: .25rem;
+    }
+
     h2 {
       line-height: 1.4;
       font-weight: var(--bold);
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
+      font-size: 1.3rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
     }
 
     p {
-      color: var(--400);
+      color: var(--INVAC_Cinza_info);
 
       &:not(:last-child) {
         margin-bottom: 1rem;
@@ -406,9 +430,9 @@
     }
 
     button {
+      margin-top: 3rem;
       padding: .7rem 3rem;
-      background: var(--400);
-      color: var(--100);
+      width: 100%;
       font-weight: var(--bold);
     }
   }
