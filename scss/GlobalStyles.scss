@@ -66,14 +66,6 @@ button {
     background: var(--INVAC_Azul_700);
     transition: .3s ease-in-out;
   }
-
-  &::after {
-    content: '';
-    width: 1rem;
-    height: 1.2rem;
-
-    margin-left: 1.125rem;
-  }
 }
 
 .btn_secundario {
@@ -170,7 +162,7 @@ button {
   .menu_info__item {
     line-height: 1.2;
     font-weight: var(--medium);
-    color: var(--navbar_texto);
+    color: var(--INVAC_Neutra_400);
     letter-spacing: -0.25px;
     text-decoration: underline;
     text-underline-offset: .275rem;
