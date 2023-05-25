@@ -20,7 +20,7 @@ export class Card extends Component {
   }
 
   render() {
-    const { styles, step_titulo, step_texto, step } = this.props;
+    const { styles, step_image, step_titulo, step_texto, step } = this.props;
 
     let progresso = [
       <li key={Math.random(1, 10)}></li>,
@@ -41,11 +41,17 @@ export class Card extends Component {
       this.setState({ fechado: true });
     };
 
+    if(!fechado) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+
     return (
       <div className={`${styles.overlay} ${fechado ? styles.fechado : ''}`}>
 
         <div className={styles.visita_popup}>
-          <img src="" alt="" />
+          <img src={step_image} alt="" />
           <div className={styles.visita_info}>
             <div>
               <p className={styles.step_titulo}>{step_titulo}</p>
