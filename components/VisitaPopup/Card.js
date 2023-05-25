@@ -20,7 +20,7 @@ export class Card extends Component {
   }
 
   render() {
-    const { styles, step_image, step_titulo, step_texto, step } = this.props;
+    const { styles, step_titulo, step_texto, step } = this.props;
 
     let progresso = [
       <li key={Math.random(1, 10)}></li>,
@@ -51,7 +51,7 @@ export class Card extends Component {
       <div className={`${styles.overlay} ${fechado ? styles.fechado : ''}`}>
 
         <div className={styles.visita_popup}>
-          <img src={step_image} alt="" />
+          <img src={`/img/visita_step${step}.png`} alt="" />
           <div className={styles.visita_info}>
             <div>
               <p className={styles.step_titulo}>{step_titulo}</p>
