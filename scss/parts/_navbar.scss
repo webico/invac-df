@@ -5,6 +5,10 @@
   width: 100%;
   z-index: 5;
 
+  &.gradiente_verde {
+    background: var(--Gradiente_Azul-ltr-Verde);
+  }
+
   &::before {
     content: '';
     display: block;

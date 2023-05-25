@@ -12,7 +12,8 @@
       padding-bottom: 1.5rem;
       border-bottom: 4px solid var(--INVAC_Azul_500);
 
-      h2, p {
+      h2,
+      p {
         text-align: center;
       }
 
@@ -60,6 +61,23 @@
             text-decoration: underline;
           }
         }
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .banner_covid {
+        border-bottom: none;
+        padding-bottom: none;
+        border-right: 4px solid var(--INVAC_Azul_500);
+        padding-right: 1.5rem;
+      }
+
+      .banner_info {
+        margin-top: 0;
+        max-width: 22rem;
       }
     }
   }

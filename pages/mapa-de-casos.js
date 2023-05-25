@@ -39,7 +39,7 @@ const MapaDeCasos = () => {
       </section >
 
       <BannerInformativo titulo='Mapa de Casos'>
-        <li><a href="https://www.saude.df.gov.br/boletinsinformativos-divep-cieves" target="_blank" rel="noopener noreferrer">Voletins Covid-19 - Divep/SVS/SES-DF</a></li>
+        <li><a href="https://www.saude.df.gov.br/boletinsinformativos-divep-cieves" target="_blank" rel="noopener noreferrer">Boletins Covid-19 - Divep/SVS/SES-DF</a></li>
       </BannerInformativo>
 
       <Footer />

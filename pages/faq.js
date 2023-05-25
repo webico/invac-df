@@ -2,8 +2,16 @@ import Head from 'next/head';
 import styles from '@/css/Faq.module.css';
 import Footer from '@/components/Footer';
 import FAQs from '@/components/FAQs';
+import BannerInformativo from '@/components/BannerInformativo';
+import { useEffect } from 'react';
 
 const Faq = () => {
+
+  //gambiarra porque precisava mudar a cor de fundo do header, mas não consigo acessar ele deste arquivo (porque ele tá no componente Layout)
+  useEffect(() => {
+    document.querySelector('header').classList.add('gradiente_verde');
+  }, []);
+
   return (
     <>
       <Head>
@@ -14,7 +22,7 @@ const Faq = () => {
       </Head>
 
       {/* SEÇÃO INICIAL */}
-      <main className='main'>
+      <main className={`main ${styles.main}`}>
         <div className="container">
           <div className='main_call'>
             <h1 className='main__titulo_secundario'>Tire suas dúvidas em relação às vacinas e aos testes de Covid-19.</h1>
@@ -23,6 +31,11 @@ const Faq = () => {
       </main>
 
       <FAQs styles={styles} />
+
+      <BannerInformativo titulo='Mapa de Casos'>
+        <li><a href="https://www.saude.df.gov.br/faq-covid-19" target="_blank" rel="noopener noreferrer">Dúvidas frequentes sobre Covid-19 - SES-DF</a></li>
+        <li><a href="https://portal.fiocruz.br/coronavirus/perguntas-e-respostas" target="_blank" rel="noopener noreferrer">Perguntas e respostas sobre Covid-19 - Fiocruz</a></li>
+      </BannerInformativo>
 
       <Footer />
     </>
