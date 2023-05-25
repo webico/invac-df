@@ -11,7 +11,7 @@ const useFetch = (url) => {
     fetch(url, { signal: abortCont.signal })
       .then(r => {
         if (!r.ok) {
-          throw Error('Could not fetch the data for that resource.');
+          throw Error('Houve um problema na requisição deste recurso. Tente novamente mais tarde.');
         } else {
           return r.json();
         }
@@ -25,7 +25,7 @@ const useFetch = (url) => {
         if (err.name == 'AbortError') {
           console.log('fetch aborted');
         } else {
-          setError(err.message);
+          setError('Houve um problema na requisição deste recurso. Cheque por problemas de conexão.');
           setisPending(false);
         }
       });
