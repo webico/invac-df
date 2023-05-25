@@ -20,7 +20,7 @@ const DadosVacinais = () => {
       </Head>
 
       {/* SEÇÃO INICIAL */}
-      <main className='main'>
+      <main className={`main gradiente_verde ${styles.main}`}>
         <div className="container">
           <div className='main_call'>
             <h1 className='main__titulo_secundario'>Acompanhe os dados parciais da Campanha Nacional de Vacinação contra a COVID-19 no Distrito Federal!</h1>

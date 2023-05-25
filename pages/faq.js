@@ -15,7 +15,7 @@ const Faq = () => {
       </Head>
 
       {/* SEÇÃO INICIAL */}
-      <main className={`main ${styles.main}`}>
+      <main className={`main gradiente_verde ${styles.main}`}>
         <div className="container">
           <div className='main_call'>
             <h1 className='main__titulo_secundario'>Tire suas dúvidas em relação às vacinas e aos testes de Covid-19.</h1>

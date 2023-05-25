@@ -55,47 +55,49 @@ const FaixaEtaria = ({ data, styles }) => {
         <h2 className='section__h2'>Cobertura vacinal por faixa etária </h2>
         <h3>{faixa.faixa}</h3>
 
-        <Bar data={dataBar} options={options}></Bar>
+        <div className={styles.faixa_etaria__section}>
+          <Bar data={dataBar} options={options}></Bar>
 
-        <div className='menu_filtro'>
-          <div className='filtro_actions'>
-            <div className='filtro_select'>
-              <select name="" id="" defaultValue='6 meses a 2 anos' onChange={(e) => handleSetFaixa(e)}>
-                {
-                  data.faixas.map(item => (
-                    <option key={item.faixa} value={item.faixa}>{item.faixa}</option>
-                  ))
-                }
-              </select>
+          <div className={`menu_filtro ${styles.menu_filtro}`}>
+            <div className='filtro_actions'>
+              <div className='filtro_select'>
+                <select name="" id="" defaultValue='6 meses a 2 anos' onChange={(e) => handleSetFaixa(e)}>
+                  {
+                    data.faixas.map(item => (
+                      <option key={item.faixa} value={item.faixa}>{item.faixa}</option>
+                    ))
+                  }
+                </select>
+              </div>
+
+              <div className='filtro_select'>
+                <select name="" id="" defaultValue='1ª Dose' onChange={(e) => handleSetDado(e)}>
+                  {
+                    faixa.doses.map(item => (
+                      <option key={item.dose} value={item.dose}>{item.dose}</option>
+                    ))
+                  }
+                </select>
+              </div>
             </div>
 
-            <div className='filtro_select'>
-              <select name="" id="" defaultValue='1ª Dose' onChange={(e) => handleSetDado(e)}>
-                {
-                  faixa.doses.map(item => (
-                    <option key={item.dose} value={item.dose}>{item.dose}</option>
-                  ))
-                }
-              </select>
-            </div>
+            <ul className="filtro_info">
+              <li>
+                <p>{addComma(dose.quantidade)}</p>
+                <span>Total de vacinados</span>
+              </li>
+
+              <li>
+                <p>{addComma(faixa.populacao_faixa)}</p>
+                <span>População (Faixa etária)</span>
+              </li>
+
+              <li>
+                <p>{addComma(faixa.vacinacao_semanal)}</p>
+                <span>Vacinação por semana</span>
+              </li>
+            </ul>
           </div>
-
-          <ul className="filtro_info">
-            <li>
-              <p>{addComma(dose.quantidade)}</p>
-              <span>Total de vacinados</span>
-            </li>
-
-            <li>
-              <p>{addComma(faixa.populacao_faixa)}</p>
-              <span>População (Faixa etária)</span>
-            </li>
-
-            <li>
-              <p>{addComma(faixa.vacinacao_semanal)}</p>
-              <span>Vacinação por semana</span>
-            </li>
-          </ul>
         </div>
       </div>
     </section>

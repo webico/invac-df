@@ -17,7 +17,7 @@ const MapaDeCasos = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={`main ${styles.main}`}>
+      <main className={`main gradiente_verde ${styles.main}`}>
         <div className="container">
           <div className='main_call'>
             <h1 className='main__titulo_secundario'>Veja o número de casos confirmados de Covid-19 e mortes causadas pelo vírus no Distrito Federal.</h1>
