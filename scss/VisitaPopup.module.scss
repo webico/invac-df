@@ -50,8 +50,12 @@
       justify-content: space-between;
       z-index: 9;
 
-      @media only screen and (min-height: 700px) {
-        padding-bottom: 5.5rem;
+      @media only screen and (min-height: 799px) {
+        justify-content: flex-start;
+        
+        .progresso {
+          margin-top: 7rem;
+        }
       }
 
         .step_titulo {
