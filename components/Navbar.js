@@ -6,15 +6,25 @@ import { useRouter } from 'next/router';
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
+  const router = useRouter();
+
   useEffect(() => {
     if (menu) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'visible';
     }
-  }, [menu]);
 
-  const router = useRouter();
+    //gambiarra porque precisava mudar a cor de fundo do header, mas não consigo acessar ele deste arquivo (porque ele tá no componente Layout)
+    if (router.pathname == '/faq') {
+      console.log('é faq');
+      document.querySelector('header').classList.add('gradiente_verde');
+    } else {
+      console.log('n é faq');
+      document.querySelector('header').classList.remove('gradiente_verde');
+
+    }
+  }, [menu, router.pathname]);
 
   return (
     <header className={`header ${menu ? '__open' : ''}`}>

@@ -6,12 +6,6 @@ import BannerInformativo from '@/components/BannerInformativo';
 import { useEffect } from 'react';
 
 const Faq = () => {
-
-  //gambiarra porque precisava mudar a cor de fundo do header, mas não consigo acessar ele deste arquivo (porque ele tá no componente Layout)
-  useEffect(() => {
-    document.querySelector('header').classList.add('gradiente_verde');
-  }, []);
-
   return (
     <>
       <Head>
