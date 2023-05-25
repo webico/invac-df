@@ -25,7 +25,7 @@ const Agendamento = () => {
 
       <section>
         <div className="container">
-          <ul className='tab_menu'>
+          <ul className='tab_menu agendamento'>
             <li><button className={`tab_menu__btn ${tab == 'vacina' ? 'ativo' : ''}`} onClick={() => setTab('vacina')}>Agendar Vacina</button></li>
             <li><button className={`tab_menu__btn ${tab == 'teste' ? 'ativo' : ''}`} onClick={() => setTab('teste')}>Agendar Teste</button></li>
           </ul>

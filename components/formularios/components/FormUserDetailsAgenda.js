@@ -142,8 +142,8 @@ export class FormUserDetails extends Component {
                     <div className={styles.label_input}>
                       <label>Teste *</label>
 
-                      <div className={styles.select}>
-                        <select name="" id="" required onChange={handleChange('teste')} >
+                      <div className={styles.select} style={{width: '16.25rem'}}>
+                        <select name="" id="" required onChange={handleChange('teste')} style={{width: '16.25rem'}}>
                           <option disabled {...values.teste == '' ? { selected: true } : ''}>Selecionar teste</option>
                           <option value="RT-PCR" {...values.teste == 'RT-PCR' ? { selected: true } : ''}>RT-PCR</option>
                           <option value="Teste Rápido Antígeno" {...values.teste == 'Teste Rápido Antígeno' ? { selected: true } : ''}>Teste Rápido Antígeno</option>

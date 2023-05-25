@@ -45,61 +45,63 @@ export class FormPersonalDetails extends Component {
             <div className={styles.label_input}>
               <label>Selecione todos os seus sintomas *</label>
 
-              <div className={styles.checkbox}>
-                <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Tosse seca e persistente" id='tosse'
-                  onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Tosse seca e persistente') ? { checked: true } : ''}
-                />
-                <label htmlFor="tosse">Tosse seca e persistente</label>
-              </div>
+              <ul className={styles.checkboxlist}>
+                <li className={styles.checkbox}>
+                  <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Tosse seca e persistente" id='tosse'
+                    onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Tosse seca e persistente') ? { checked: true } : ''}
+                  />
+                  <label htmlFor="tosse">Tosse seca e persistente</label>
+                </li>
 
-              <div className={styles.checkbox}>
-                <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Cansaço excessivo" id='cansaco' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Cansaço excessivo') ? { checked: true } : ''} />
-                <label htmlFor="cansaco">Cansaço excessivo</label>
-              </div>
+                <li className={styles.checkbox}>
+                  <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Cansaço excessivo" id='cansaco' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Cansaço excessivo') ? { checked: true } : ''} />
+                  <label htmlFor="cansaco">Cansaço excessivo</label>
+                </li>
 
-              <div className={styles.checkbox}>
-                <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Dor de cabeça" id='dor' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Dor de cabeça') ? { checked: true } : ''} />
-                <label htmlFor="dor">Dor de cabeça</label>
-              </div>
+                <li className={styles.checkbox}>
+                  <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Dor de cabeça" id='dor' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Dor de cabeça') ? { checked: true } : ''} />
+                  <label htmlFor="dor">Dor de cabeça</label>
+                </li>
 
-              <div className={styles.checkbox}>
-                <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Febre acima de 38°C" id='febre' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Febre acima de 38°C') ? { checked: true } : ''} />
-                <label htmlFor="febre">Febre acima de 38°C</label>
-              </div>
+                <li className={styles.checkbox}>
+                  <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Febre acima de 38°C" id='febre' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Febre acima de 38°C') ? { checked: true } : ''} />
+                  <label htmlFor="febre">Febre acima de 38°C</label>
+                </li>
 
-              <div className={styles.checkbox}>
-                <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Dor muscular generalizada" id='muscular' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Dor muscular generalizada') ? { checked: true } : ''} />
-                <label htmlFor="muscular">Dor muscular generalizada</label>
-              </div>
+                <li className={styles.checkbox}>
+                  <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Dor muscular generalizada" id='muscular' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Dor muscular generalizada') ? { checked: true } : ''} />
+                  <label htmlFor="muscular">Dor muscular generalizada</label>
+                </li>
 
-              <div className={styles.checkbox}>
-                <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Garganta inflamada" id='garganta' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Garganta inflamada') ? { checked: true } : ''} />
-                <label htmlFor="garganta">Garganta inflamada</label>
-              </div>
+                <li className={styles.checkbox}>
+                  <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Garganta inflamada" id='garganta' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Garganta inflamada') ? { checked: true } : ''} />
+                  <label htmlFor="garganta">Garganta inflamada</label>
+                </li>
 
-              <div className={styles.checkbox}>
-                <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Coriza ou nariz entupido" id='coriza' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Coriza ou nariz entupido') ? { checked: true } : ''} />
-                <label htmlFor="coriza">Coriza ou nariz entupido</label>
-              </div>
+                <li className={styles.checkbox}>
+                  <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Coriza ou nariz entupido" id='coriza' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Coriza ou nariz entupido') ? { checked: true } : ''} />
+                  <label htmlFor="coriza">Coriza ou nariz entupido</label>
+                </li>
 
-              <div className={styles.checkbox}>
-                <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Diarreia" id='diarreia' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Diarreia') ? { checked: true } : ''} />
-                <label htmlFor="diarreia">Diarreia</label>
-              </div>
+                <li className={styles.checkbox}>
+                  <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Diarreia" id='diarreia' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Diarreia') ? { checked: true } : ''} />
+                  <label htmlFor="diarreia">Diarreia</label>
+                </li>
 
-              <div className={styles.checkbox}>
-                <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Perda de olfato e paladar" id='perda' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Perda de olfato e paladar') ? { checked: true } : ''} />
-                <label htmlFor="perda">Perda de olfato e paladar</label>
-              </div>
+                <li className={styles.checkbox}>
+                  <input type="checkbox" className={styles.radio_input} name="sintomas[]" multiple value="Perda de olfato e paladar" id='perda' onChange={(e) => handleCheck(e)} {...values.sintomas.includes('Perda de olfato e paladar') ? { checked: true } : ''} />
+                  <label htmlFor="perda">Perda de olfato e paladar</label>
+                </li>
+              </ul>
             </div>
 
             <div className={styles.label_input}>
               <label htmlFor='sintomatempo'>Por quanto tempo você tem sentido esses sintomas? *</label>
 
-              <div className={styles.select}>
+              <div className={styles.select} style={{ width: '16.25rem' }}>
                 <select name="" id="sintomatempo" required
                   onInput={handleChange('tempo')}
-                  onChange={(e) => showAviso(e)}>
+                  onChange={(e) => showAviso(e)} style={{ width: '16.25rem' }}>
                   <option value="Selecionar dose" disabled {...values.tempo == '' ? { selected: true } : ''}>Selecionar tempo</option>
                   <option value="1 a 2 dias">1 a 2 dias</option>
                   <option value="3 a 5 dias">3 a 5 dias</option>
@@ -145,8 +147,8 @@ export class FormPersonalDetails extends Component {
               <div className={styles.label_input}>
                 <label htmlFor='infectadotempo'>Quantos dias desde que teve contato com alguém infectado? *</label>
 
-                <div className={styles.select}>
-                  <select name="" id="infectadotempo" required onClick={handleChange('infectado')}>
+                <div className={styles.select} style={{ width: '16.25rem' }}>
+                  <select name="" id="infectadotempo" required onClick={handleChange('infectado')} style={{ width: '16.25rem' }}>
                     <option disabled {...values.tipoVacina == '' ? { selected: true } : ''}>Selecionar tempo</option>
 
                     <option value="0102" {...values.infectado == '0102' ? { selected: true } : ''}>1 a 2 dias</option>

@@ -80,7 +80,7 @@ export class FormLocalDetails extends Component {
 
               {
                 data &&
-                <div className={styles.select}>
+                <div className={`${styles.select} ${styles.select_regiao}`}>
                   <select name="" id="regiao" required
                     onChange={handleChange('regiao')}
                     onInput={e => handleUBS(e)}

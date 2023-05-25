@@ -37,11 +37,21 @@
   padding: 2.5rem 1rem;
   margin-bottom: 6rem;
   border-radius: 0 0 .5rem .5rem;
+
+  @media only screen and (min-width: 768px) {
+    padding: 3.5rem;
+  }
 }
 
 .form_section {
   &:not(:last-child) {
     margin-bottom: 2rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
   }
 
   .section__h2 {
@@ -54,6 +64,24 @@
   .form_linha {
     &:not(:last-child) {
       margin-bottom: 1rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      .label_input {
+        width: 45%;
+
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
@@ -68,8 +96,18 @@
       margin-bottom: 1.3rem;
     }
 
+    @media only screen and (min-width: 768px) {
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+
     label {
       margin-bottom: .5rem;
+
+      @media only screen and (min-width: 768px) {
+        margin-bottom: 1rem;
+      }
     }
 
     input,
@@ -87,7 +125,8 @@
 
     //estilização dos inputs de select
     .select {
-      background: var(--INVAC_Neutra_200);
+      border: 1px solid var(--INVAC_Neutra_300);
+      background: var(--INVAC_Neutra_fff);
       border-radius: .25rem;
       position: relative;
 
@@ -106,9 +145,38 @@
         border-radius: 0;
         width: 100%;
       }
+
+      @media only screen and (min-width: 768px) {
+        &.select_regiao {
+
+          &,
+          select {
+            width: 26rem !important;
+          }
+        }
+      }
+
     }
 
     //estilização das checkboxes
+
+    .checkboxlist {
+      @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        // li:nth-child(2), li:nth-child(5), li:nth-child(8) {
+        //   background: red;
+        //   margin: 0 auto;
+        // }
+
+        li {
+          width: 15rem;
+        }
+      }
+    }   
+
     .checkbox {
       display: flex;
       align-items: center;
@@ -136,8 +204,9 @@
     #dia_agendamento {
       width: 100%;
     }
-  }
 
+
+  }
 
   //estilização dos inputs do tipo radio e labels
   label[id="radio_select"] {
@@ -330,7 +399,7 @@
       line-height: 1;
       font-size: 1.3rem;
       margin-bottom: 2.5rem;
-      color: var(--INVAC_Preto_texto);
+      color: var(--INVAC_Azul_600);
     }
 
     p {
