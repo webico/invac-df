@@ -121,7 +121,7 @@ export class FormLocalDetails extends Component {
               <div className={styles.label_input}>
                 <label htmlFor="dia_agendamento">Dia de agendamento *</label>
 
-                <input type="date" name='dia_agendamento' id="dia_agendamento" value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')} placeholder='dd/mm/aaaa' />
+                <input type="date" name='dia_agendamento' id="dia_agendamento" value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')}/>
               </div>
 
               <div className={styles.label_input}>
