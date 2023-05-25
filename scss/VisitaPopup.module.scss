@@ -1,0 +1,99 @@
+.overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 8;
+
+  .visita_popup {
+    height: 100vh;
+    width: 100vw;
+    background: var(--INVAC_Neutra_fff);
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 40%;
+      background: var(--INVAC_Neutra_700);
+    }
+
+    .visita_info {
+      height: 60%;
+      padding: 2.5rem 1.5rem 4.5rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+        .step_titulo {
+          color: var(--INVAC_Preto_texto);
+          font-weight: var(--bold);
+          font-size: 1.25rem;
+        }
+  
+        .step_texto {
+          color: var(--INVAC_Cinza_texto);
+          margin-top: 1.25rem;
+        }
+
+      .progresso {
+        width: 100%;
+
+        ul {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 2rem;
+
+          li {
+            width: .875rem;
+            height: .875rem;
+            border-radius: 50%;
+            background: var(--INVAC_Azul_600);
+
+            &.unfinished {
+              background: var(--INVAC_Neutra_300);
+            }
+
+            &:not(:last-child) {
+              margin-right: .875rem;
+            }
+          }
+        }
+
+        .proximo {
+          width: 100%;
+        }
+      }
+
+      .fechar {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+
+        span {
+          position: absolute;
+          left: -9999999px;
+        }
+
+        div {
+          &, &::after {
+            width: 1.7rem;
+            height: .2rem;
+            background: var(--INVAC_Neutra_fff);
+            border-radius: .25rem;
+          }
+          
+          transform: rotate(-45deg);
+
+          &::after {
+            display: block;
+            content: '';
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+}

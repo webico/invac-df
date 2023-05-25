@@ -4,6 +4,7 @@ import styles from '@/css/Index.module.css';
 import DisponiveisLista from '@/components/Index/DisponiveisLista';
 import useFetch from '@/public/js/useFetch';
 import Footer from '@/components/Footer';
+import VisitaPopup from '@/components/VisitaPopup/VisitaPopup';
 
 export default function Home() {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas');
@@ -16,6 +17,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {/* POPUP DE PRIMEIRA VISITA */}
+      <VisitaPopup />
 
       {/* SEÇÃO INICIAL */}
       <main className='main'>
