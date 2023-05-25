@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @import "parts/tema";
 
@@ -92,12 +92,18 @@ button {
 
 .container {
   padding: 0 1.375rem;
-}
 
+  @media only screen and (min-width: 768px) {
+    padding: 0;
+    max-width: 43rem;
+    margin: 0 auto;
+  }
+}
 
 //MAIN SECTION
 .main {
   padding: 2.5rem 0;
+  background: var(--INVAC_Azul_600);
   background: var(--Gradiente_Azul-ltr-Azul);
   margin-bottom: 4rem;
 
@@ -106,6 +112,7 @@ button {
     font-size: 1.5rem;
     line-height: 1.2;
     color: var(--INVAC_Neutra_fff);
+    max-width: 20.7rem;
   }
 
   .main__titulo_secundario {
@@ -132,6 +139,11 @@ button {
       margin-right: .75rem;
     }
   }
+
+  // @media only screen and (min-width: 530px) {
+  //   .main__titulo {
+  //   }
+  // }
 }
 
 .page {
@@ -266,7 +278,10 @@ footer {
 
   li {
     width: 100%;
-    max-width: 11.25rem;
+    
+    @media only screen and (min-width: 500px) {
+      max-width: 6.8rem;
+    }
 
     .tab_menu__btn {
       background: none;

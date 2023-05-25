@@ -29,7 +29,7 @@ export default function Home() {
       {popup && <VisitaPopup />}
 
       {/* SEÇÃO INICIAL */}
-      <main className='main'>
+      <main className={`main ${styles.main}`}>
         <div className="container">
           <h1 className='main__titulo'>A vacinação é uma das formas mais eficazes de prevenir e proteger a saúde!</h1>
 
@@ -44,7 +44,7 @@ export default function Home() {
 
 
       {/* SEÇÃO DE CONSULTA */}
-      <section className={styles.secao_index}>
+      <section className={`${styles.secao_index} ${styles.consulta}`}>
         <div className={`container ${styles.container}`}>
           <img src="/img/consulta_img.png" alt="" />
 
@@ -58,7 +58,7 @@ export default function Home() {
 
 
       {/* MAPA DE CASOS */}
-      <section className={styles.secao_index}>
+      <section className={`${styles.secao_index} ${styles.mapa_casos}`}>
         <div className={`container ${styles.container}`}>
           <img src="/img/mapa_casos_img.png" alt="" />
 
@@ -87,8 +87,10 @@ export default function Home() {
         <div className={`container ${styles.container}`}>
           <div className={styles.duvidas_container}>
             <h2 className='section__h2'>Dúvidas sobre a <span>vacina</span>?</h2>
-            <p className={styles.secao_duvidas__p}>Respondemos frequentes dúvidas que as pessoas possuem para que você se manter informado!</p>
-            <Link href='/faq' className={`btn_principal ${styles.secao_duvidas__btn}`}>Dúvidas frequentes</Link>
+            <div className={styles.duvidas_cta}>
+              <p className={styles.secao_duvidas__p}>Respondemos frequentes dúvidas que as pessoas possuem para que você se manter informado!</p>
+              <Link href='/faq' className={`btn_principal ${styles.secao_duvidas__btn}`}>Dúvidas frequentes</Link>
+            </div>
           </div>
         </div>
       </section>
