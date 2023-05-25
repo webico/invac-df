@@ -24,7 +24,7 @@ const MapaCasos = ({ data, styles }) => {
 
   return (
     <>
-      <div className='menu_filtro'>
+      <div className={`menu_filtro ${styles.menu_filtro}`}>
         <div className='filtro_actions'>
           <div className='filtro_select'>
             <select name="" id="" defaultValue='Casos'

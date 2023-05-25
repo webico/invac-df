@@ -17,7 +17,7 @@ const MapaDeCasos = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='main'>
+      <main className={`main ${styles.main}`}>
         <div className="container">
           <div className='main_call'>
             <h1 className='main__titulo_secundario'>Veja o número de casos confirmados de Covid-19 e mortes causadas pelo vírus no Distrito Federal.</h1>
@@ -25,9 +25,9 @@ const MapaDeCasos = () => {
         </div>
       </main>
 
-      <section>
-        <div className="container">
-          <img src="/img/mapa_casos2_img.png" alt="" />
+      <section className={styles.mapa_section}>
+        <div className={`container ${styles.container}`}>
+          <img className={styles.mapa} src="/img/mapa_casos2_img.svg" alt="" />
 
 
           {error && <div className='container'>{error}</div>}

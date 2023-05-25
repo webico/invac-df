@@ -1,3 +1,51 @@
+.main {
+  background: var(--Gradiente_Azul-ltr-Verde);
+
+  @media only screen and (min-width: 768px) {
+    height: 13rem;
+    background-image: var(--INVAC_Azul_600);
+    background-image: url(../public/img/bg_main_faq.svg), var(--Gradiente_Azul-ltr-Verde);
+    background-repeat: no-repeat;
+    background-position: 100% 0%;
+
+    h1 {
+      max-width: 32.5rem;
+      // margin: 2rem 0;
+    }
+  }
+}
+
+.mapa_section {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .mapa {
+      max-width: 27rem;
+    }
+
+    .menu_filtro {
+      width: 100%;
+      max-width: 28.75rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .mapa {
+        width: 25rem;
+      }
+
+      .menu_filtro {
+        width: 17rem;
+      }
+    }
+  }
+}
+
 .filtro_estado {
   font-size: .75rem !important;
   text-transform: uppercase;

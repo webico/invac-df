@@ -3,7 +3,6 @@ import styles from '@/css/Faq.module.css';
 import Footer from '@/components/Footer';
 import FAQs from '@/components/FAQs';
 import BannerInformativo from '@/components/BannerInformativo';
-import { useEffect } from 'react';
 
 const Faq = () => {
   return (
