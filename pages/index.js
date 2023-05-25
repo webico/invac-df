@@ -5,9 +5,16 @@ import DisponiveisLista from '@/components/Index/DisponiveisLista';
 import useFetch from '@/public/js/useFetch';
 import Footer from '@/components/Footer';
 import VisitaPopup from '@/components/VisitaPopup/VisitaPopup';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas');
+
+  const [popup, setPopup] = useState(null);
+
+  useEffect(() => {
+    localStorage.getItem('visita_popup') ? setPopup(false) : setPopup(true);
+  }, []);
 
   return (
     <>
@@ -19,7 +26,7 @@ export default function Home() {
       </Head>
 
       {/* POPUP DE PRIMEIRA VISITA */}
-      <VisitaPopup />
+      {popup && <VisitaPopup />}
 
       {/* SEÇÃO INICIAL */}
       <main className='main'>

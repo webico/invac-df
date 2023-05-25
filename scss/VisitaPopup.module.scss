@@ -5,6 +5,15 @@
   top: 0;
   left: 0;
   z-index: 8;
+  visibility: visible;
+  opacity: 1;
+  transition: .3s ease-in-out;
+
+  &.fechado {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
 
   .visita_popup {
     height: 100vh;

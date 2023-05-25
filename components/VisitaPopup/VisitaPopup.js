@@ -15,13 +15,6 @@ export class VisitaPopup extends Component {
     });
   };
 
-  // prevStep = () => {
-  //   const { step } = this.state;
-  //   this.setState({
-  //     step: step - 1
-  //   });
-  // };
-
   render() {
     const { step } = this.state;
 
