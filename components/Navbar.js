@@ -2,16 +2,19 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import UserHelpLinks from './UserHelpLinks';
 import { useRouter } from 'next/router';
+import PWAButton from './PWAButton';
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(null);
 
   const router = useRouter();
 
   useEffect(() => {
     const body = document.body,
       header = document.querySelector('.header__container');
+
+    setWindowWidth(window.innerWidth);
 
     if (menu && windowWidth < 1280) {
       body.style.overflow = 'hidden';
@@ -118,7 +121,7 @@ const Navbar = () => {
             </nav>
 
             <div className='menu_instalacao'>
-              <button className='btn_principal'>Instalar Aplicativo</button>
+              <PWAButton />
             </div>
 
             <div className='divisoria'>
