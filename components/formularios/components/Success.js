@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 
 export class Success extends Component {
-
   render() {
     const { styles, teste } = this.props;
 

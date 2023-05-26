@@ -25,6 +25,12 @@ const Navbar = () => {
       0 !== window.scrollY ? header.classList.add('scroll') : header.classList.remove('scroll');
     }
     );
+
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
   }, [menu]);
 
   return (
@@ -115,7 +121,6 @@ const Navbar = () => {
 
             <div className='menu_instalacao'>
               <button className='btn_principal'>Instalar Aplicativo</button>
-
             </div>
 
             <div className='divisoria'>
@@ -123,6 +128,8 @@ const Navbar = () => {
             </div>
 
             <UserHelpLinks />
+
+            <p className='copyright'></p>
           </div>
         </div>
       </div>

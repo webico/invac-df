@@ -4,12 +4,14 @@ import Navbar from './Navbar';
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar />
+      <div className="content_body">
+        <Navbar />
 
-      <main className='page'>
-        {children}
-      </main>
-    </> 
+        <main className='page'>
+          {children}
+        </main>
+      </div>
+    </>
   );
 };
 
