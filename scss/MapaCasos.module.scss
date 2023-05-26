@@ -1,11 +1,14 @@
 .main {
   @media only screen and (min-width: 768px) {
     background-image: var(--INVAC_Azul_600);
-    // background-image: url(../public/img/bg_mapa_main.png), url(../public/img/bg_main_faq.svg), var(--Gradiente_Azul-ltr-Verde);
     background-image: url(../public/img/bg_main_faq.svg), var(--Gradiente_Azul-ltr-Verde);
     background-repeat: no-repeat;
-    background-position: 96% 0%, 100% 0%;
-   
+
+    @media only screen and (min-width: 880px) {
+      background-image: url(../public/img/bg_mapa_main.png), url(../public/img/bg_main_faq.svg), var(--Gradiente_Azul-ltr-Verde);
+      background-position: 96% bottom, 100% 0%;
+
+    }
   }
 }
 
@@ -35,6 +38,12 @@
 
       .menu_filtro {
         width: 17rem;
+      }
+    }
+
+    @media only screen and (min-width: 880px) {
+      .menu_filtro {
+        width: 20rem;
       }
     }
   }

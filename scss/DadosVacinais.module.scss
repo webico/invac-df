@@ -214,9 +214,15 @@
       max-width: 24rem !important;
       height: auto !important;
     }
+
+    @media only screen and (min-width: 880px) {
+      flex-direction: row;
+      justify-content: space-between;
+      
+      .menu_filtro {
+        margin: 0;
+      }
+    }
   }
 
-  // @media only screen and (min-width: 768px) {
-
-  // }
 }

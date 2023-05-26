@@ -6,8 +6,11 @@
     border: 1px solid var(--INVAC_Neutra_300);
     background: var(--INVAC_Neutra_fff);
     border-radius: .5rem;
-    display: flex;
-    flex-direction: column;
+
+    .banner_fundo {
+      display: flex;
+      flex-direction: column;
+    }
 
     .banner_covid {
       padding-bottom: 1.5rem;
@@ -66,8 +69,12 @@
     }
 
     @media only screen and (min-width: 768px) {
-      flex-direction: row;
-      justify-content: space-between;
+      .banner_fundo {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 720px;
+        margin: 0 auto;
+      }
 
       .banner_covid {
         border-bottom: none;

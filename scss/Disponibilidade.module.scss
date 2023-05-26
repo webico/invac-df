@@ -126,9 +126,9 @@
                 }
               }
 
-              p {
-                margin-left: calc(.875rem + .375rem);
-              }
+              // p {
+              //   margin-left: calc(.875rem + .375rem);
+              // }
             }
           }
 
@@ -153,6 +153,42 @@
                 background: var(--INVAC_Azul_400);
                 border-radius: 50%;
                 margin-right: .5rem;
+              }
+            }
+          }
+
+          @media only screen and (min-width: 880px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .ubs_info {
+              display: flex;
+
+              span {
+                display: inline-block;
+              }
+            }
+
+            .doses {
+              margin-top: 0;
+              width: 21rem;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              align-items: center;
+
+              li {
+                width: 8.5rem;
+
+                &:not(:last-child), &:last-child {
+                  margin-bottom: .5rem;
+                }
+
+                &.longo {
+                  width: 9.2rem;
+
+                }
               }
             }
           }

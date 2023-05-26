@@ -53,13 +53,11 @@ const Disponibilidade = ({ data, styles, query }) => {
                             <h4>{unidade.nome}</h4>
 
                             <div className={styles.ubs_info}>
-                              <span className={styles.ubs_horario}>Horários:</span>
-                              <p>{unidade.horario}</p>
+                              <p><span className={styles.ubs_horario}>Horários:</span> {unidade.horario}</p>
                             </div>
 
                             <div className={styles.ubs_info}>
-                              <span className={styles.ubs_endereco}>Endereço:</span>
-                              <p>{unidade.endereco}</p>
+                              <p><span className={styles.ubs_endereco}>Endereço:</span> {unidade.endereco}</p>
                             </div>
                           </div>
 
@@ -68,7 +66,7 @@ const Disponibilidade = ({ data, styles, query }) => {
                               tab == 'vacina' ?
 
                                 unidade.vacinas[0].tipos.slice(0, unidade.vacinas[0].tipos.length - 1).map(vacina => (
-                                  <li key={vacina}>
+                                  <li key={vacina} className={vacina == 'Vacinação Infantil' ? styles.longo : ''}>
                                     <p>{vacina}</p>
                                   </li>
                                 ))

@@ -155,28 +155,36 @@
   @media only screen and (min-width: 560px) {
     .disponivel_caixa {
       padding: 2rem 1.5rem;
-      
+
       .disponivel__lista {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         width: 100%;
-  
+
         .disponivel__card {
           flex: 1 0 45%;
-  
+
           &:not(:last-child),
           &:last-child {
             margin-bottom: 1.5rem;
           }
-  
+
           &:nth-child(odd) {
             margin-right: 1.5rem;
           }
         }
       }
     }
+  }
+
+  @media only screen and (min-width: 880px) {
+    .disponivel_caixa .disponivel__lista .disponivel__card {
+      &:nth-child(odd) {
+        margin-right: 2rem;
+      }
     }
+  }
 }
 
 //CONSULTA 
@@ -203,6 +211,14 @@
         text-align: left;
         max-width: 20.75rem;
       }
+    }
+  }
+
+  @media only screen and (min-width: 880px) {
+    img {
+      min-width: 20.75rem;
+      width: 100%;
+      max-width: 24rem;
     }
   }
 }
@@ -233,6 +249,14 @@
         text-align: left;
         max-width: 20.75rem;
       }
+    }
+  }
+
+  @media only screen and (min-width: 880px) {
+    img {
+      min-width: 20.75rem;
+      width: 100%;
+      max-width: 24rem;
     }
   }
 }
