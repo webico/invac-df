@@ -1,4 +1,4 @@
-.main {
+.main .container {
   @media only screen and (min-width: 768px) {
     background-image: var(--INVAC_Azul_600);
     background-image: url(../public/img/bg_vacinais_main.png), url(../public/img/bg_main_faq.svg), var(--Gradiente_Azul-ltr-Verde);
@@ -218,9 +218,13 @@
     @media only screen and (min-width: 880px) {
       flex-direction: row;
       justify-content: space-between;
-      
+
       .menu_filtro {
         margin: 0;
+      }
+
+      canvas {
+        width: 26rem!important;
       }
     }
   }

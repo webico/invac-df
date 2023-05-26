@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const router = useRouter();
 
@@ -12,7 +13,7 @@ const Navbar = () => {
     const body = document.body,
       header = document.querySelector('.header__container');
 
-    if (menu) {
+    if (menu && windowWidth < 1280) {
       body.style.overflow = 'hidden';
     } else {
       body.style.overflow = 'visible';
@@ -22,6 +23,12 @@ const Navbar = () => {
       0 !== window.scrollY ? header.classList.add('scroll') : header.classList.remove('scroll');
     }
     );
+
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
   }, [menu]);
 
   return (
@@ -119,6 +126,8 @@ const Navbar = () => {
             </div>
 
             <UserHelpLinks />
+
+            <p className='copyright'></p>
           </div>
         </div>
       </div>
