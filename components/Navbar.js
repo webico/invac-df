@@ -14,14 +14,7 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = 'visible';
     }
-
-    //gambiarra porque precisava mudar a cor de fundo do header, mas não consigo acessar ele deste arquivo (porque ele tá no componente Layout)
-    if (router.pathname == '/faq' || router.pathname == '/mapa-de-casos' || router.pathname == '/dados-vacinais') {
-      document.querySelector('header').classList.add('gradiente_verde');
-    } else {
-      document.querySelector('header').classList.remove('gradiente_verde');
-    }
-  }, [menu, router.pathname]);
+  }, [menu]);
 
   return (
     <header className={`header ${menu ? '__open' : ''}`}>

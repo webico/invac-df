@@ -23,7 +23,7 @@ const Disponibilidade = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='main'>
+      <main className={`main ${styles.main}`}>
         <div className="container">
           <h1 className='main__titulo'>Confira os lugares com disponibilidade e faça o agendamento.</h1>
 
