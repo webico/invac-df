@@ -17,8 +17,8 @@ const Navbar = () => {
     } else {
       body.style.overflow = 'visible';
     }
-    
-    window.addEventListener('scroll', e => {
+
+    window.addEventListener('scroll', () => {
       0 !== window.scrollY ? header.classList.add('scroll') : header.classList.remove('scroll');
     }
     );
