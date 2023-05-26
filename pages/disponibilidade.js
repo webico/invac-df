@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import useFetch from '@/public/js/useFetch';
 import DisponibilidadeLista from '@/components/Disponibilidade/DisponibilidadeLista';
 import Footer from '@/components/Footer';
+import Loading from '@/components/Loading';
+import Error from '@/components/Error';
 
 const Disponibilidade = () => {
   const { query } = useRouter();
@@ -31,10 +33,10 @@ const Disponibilidade = () => {
 
       <section>
         <div className="container">
-          {error && <div className='container'>{error}</div>}
-          {isPending && <div className='container'>Loading...</div>}
-          {data && <DisponibilidadeLista data={data} styles={styles} query={query}/>}
-  
+          {error && <Error error={error} />}
+          {isPending && <Loading />}
+          {data && <DisponibilidadeLista data={data} styles={styles} query={query} />}
+
         </div>
       </section>
 

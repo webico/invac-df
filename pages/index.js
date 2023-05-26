@@ -6,6 +6,8 @@ import useFetch from '@/public/js/useFetch';
 import Footer from '@/components/Footer';
 import VisitaPopup from '@/components/VisitaPopup/VisitaPopup';
 import { useEffect, useState } from 'react';
+import Loading from '@/components/Loading';
+import Error from '@/components/Error';
 
 export default function Home() {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas');
@@ -25,6 +27,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
       {/* POPUP DE PRIMEIRA VISITA */}
       {popup && <VisitaPopup />}
 
@@ -37,9 +40,10 @@ export default function Home() {
         </div>
       </main>
 
+
       {/* DISPONIBILIDADE DE VACINAS E TESTES */}
-      {error && <div className='container'>{error}</div>}
-      {isPending && <div className='container'>Loading...</div>}
+      {error && <Error error={error}/>}
+      {isPending && <Loading />}
       {data && <DisponiveisLista data={data} styles={styles} />}
 
 

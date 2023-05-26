@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import ProgressBtns from '../components/ProgressBtns';
+import Loading from '@/components/Loading';
+import Error from '@/components/Error';
 
 export class FormLocalDetails extends Component {
   continue = e => {
@@ -38,15 +40,13 @@ export class FormLocalDetails extends Component {
       const response = await fetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas'),
         json = await response.json();
       this.setState({ data: json });
-      // this.setState({ unidades: json[0].unidades });
       this.setState({ unidades: this.props.values.regiao ? this.findUBS(this.props.values.regiao, json) : json[0].unidades });
 
       this.setState({ isPending: false });
     } catch (error) {
-      this.setState({ error: error.message });
+      this.setState({ error: 'Houve um problema no carregamento desta seção. Tente novamente mais tarde.' });
       this.setState({ isPending: false });
     }
-
   };
 
   componentDidMount() {
@@ -73,45 +73,47 @@ export class FormLocalDetails extends Component {
             <h2 className={styles.section__h2}>Informações do local</h2>
 
             <div className={styles.label_input}>
-              <label htmlFor="regiao">Região *</label>
 
-              {isPending && <p>Carregando...</p>}
-              {error && <p>{error}</p>}
+              {error && <Error error={error} />}
+              {isPending && <Loading />}
 
               {
                 data &&
-                <div className={`${styles.select} ${styles.select_regiao}`}>
-                  <select name="" id="regiao" required
-                    onChange={handleChange('regiao')}
-                    onInput={e => handleUBS(e)}
-                  >
-                    {data.map(regiao => (
-                      <option key={regiao.nome} value={regiao.nome} {...values.regiao == regiao.nome ? { selected: true } : ''}>{regiao.nome}</option>
-                    ))}
-                  </select>
-                </div>
+                <>
+                  <label htmlFor="regiao">Região *</label>
+
+                  <div className={`${styles.select} ${styles.select_regiao}`}>
+                    <select name="" id="regiao" required
+                      onChange={handleChange('regiao')}
+                      onInput={e => handleUBS(e)}
+                    >
+                      {data.map(regiao => (
+                        <option key={regiao.nome} value={regiao.nome} {...values.regiao == regiao.nome ? { selected: true } : ''}>{regiao.nome}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <label id="radio_select">Selecionar local *</label>
+                  <ul className={styles.radio_select} >
+
+                    {data && unidades && unidades.map(unidade => (
+                      <li key={unidade.nome} className={styles.ubs}>
+                        <input type="radio" name='ubs' id='radio1' className={styles.radio_input} value={unidade.nome} onChange={handleChange('ubs')}
+                          {...values.ubs == unidade.nome ? { checked: true } : ''}
+                        />
+
+                        <label htmlFor="radio1" className={styles.ubs_info}>
+                          <p>{unidade.nome}</p>
+                          <span>Horários: {unidade.horario}</span>
+                          <span>Endereço: {unidade.endereco}</span>
+                        </label>
+                      </li>
+                    ))
+                    }
+                  </ul>
+                </>
               }
             </div>
-
-            <label id="radio_select">Selecionar local *</label>
-            <ul className={styles.radio_select} >
-
-              {data && unidades && unidades.map(unidade => (
-                <li key={unidade.nome} className={styles.ubs}>
-                  <input type="radio" name='ubs' id='radio1' className={styles.radio_input} value={unidade.nome} onChange={handleChange('ubs')}
-                    {...values.ubs == unidade.nome ? { checked: true } : ''}
-                  />
-
-                  <label htmlFor="radio1" className={styles.ubs_info}>
-                    <p>{unidade.nome}</p>
-                    <span>Horários: {unidade.horario}</span>
-                    <span>Endereço: {unidade.endereco}</span>
-                  </label>
-                </li>
-              ))
-              }
-
-            </ul>
           </section>
 
           <section className={styles.form_section}>
@@ -121,7 +123,7 @@ export class FormLocalDetails extends Component {
               <div className={styles.label_input}>
                 <label htmlFor="dia_agendamento">Dia de agendamento *</label>
 
-                <input type="date" name='dia_agendamento' id="dia_agendamento" value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')}/>
+                <input type="date" name='dia_agendamento' id="dia_agendamento" value={values.diaAgendamento} required onChange={handleChange('diaAgendamento')} />
               </div>
 
               <div className={styles.label_input}>

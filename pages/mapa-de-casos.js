@@ -4,6 +4,8 @@ import useFetch from '@/public/js/useFetch';
 import Footer from '@/components/Footer';
 import styles from '@/css/MapaCasos.module.css';
 import BannerInformativo from '@/components/BannerInformativo';
+import Loading from '@/components/Loading';
+import Error from '@/components/Error';
 
 const MapaDeCasos = () => {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09/regioes_administrativas');
@@ -29,11 +31,10 @@ const MapaDeCasos = () => {
         <div className={`container ${styles.container}`}>
           <img className={styles.mapa} src="/img/mapa_casos2_img.svg" alt="" />
 
+          {error && <Error error={error} />}
+          {isPending && <Loading />}
 
-          {error && <div className='container'>{error}</div>}
-          {isPending && <div className='container'>Loading...</div>}
-
-          { data && <MapaCasos data={data} styles={styles}/>}
+          {data && <MapaCasos data={data} styles={styles} />}
 
         </div>
       </section >

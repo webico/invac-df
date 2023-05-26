@@ -6,6 +6,8 @@ import useFetch from '@/public/js/useFetch';
 import Estoque from '@/components/DadosVacinais/Estoque';
 import FaixaEtaria from '@/components/DadosVacinais/FaixaEtaria';
 import BannerInformativo from '@/components/BannerInformativo';
+import Loading from '@/components/Loading';
+import Error from '@/components/Error';
 
 const DadosVacinais = () => {
   const { data, isPending, error } = useFetch('https://api.npoint.io/602d6184ba6fe5909c09');
@@ -28,13 +30,18 @@ const DadosVacinais = () => {
         </div>
       </main>
 
-      {error && <div className='container'>{error}</div>}
-      {isPending && <div className='container'>Loading...</div>}
-      {data && <Quantitativo styles={styles} data={data} />}
+      {error && <Error error={error} />}
+      {isPending && <div style={{height:'2rem'}}><Loading /></div>}
 
-      {data && <Estoque styles={styles} data={data.dados_vacinais_df.estoque_vacinal} />}
+      {data &&
+        <>
+          <Quantitativo styles={styles} data={data} />
 
-      {data && <FaixaEtaria styles={styles} data={data.dados_vacinais_df.faixa_etaria} />}
+          <Estoque styles={styles} data={data.dados_vacinais_df.estoque_vacinal} />
+
+          <FaixaEtaria styles={styles} data={data.dados_vacinais_df.faixa_etaria} />
+        </>
+      }
 
       <BannerInformativo titulo='Dados Vacinais'>
         <li><a href="https://www.saude.df.gov.br/coronavirus" target="_blank" rel="noopener noreferrer">Boletins semanais de vacinação - SES/DF</a></li>

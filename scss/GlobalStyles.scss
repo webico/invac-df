@@ -11,6 +11,10 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+
+  &:focus, &:focus-visible, &:focus-within {
+    outline-color: var(--INVAC_Azul_500);
+  }
 }
 
 img {
@@ -181,13 +185,20 @@ footer {
   padding: 3rem 0 2rem;
   margin-top: 6rem;
 
-  .menu_info .menu_info__item {
-    font-size: 1.125rem;
-    color: var(--INVAC_Azul_100);
-    text-align: center;
+  .menu_info {
+    li {
+      width: fit-content;
+      margin: 0 auto;
 
-    &:hover {
-      color: var(--INVAC_Azul_300);
+      .menu_info__item {
+        font-size: 1.125rem;
+        color: var(--INVAC_Azul_100);
+        text-align: center;
+    
+        &:hover {
+          color: var(--INVAC_Azul_300);
+        }
+      }
     }
   }
 
@@ -221,11 +232,11 @@ footer {
     border: 1px solid var(--INVAC_Neutra_300);
     border-radius: .25rem;
     position: relative;
-  
+
     &:not(:last-child) {
       margin-bottom: .5rem;
     }
-  
+
     &::after {
       position: absolute;
       display: block;
@@ -233,7 +244,7 @@ footer {
       right: .9rem;
       top: 25%;
     }
-  
+
     select {
       background: transparent;
       -webkit-appearance: none;
@@ -284,7 +295,7 @@ footer {
 
   li {
     width: 100%;
-    
+
     @media only screen and (min-width: 500px) {
       max-width: 6.8rem;
     }
@@ -315,5 +326,56 @@ footer {
       border-right: 2px solid var(--INVAC_Neutra_100);
       border-left: none;
     }
+  }
+}
+
+//LOADING E ERROR COMPONENTS
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+
+  }
+
+  to {
+    transform: rotate(360deg);
+
+  }
+}
+
+#loading {
+  position: relative;
+  width: 100%;
+
+  #spinner_container {
+    width: 3.5rem;
+    height: 3.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+
+    #spinner {
+      width: 3rem;
+      height: 3rem;
+      margin: .25rem auto;
+      border-radius: 50%;
+      border: .4rem solid var(--INVAC_Azul_600);
+      border-right: .4rem solid transparent;
+      animation: spinner 1s linear infinite;
+    }
+  }
+}
+
+#error {
+  width: 100%;
+
+  p {
+    color: var(--Auxiliar_Vermelho_500);
+    max-width: 21rem;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-weight: var(--medium);
   }
 }

@@ -100,14 +100,14 @@
       &:not(:last-child) {
         margin-bottom: 3rem;
       }
+
+      label {
+        margin-bottom: 1rem;
+      }
     }
 
     label {
       margin-bottom: .5rem;
-
-      @media only screen and (min-width: 768px) {
-        margin-bottom: 1rem;
-      }
     }
 
     input,
@@ -121,6 +121,10 @@
       &::placeholder {
         color: var(--INVAC_Neutra_300);
       }
+    }
+
+    input#dia_agendamento {
+      width: 100%;
     }
 
     //estilização dos inputs de select
@@ -147,65 +151,50 @@
       }
 
       @media only screen and (min-width: 768px) {
-        &.select_regiao {
-
-          &,
-          select {
-            width: 26rem !important;
-          }
+        &.select_regiao,
+        &.select_regiao select {
+          width: 26rem !important;
         }
       }
 
     }
 
     //estilização das checkboxes
-
     .checkboxlist {
+      .checkbox {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        input {
+          padding: 0;
+          margin-right: .5rem;
+
+          &:checked {
+            border: 3px solid #fff;
+          }
+        }
+
+        label {
+          color: var(--300);
+          font-weight: var(--regular);
+          margin-bottom: 0;
+        }
+      }
+
       @media only screen and (min-width: 768px) {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        
-        // li:nth-child(2), li:nth-child(5), li:nth-child(8) {
-        //   background: red;
-        //   margin: 0 auto;
-        // }
 
-        li {
+        .checkbox {
           width: 15rem;
         }
       }
-    }   
-
-    .checkbox {
-      display: flex;
-      align-items: center;
-
-      &:not(:last-child) {
-        margin-bottom: 1rem;
-      }
-
-      input {
-        padding: 0;
-        margin-right: .5rem;
-
-        &:checked {
-          border: 3px solid #fff;
-        }
-      }
-
-      label {
-        color: var(--300);
-        font-weight: var(--regular);
-        margin-bottom: 0;
-      }
     }
-
-    #dia_agendamento {
-      width: 100%;
-    }
-
-
   }
 
   //estilização dos inputs do tipo radio e labels
@@ -367,6 +356,7 @@
   }
 }
 
+//checkbox sobre a LGPD no componente de confirmação
 .confirm_lgpd {
   display: flex;
   align-items: flex;

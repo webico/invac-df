@@ -11,22 +11,30 @@ const useFetch = (url) => {
     fetch(url, { signal: abortCont.signal })
       .then(r => {
         if (!r.ok) {
-          throw Error('Houve um problema na requisição deste recurso. Tente novamente mais tarde.');
+          throw Error('Houve um problema no carregamento desta seção. Tente novamente mais tarde.');
         } else {
           return r.json();
         }
       })
       .then(data => {
-        setData(data);
-        setisPending(false);
-        setError(null);
+        setTimeout(() => {
+          setisPending(false);
+        }, 500);
+        setTimeout(() => {
+          setData(data);
+          setError(null);
+        }, 502);
       })
       .catch(err => {
         if (err.name == 'AbortError') {
           console.log('fetch aborted');
         } else {
-          setError('Houve um problema na requisição deste recurso. Cheque por problemas de conexão.');
-          setisPending(false);
+          setTimeout(() => {
+            setisPending(false);
+          }, 500);
+          setTimeout(() => {
+            setError('Houve um problema no carregamento desta seção. Cheque por problemas de conexão.');
+          }, 502);
         }
       });
 
