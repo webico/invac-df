@@ -9,11 +9,19 @@ const Navbar = () => {
   const router = useRouter();
 
   useEffect(() => {
+    const body = document.body,
+      header = document.querySelector('.header__container');
+
     if (menu) {
-      document.body.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'visible';
+      body.style.overflow = 'visible';
     }
+    
+    window.addEventListener('scroll', e => {
+      0 !== window.scrollY ? header.classList.add('scroll') : header.classList.remove('scroll');
+    }
+    );
   }, [menu]);
 
   return (
