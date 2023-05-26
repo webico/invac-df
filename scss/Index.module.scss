@@ -30,33 +30,10 @@
       }
     }
   }
-
-  @media only screen and (min-width: 1280px) {
-    margin: 9rem 0;
-
-    .container {
-      .section__info {
-        width: 24rem !important;
-
-        img {
-          max-width: 25rem;
-        }
-
-        h2 {
-          font-size: 1.5rem;
-        }
-
-        p {
-          font-size: 1.25rem;
-          max-width: 100% !important;
-        }
-      }
-    }
-  }
 }
 
 //MAIN SECTION
-.main .container {
+.main {
   @media only screen and (min-width: 768px) {
     height: 17rem;
     background-image: url(../public/img/bg_main_index2.png), url(../public/img/bg_main_index.svg), var(--Gradiente_Azul-ltr-Verde);

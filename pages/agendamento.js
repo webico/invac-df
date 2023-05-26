@@ -17,7 +17,7 @@ const Agendamento = () => {
       </Head>
 
       <main className={`main ${forms.main} gradiente_verde`}>
-        <div className={`container ${forms.container}`}>
+        <div className="container">
           <h1 className='main__titulo'>Não deixe para depois!</h1>
           <h2 className='main__titulo_secundario'>Cuide da sua saúde agendando suas vacinas e testes de COVID.</h2>
         </div>
