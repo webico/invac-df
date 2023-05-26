@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import UserHelpLinks from './UserHelpLinks';
 import { useRouter } from 'next/router';
-import PWAButton from './PWAButton';
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -115,7 +114,8 @@ const Navbar = () => {
             </nav>
 
             <div className='menu_instalacao'>
-              <PWAButton />
+              <button className='btn_principal'>Instalar Aplicativo</button>
+
             </div>
 
             <div className='divisoria'>
