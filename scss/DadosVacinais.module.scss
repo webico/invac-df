@@ -47,8 +47,11 @@
     .perc__lista {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       .perc__item {
+        width: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -83,13 +86,19 @@
             color: var(--INVAC_Preto_texto);
           }
         }
+
+        canvas {
+          width: 100% !important;
+          max-width: 20rem !important;
+          height: auto !important;
+        }
       }
     }
 
     @media only screen and (min-width: 768px) {
       .total_doses {
         margin-bottom: 3rem;
-        
+
         canvas {
           width: 20rem !important;
           height: 20rem !important;
@@ -103,9 +112,13 @@
           flex-direction: row;
           flex-wrap: wrap;
           justify-content: space-between;
+          max-width: 44rem;
+          margin: 0 auto;
 
           .perc__item {
-            &:nth-child(3), &:last-child {
+
+            &:nth-child(3),
+            &:last-child {
               margin-bottom: 0;
             }
           }
@@ -168,7 +181,7 @@
     }
 
     @media only screen and (min-width: 768px) {
-      max-width: 100%;
+      max-width: 44rem;
     }
   }
 }
@@ -185,27 +198,25 @@
     color: var(--INVAC_Azul_600);
   }
 
-  .menu_filtro {
-    width: 100%;
-    max-width: 28.75rem;
-    margin: 2.5rem auto 0;
-  }
+  .faixa_etaria__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  @media only screen and (min-width: 768px) {
-    .faixa_etaria__section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .menu_filtro {
+      width: 100%;
+      max-width: 23rem;
+      margin: 2.5rem auto 0;
+    }
 
-      canvas {
-        max-width: 20rem !important;
-        height: auto;
-      }
-
-      .menu_filtro {
-        max-width: 20rem;
-        margin: 0;
-      }
+    canvas {
+      max-width: 24rem !important;
+      height: auto !important;
     }
   }
+
+  // @media only screen and (min-width: 768px) {
+
+  // }
 }

@@ -57,12 +57,6 @@ const Quantitativo = ({ data, styles }) => {
         display: false
       }
     },
-    // tooltips: {
-    //   enabled: false,
-    // },
-    // legend: {
-    //   display: false
-    // },
     devicePixelRatio: 4,
     responsive: true,
     scales: {
@@ -75,17 +69,7 @@ const Quantitativo = ({ data, styles }) => {
           display: false
         }
       },
-      // x: {
-      //   beginAtZero: true,
-      //   grid: {
-      //     display: false
-      //   },
-      //   ticks: {
-      //     display: false
-      //   }
-      // }
     }
-
   };
 
   let BartCharts = [];
