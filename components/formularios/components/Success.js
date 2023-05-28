@@ -22,7 +22,7 @@ export class Success extends Component {
         <section className={styles.app_info_sec}>
           <h3>Baixe o aplicativo Invac DF para receber informações sobre vacinas e testes na sua região!</h3>
 
-          <button className={`btn_principal ${styles.btn_app}`}>Instalar Aplicativo</button>
+          <button className={`btn_principal ${styles.btn_app}`}>Baixar aplicativo</button>
         </section>
       </div>
     );

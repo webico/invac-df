@@ -19,19 +19,66 @@ export class UserForm extends Component {
     ubs: '',
     diaAgendamento: '',
     horario: '',
+    errors: {} // Armazena os erros do formulário
+  };
+
+  // Função para validar os campos do formulário
+  validateForm = () => {
+    const {
+      nomeCompleto,
+      cpf,
+      telefone,
+      doseVacina,
+    } = this.state;
+
+    const errors = {};
+
+    if (nomeCompleto.trim() === '') {
+      errors.nomeCompleto = 'O nome completo é obrigatório.';
+      window.alert('Digite um nome.')
+    }
+
+    //Erros CPF
+    if (cpf.trim() === '') {
+      errors.cpf = 'O CPF é obrigatório.';
+      window.alert('Digite um CPF.')
+    }
+
+    if (telefone.trim() === '') {
+      errors.telefone = 'O Telefone é obrigatório.';
+      window.alert('Digite um Telefone.')
+    }
+
+    if (doseVacina.trim() === '') {
+      errors.doseVacina = 'O Telefone é obrigatório.';
+
+      window.alert('Selecione uma vacina.')
+    }
+
+    return errors;
   };
 
   nextStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step + 1
-    });
+    const errors = this.validateForm(); // Verifica os erros do formulário
+
+    if (Object.keys(errors).length === 0) {
+      const { step } = this.state;
+      this.setState({
+        step: step + 1,
+        errors: {}
+      });
+    } else {
+      this.setState({
+        errors
+      });
+    }
   };
 
   prevStep = () => {
     const { step } = this.state;
     this.setState({
-      step: step - 1
+      step: step - 1,
+      errors: {}
     });
   };
 
@@ -40,9 +87,31 @@ export class UserForm extends Component {
   };
 
   render() {
-    const { step } = this.state;
-    const { nomeCompleto, cpf, email, telefone, doseVacina, tipoVacina, regiao, ubs, diaAgendamento, horario } = this.state;
-    const values = { nomeCompleto, cpf, email, telefone, doseVacina, tipoVacina, regiao, ubs, diaAgendamento, horario };
+    const { step, errors } = this.state; // Obtém os erros do estado
+    const {
+      nomeCompleto,
+      cpf,
+      email,
+      telefone,
+      doseVacina,
+      tipoVacina,
+      regiao,
+      ubs,
+      diaAgendamento,
+      horario
+    } = this.state;
+    const values = {
+      nomeCompleto,
+      cpf,
+      email,
+      telefone,
+      doseVacina,
+      tipoVacina,
+      regiao,
+      ubs,
+      diaAgendamento,
+      horario
+    };
     const styles = forms;
 
     switch (step) {

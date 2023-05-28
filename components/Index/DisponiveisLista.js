@@ -14,12 +14,14 @@ const DisponiveisLista = ({ data, styles }) => {
   return (
     <section className={styles.disponivel}>
       <div className="container">
-        <h2 className='section__h2'>Veja os lugares com vacinas e testes disponíveis na sua região e faça seu agendamento.</h2>
+        <h2 className='section__h2 mobile'>Veja os lugares com vacinas e testes disponíveis na sua região.</h2>
+
+        <h2 className='section__h2 desktop'>Veja os lugares com vacinas e testes disponíveis na sua região e faça seu agendamento.</h2>
 
         <section>
           <ul className='tab_menu'>
-            <li><button className={`tab_menu__btn ${tab == 'vacina' ? 'ativo' : ''}`} onClick={() => setTab('vacina')}>Vacina</button></li>
-            <li><button className={`tab_menu__btn ${tab == 'teste' ? 'ativo' : ''}`} onClick={() => setTab('teste')}>Teste</button></li>
+            <li><button className={`tab_menu__btn ${tab == 'vacina' ? 'ativo' : ''}`} onClick={() => setTab('vacina')}>Vacinas</button></li>
+            <li><button className={`tab_menu__btn ${tab == 'teste' ? 'ativo' : ''}`} onClick={() => setTab('teste')}>Testes</button></li>
           </ul>
 
           <div className={styles.disponivel_caixa}>
@@ -47,7 +49,8 @@ const DisponiveisLista = ({ data, styles }) => {
               }
             </ul>
 
-            {itemsShow == 4 ? <button className={styles.ver_todas} onClick={handleShowMore}>Ver todas as regiões</button> : ''}
+              <Link
+              href={{pathname: '/disponibilidade'}} className={styles.ver_todas}>Ver todas as regiões</Link>
           </div>
 
 

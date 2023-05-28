@@ -31,7 +31,7 @@
     }
   }
 
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1180px) {
     margin: 9rem 0;
 
     .container {
@@ -53,10 +53,18 @@
       }
     }
   }
+
+  @media only screen and (min-width: 1366px) {}
 }
 
 //MAIN SECTION
 .main .container {
+
+  div {
+    width: 19.75rem;
+    margin: 0 auto;
+  }
+
   @media only screen and (min-width: 768px) {
     height: 17rem;
     background-image: url(../public/img/bg_main_index2.png), url(../public/img/bg_main_index.svg), var(--Gradiente_Azul-ltr-Verde);
@@ -67,11 +75,43 @@
     h1 {
       max-width: 21rem !important;
     }
+
+    div {
+      width: 43rem;
+      margin: 0 auto;
+    }
+  }
+
+  @media only screen and (min-width: 1180px) {
+    width: 53.625rem;
+    margin: 0 auto;
+
+    h1 {
+      max-width: 28.75rem !important;
+    }
+
+    div {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 1366px) {
+    width: 60.6875rem;
+    height: 20.8rem;
+
+    h1 {
+      max-width: 28.75rem !important;
+    }
+
+    .index_main__btn {
+      margin-top: 2.5rem !important;
+    }
   }
 }
 
 // DISPONIBILIDADE DE VACINAS E TESTES
 .disponivel {
+
   h2 {
     font-size: 1.125rem;
     font-weight: var(--semi);
@@ -79,7 +119,7 @@
     line-height: 1.4;
     letter-spacing: 0;
     margin: 0 auto 2.5rem;
-    max-width: 31.8rem;
+    //max-width: 31.8rem;
   }
 
   .disponivel_caixa {
@@ -89,16 +129,38 @@
     padding: 2rem 1rem;
 
     .disponivel__lista {
-      display: flex;
-      flex-direction: column;
+      //display: flex;
+      //flex-direction: column;
 
       .disponivel__card {
-        background: var(--INVAC_Neutra_100);
+        background: #F0F2F5;
         border-radius: .5rem;
         padding-left: 1.25rem;
+        transition: .3s ease-in-out;
 
         &:not(:last-child) {
           margin-bottom: .5rem;
+        }
+
+        &:hover{
+          background: var(--INVAC_Azul_600);
+
+          a{
+            div{
+              .regiao_span{
+                color: var(--INVAC_Neutra_fff);
+                opacity: .7;
+              }
+
+              .regiao_nome{
+                color: var(--INVAC_Neutra_fff);
+              }
+
+              .regiao_disp{
+                color: var(--INVAC_Neutra_fff);
+              }
+            }
+          }
         }
 
         a {
@@ -150,11 +212,16 @@
             border-radius: .5rem 0;
             background: var(--INVAC_Azul_600);
 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             &::before {
               content: url(../public/icons/arrow_right.svg);
-              width: 1rem;
-              height: 1rem;
-              margin: auto;
+              padding: 3px 0 0 2px;
+              //width: 1rem;
+              //height: 1rem;
+              //margin: auto;
             }
           }
         }
@@ -163,18 +230,133 @@
 
     .ver_todas {
       display: block;
-      font-weight: var(--bold);
+      font-weight: var(--semi);
       background: none;
       color: var(--INVAC_Azul_600);
       width: fit-content;
       margin: 2rem auto 0;
 
-      @media only screen and (min-width: 560px) {
-        margin: 2rem 0 0 auto;
+      &:hover {
+        text-decoration: underline;
+        color: var(--INVAC_Azul_700);
       }
     }
   }
 
+  @media only screen and (min-width: 768px) {
+    h2 {
+      font-size: 1.25rem;
+      width: 31.875rem;
+      margin-bottom: 4rem;
+    }
+
+    .disponivel_caixa {
+      padding: 3.5rem 1.5rem 2.5rem;
+
+      .disponivel__lista {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .disponivel__card {
+          width: 19.25rem;
+
+          &:not(:last-child),
+          &:last-child {
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+
+      .ver_todas {
+        margin-top: .5rem;
+        margin: .5rem 0 0 auto;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1180px) {
+    h2 {
+      font-size: 1.375rem;
+      width: 40rem;
+    }
+
+    .disponivel_caixa {
+      .disponivel__lista {
+
+        .disponivel__card {
+          width: 11.875rem;
+          height: 7.5rem;
+          padding: 0 1rem;
+
+          display: flex;
+          align-items: center;
+
+          a {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            &:hover {
+              text-decoration: none;
+            }
+
+            div {
+              padding: 0;
+
+              .regiao_span {
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: var(--INVAC_Neutra_300);
+                font-size: .75rem;
+                font-weight: var(--semi);
+              }
+
+              .regiao_nome {
+                font-weight: var(--semi);
+                color: var(--INVAC_Preto_texto);
+                font-size: 1.125rem;
+                letter-spacing: -0.01em;
+                margin: .5rem 0 .75rem;
+              }
+
+              .regiao_disp {
+                display: flex;
+                align-items: center;
+                color: var(--INVAC_Preto_texto);
+
+                &::before {
+                  content: url(../public/icons/medical_services.svg);
+                  width: 1rem;
+                  height: 1rem;
+                  margin-right: .625rem;
+                  margin-bottom: 3px;
+                }
+              }
+            }
+
+            button {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1366px) {
+    .disponivel_caixa {
+      .disponivel__lista {
+
+        .disponivel__card {
+          width: 13.75rem;
+        }
+      }
+    }
+  }
+
+
+  /*
   @media only screen and (min-width: 560px) {
     .disponivel_caixa {
       padding: 2rem 1.5rem;
@@ -207,11 +389,16 @@
         margin-right: 2rem;
       }
     }
-  }
+  }*/
 }
 
 //CONSULTA 
 .consulta .container {
+
+  img {
+    width: 17.5rem;
+  }
+
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
@@ -219,7 +406,7 @@
 
     img {
       order: 2;
-      max-width: 20.75rem;
+      width: 20.75rem;
       margin-bottom: 0;
     }
 
@@ -227,6 +414,7 @@
       align-items: flex-start;
 
       h2 {
+        font-size: 1.5rem;
         text-align: left;
       }
 
@@ -237,6 +425,46 @@
     }
   }
 
+  @media only screen and (min-width: 1180px) {
+    img {
+      width: 22.5rem;
+    }
+
+    .section__info {
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1.125rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1366px) {
+
+    padding: 0 1.5rem;
+
+    img {
+      width: 25rem;
+    }
+
+    .section__info {
+      min-width: 28.75rem;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.375rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  /*
   @media only screen and (min-width: 880px) {
     img {
       min-width: 20.75rem;
@@ -244,6 +472,7 @@
       max-width: 24rem;
     }
   }
+  */
 }
 
 //MAPA DE CASOS 
@@ -255,7 +484,7 @@
 
     img {
       order: 2;
-      max-width: 16.5rem;
+      width: 16.5rem;
       margin-bottom: 0;
     }
 
@@ -265,16 +494,56 @@
       order: 2;
 
       h2 {
-        text-align: left;
+        font-size: 1.5rem;
+        line-height: 1.4;
       }
 
+      h2,
       p {
         text-align: left;
-        max-width: 20.75rem;
       }
     }
   }
 
+  @media only screen and (min-width: 1180px) {
+    img {
+      width: 22.5rem;
+    }
+
+    .section__info {
+      min-width: 25.8125rem;
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1366px) {
+    img {
+      width: 25rem;
+    }
+
+    .section__info {
+      min-width: 27.875rem;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  /*
   @media only screen and (min-width: 880px) {
     img {
       min-width: 20.75rem;
@@ -282,6 +551,7 @@
       max-width: 24rem;
     }
   }
+  */
 }
 
 // DADOS VACINAIS DF
@@ -301,27 +571,32 @@
       font-size: 1.5rem;
       text-align: left;
       line-height: 1.3;
-      font-weight: var(--bold);
+      font-weight: var(--semi);
       max-width: 24rem;
     }
 
     p {
       margin: .75rem 0 2rem;
+      line-height: 1.65;
     }
 
     .dados_vacinais__btn {
       background: var(--INVAC_Neutra_fff);
-      color: var(--INVAC_Azul_texto);
+      color: var(--INVAC_Azul_escuro);
+      font-weight: var(--bold);
+
+      &:hover {
+        background: var(--INVAC_Neutra_200);
+      }
     }
 
     @media only screen and (min-width: 768px) {
       margin: 6rem 0;
-      height: 17rem;
+      //height: 17rem;
       justify-content: center;
-      background: var(--INVAC_Azul_600);
+      background: red;
       background-image: url(../public/img/bg_dados_index.svg);
-      //fallback ^^
-      background-image: url(../public/img/bg_dados_index.svg), var(--Gradiente_Azul-ltr-Azul);
+      background-image: url(../public/img/bg_dados_index.svg), var(--Gradiente_Azul-ltr-Verde);
       background-size: 106%;
       background-repeat: no-repeat;
       background-position: 100% 0;
@@ -329,6 +604,40 @@
       h2,
       p {
         max-width: 20.25rem !important;
+      }
+    }
+
+    @media only screen and (min-width: 1180px) {
+      padding: 3rem 2.5rem;
+
+      .dados_vacinais__h2 {
+        font-size: 1.75rem;
+      }
+
+      .dados_vacinais__h2,
+      p {
+        min-width: 24.5rem;
+      }
+
+      p {
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    @media only screen and (min-width: 1366px) {
+      padding: 3.5rem 3rem;
+
+      .dados_vacinais__h2 {
+        font-size: 2rem;
+      }
+
+      .dados_vacinais__h2,
+      p {
+        min-width: 27.875rem;
+      }
+
+      p {
+        font-size: 1.25rem;
       }
     }
   }
@@ -369,6 +678,10 @@
 
       a {
         margin: auto;
+
+        &:hover {
+          background: var(--INVAC_Neutra_200);
+        }
       }
     }
 
@@ -381,9 +694,24 @@
       width: 100%;
 
       h2 {
-        width: 15rem;
-        margin-bottom: 0;
+        width: 13.125rem;
+        font-size: 1.8rem;
+        font-weight: 800;
+        line-height: 1.3;
 
+        margin-bottom: 0;
+        text-align: left;
+
+        span {
+          font-size: 2rem;
+        }
+
+        &,
+        span {
+          color: var(--INVAC_Neutra_fff);
+        }
+
+        /*
         &,
         span {
           color: var(--INVAC_Neutra_fff);
@@ -392,10 +720,11 @@
           letter-spacing: 0;
           font-weight: 800;
         }
+*/
       }
 
       .duvidas_cta {
-        max-width: 22rem;
+        //max-width: 22rem;
         color: var(--INVAC_Neutra_fff);
 
         .secao_duvidas__p {
@@ -403,11 +732,42 @@
         }
 
         a {
+          font-weight: var(--bold);
           background: var(--INVAC_Neutra_fff);
           color: var(--INVAC_Azul_escuro);
           margin: 0;
         }
       }
+    }
+
+    @media only screen and (min-width: 1180px) {
+      padding: 2.5rem;
+
+      h2 {
+        font-size: 2.5rem;
+        width: 18.375rem;
+
+        span {
+          font-size: 2.5rem;
+        }
+      }
+
+      .duvidas_cta .secao_duvidas__p {
+        font-size: 1.125rem;
+        min-width: 26.7rem;
+      }
+    }
+
+    @media only screen and (min-width: 1366px) {
+      padding: 3.5rem;
+
+      .duvidas_cta {
+        .secao_duvidas__p {
+          font-size: 1.25rem;
+          min-width: 30rem;
+        }
+      }
+
     }
   }
 }

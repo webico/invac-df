@@ -34,9 +34,11 @@ export default function Home() {
       {/* SEÇÃO INICIAL */}
       <main className={`main ${styles.main}`}>
         <div className={`container ${styles.container}`}>
+          <div>
           <h1 className='main__titulo'>A vacinação é uma das formas mais eficazes de prevenir e proteger a saúde!</h1>
 
           <Link href='/agendamento' className="btn_principal index_main__btn">Quero me vacinar</Link>
+          </div>
         </div>
       </main>
 

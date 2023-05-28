@@ -41,7 +41,7 @@ export class Card extends Component {
       this.setState({ fechado: true });
     };
 
-    if(!fechado) {
+    if (!fechado) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'visible';
@@ -52,23 +52,27 @@ export class Card extends Component {
 
         <div className={styles.visita_popup}>
           <img src={`/img/visita_step${step}.png`} alt="" />
+          <div className={styles.img_gradient}></div>
           <div className={styles.visita_info}>
-            <div>
-              <p className={styles.step_titulo}>{step_titulo}</p>
-              <p className={styles.step_texto}>{step_texto}</p>
+            <div className={`conatiner ${styles.container}`}>
+              <div>
+                <p className={styles.step_titulo}>{step_titulo}</p>
+                <p className={styles.step_texto}>{step_texto}</p>
+              </div>
+
+              <div className={styles.progresso}>
+                <ul>
+                  {progresso}
+                </ul>
+                <button className={`btn_principal ${styles.proximo}`}
+                  onClick={e => this.continue(e, step, handlePopup)}>
+                  {step == 4 ? 'Começar' : 'Próximo'}
+                </button>
+              </div>
+
+              <button className={styles.fechar} onClick={handlePopup}><div></div><span>Fechar</span></button>
             </div>
 
-            <div className={styles.progresso}>
-              <ul>
-                {progresso}
-              </ul>
-              <button className={`btn_principal ${styles.proximo}`}
-                onClick={e => this.continue(e, step, handlePopup)}>
-                {step == 4 ? 'Começar' : 'Próximo'}
-              </button>
-            </div>
-
-            <button className={styles.fechar} onClick={handlePopup}><div></div><span>Fechar</span></button>
           </div>
         </div>
       </div>

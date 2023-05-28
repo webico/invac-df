@@ -53,11 +53,13 @@ const Disponibilidade = ({ data, styles, query }) => {
                             <h4>{unidade.nome}</h4>
 
                             <div className={styles.ubs_info}>
-                              <p><span className={styles.ubs_horario}>Horários:</span> {unidade.horario}</p>
+                              <span className={styles.ubs_horario}>Horários:</span>
+                              <p> {unidade.horario}</p>
                             </div>
 
                             <div className={styles.ubs_info}>
-                              <p><span className={styles.ubs_endereco}>Endereço:</span> {unidade.endereco}</p>
+                              <span className={styles.ubs_endereco}>Endereço:</span>
+                              <p> {unidade.endereco}</p>
                             </div>
                           </div>
 

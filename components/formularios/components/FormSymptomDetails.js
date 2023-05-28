@@ -98,10 +98,10 @@ export class FormPersonalDetails extends Component {
             <div className={styles.label_input}>
               <label htmlFor='sintomatempo'>Por quanto tempo você tem sentido esses sintomas? *</label>
 
-              <div className={styles.select} style={{ width: '16.25rem' }}>
+              <div className={styles.select} >
                 <select name="" id="sintomatempo" required
                   onInput={handleChange('tempo')}
-                  onChange={(e) => showAviso(e)} style={{ width: '16.25rem' }}>
+                  onChange={(e) => showAviso(e)}>
                   <option value="Selecionar dose" disabled {...values.tempo == '' ? { selected: true } : ''}>Selecionar tempo</option>
                   <option value="1 a 2 dias">1 a 2 dias</option>
                   <option value="3 a 5 dias">3 a 5 dias</option>

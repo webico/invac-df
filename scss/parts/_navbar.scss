@@ -9,20 +9,39 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.2rem;
+    width: 19.75rem;
+    margin: 0 auto;
+    //padding: 0 1.25rem;
+    height: 3rem;
 
     @media only screen and (min-width: 768px) {
-      padding: 1.2rem 2rem;
+      //padding: 1.2rem 2rem;
+      height: 4rem;
+      width: 43rem;
+      margin: 0 auto;
     }
 
-    &.scroll {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    @media only screen and (min-width: 1180px){
+      width: auto;
+      //margin: auto;
     }
 
     .logo {
       display: flex;
       position: relative;
       z-index: 8;
+
+      svg{ 
+        height: 1.5rem;
+
+        @media only screen and (min-width: 768px) {
+          height: 2rem;
+        }
+
+        @media only screen and (min-width: 1180px) {
+          height: 1.5rem;
+        }
+      }      
     }
 
     .header__button {
@@ -38,19 +57,19 @@
 
       div {
         width: 2rem;
-        height: .25rem;
+        height: .188rem;
         margin: 0 auto;
         background: var(--INVAC_Neutra_fff);
         transition: all 0.2s ease-in-out;
         position: relative;
-        display: flex;
+        //display: flex;
 
         &::before,
         &::after {
           content: "";
           position: absolute;
           width: 2rem;
-          height: .25rem;
+          height: .188rem;
           background: var(--INVAC_Neutra_fff);
           transition: all 0.2s ease-in-out;
         }
@@ -101,8 +120,8 @@
         overflow-y: auto;
 
         .divisoria {
-          padding-bottom: 1.25rem;
-          border-bottom: 1px solid var(--INVAC_Neutra_200);
+          //padding-bottom: 1.25rem;
+          //border-bottom: 1px solid var(--INVAC_Neutra_200);
           margin-bottom: 1rem;
           display: flex;
           align-items: center;
@@ -162,7 +181,8 @@
         .btn__menu {
           display: flex;
           align-items: center;
-          padding: .75rem 0 .75rem .75rem;
+          height: 3rem;
+          padding: 0 .75rem;
           transition: .3s ease-in-out;
 
           svg {
@@ -175,7 +195,7 @@
 
           span {
             font-size: 1rem;
-            font-weight: var(--semi);
+            font-weight: var(--regular);
             color: var(--INVAC_Neutra_400);
             line-height: 1.66;
             letter-spacing: -0.25px;
@@ -203,36 +223,56 @@
 
             span {
               color: var(--INVAC_Azul_600);
+              font-weight: var(--medium);
             }
           }
         }
 
         .menu_instalacao {
+          //display: none;
           margin: 1.5rem 0 4rem;
           padding-top: 2rem;
           border-top: 1px solid var(--INVAC_Neutra_200);
 
           button {
             width: 100%;
+            height: 3rem;
+            border-radius: .25rem;
+            background: var(--INVAC_Azul_600);
+
+            font-weight: var(--medium);
             color: var(--INVAC_Neutra_fff);
+            transition: .3s ease-in-out;
 
             &::after {
-              content: url(../public/icons/btn_instalar.svg);
+              content: url(../public/icons/download.svg);
               width: 1rem;
               height: 1.2rem;
               margin-left: 1.125rem;
+
+              filter: brightness(0) saturate(100%) invert(100%) sepia(6%) saturate(0%) hue-rotate(339deg) brightness(101%) contrast(103%);
+            }
+
+            &:hover{
+              background: var(--INVAC_Azul_700);
             }
           }
         }
 
         .copyright {
-          color: var(--INVAC_Cinza_info);
+          color: var(--INVAC_Neutra_300);
         }
       }
     }
   }
 
   &.__open {
+
+    .header__container{
+      width: auto;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
 
     .logo svg {
       #nvac path {
@@ -289,7 +329,7 @@
 
       @media only screen and (min-width: 768px) {
         &::before {
-          width: 20rem;
+          width: 18.75rem;
         }
 
         .menu {
@@ -297,25 +337,28 @@
         }
       }
 
+      /*
       @media only screen and (min-width: 880px) {
         .menu {
           padding-left: 2.5rem;
           width: 20rem;
         }
       }
+      */
     }
   }
 
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1180px) {
     &, &.__open {
       background: var(--INVAC_Neutra_fff);
       width: 16rem;
       height: 100vh;
-  
+
       .logo {
-        margin: 0 auto 0 0;
+        margin: 0 auto 0 0;        
   
         svg {
+          height: 1.5rem;
           #nvac path {
             fill: #32363F;
           }
@@ -336,8 +379,9 @@
   
       .header__container {
         flex-direction: column;
+        width: 15.875rem;
         height: 100%;
-        padding: 1.2rem .8rem 2rem 1rem;
+        padding: 1.5rem .5rem 0 1.5rem;
         box-shadow: 7px -1px 5px rgba(0,0,0,.05);
   
         &.scroll {
@@ -345,7 +389,7 @@
         }
   
         .overlay {
-          margin-top: 3.5rem;
+          margin-top: 2.5rem;
           position: static;
           height: calc(100% - 2rem);
           width: 100%;
@@ -360,18 +404,21 @@
           .menu {
             position: static;
             height: 100%;
-            width: 100%;
+            width: 13.4rem;
+            box-sizing: content-box;
             overflow-y: auto;
             background: none;
             visibility: visible;
             opacity: 1;
-            padding-right: .8rem;
-            padding-left: 0;
-            padding-top: 0;
+            padding: 0 .8rem 0 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
   
             /* width */
             &::-webkit-scrollbar {
-              width: 10px;
+              width: .35rem;
             }
   
             /* Track */
@@ -381,17 +428,21 @@
   
             /* Handle */
             &::-webkit-scrollbar-thumb {
-              background: var(--INVAC_Azul_500);
+              background: var(--INVAC_Neutra_200);
+              border-radius: 1rem;
             }
   
             /* Handle on hover */
             &::-webkit-scrollbar-thumb:hover {
-              background: var(--INVAC_Azul_800);
+              background: var(--INVAC_Azul_500);
             }
           }
+
+          .copyright {
+            margin: 2rem 0 2.5rem;
+          }
         }
-      }
-  
+      }  
     }
   }
 }

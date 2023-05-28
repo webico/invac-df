@@ -1,12 +1,51 @@
-.main .container {
+.main {
+  background: var(--Gradiente_Azul-ltr-Verde);
+
+  .container {
+    background: none;
+    width: 19.5rem;
+    margin: 0 auto;
+  }
+
   @media only screen and (min-width: 768px) {
     background-image: var(--INVAC_Azul_600);
     background-image: url(../public/img/bg_vacinais_main.png), url(../public/img/bg_main_faq.svg), var(--Gradiente_Azul-ltr-Verde);
     background-repeat: no-repeat;
     background-position: 96% 0%, 100% 0%;
 
-    h1 {
-      max-width: 28.75rem !important;
+    .container {
+      width: 43rem;
+      margin: 0 auto;
+
+      h1 {
+        max-width: 28.75rem !important;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1180px) {
+    width: 53.625rem;
+    margin: 0 auto 4rem;
+    border-radius: .5rem;
+
+    .container {
+      width: auto;
+
+      h1{
+        font-size: 1.5rem !important;
+        line-height: 1.4 !important;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1366px) {
+    width: 60.6875rem;
+
+    .container {
+      width: auto;
+      h1{
+        font-size: 1.75rem !important;
+      }
     }
   }
 }
@@ -224,7 +263,7 @@
       }
 
       canvas {
-        width: 26rem!important;
+        width: 26rem !important;
       }
     }
   }

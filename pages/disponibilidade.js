@@ -24,7 +24,7 @@ const Disponibilidade = () => {
       </Head>
 
       <main className={`main ${styles.main}`}>
-        <div className="container">
+        <div className={`container ${styles.container}`}>
           <h1 className='main__titulo'>Confira os lugares com disponibilidade e faça o agendamento.</h1>
 
           <Link href='/agendamento' className={`btn_principal ${styles.main_btn}`}>Quero agendar</Link>
@@ -32,7 +32,7 @@ const Disponibilidade = () => {
       </main>
 
       <section>
-        <div className="container">
+        <div className={`container ${styles.container}`}>
           {error && <Error error={error} />}
           {isPending && <Loading />}
           {data && <DisponibilidadeLista data={data} styles={styles} query={query} />}

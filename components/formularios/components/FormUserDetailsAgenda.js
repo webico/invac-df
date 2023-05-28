@@ -76,7 +76,7 @@ export class FormUserDetails extends Component {
               </div>
 
               <div className={styles.label_input}>
-                <label htmlFor="email">E-mail *</label>
+                <label htmlFor="email">E-mail</label>
                 <input
                   type="email"
                   placeholder="Digite seu e-mail"
@@ -142,8 +142,8 @@ export class FormUserDetails extends Component {
                     <div className={styles.label_input}>
                       <label>Teste *</label>
 
-                      <div className={styles.select} style={{width: '16.25rem'}}>
-                        <select name="" id="" required onChange={handleChange('teste')} style={{width: '16.25rem'}}>
+                      <div className={styles.select} >
+                        <select name="" id="" required onChange={handleChange('teste')} >
                           <option disabled {...values.teste == '' ? { selected: true } : ''}>Selecionar teste</option>
                           <option value="RT-PCR" {...values.teste == 'RT-PCR' ? { selected: true } : ''}>RT-PCR</option>
                           <option value="Teste Rápido Antígeno" {...values.teste == 'Teste Rápido Antígeno' ? { selected: true } : ''}>Teste Rápido Antígeno</option>
