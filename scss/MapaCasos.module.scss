@@ -84,6 +84,18 @@
         width: 20rem;
       }
     }
+
+    @media only screen and (min-width: 1180px) {
+      .mapa {
+        width: 32rem !important;
+        max-width: 32rem !important;
+      }
+
+      .menu_filtro {
+        width: 100%;
+        max-width: 23rem;
+      }
+    }
   }
 }
 

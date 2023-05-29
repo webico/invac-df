@@ -61,7 +61,7 @@ const FaixaEtaria = ({ data, styles }) => {
           <div className={`menu_filtro ${styles.menu_filtro}`}>
             <div className='filtro_actions'>
               <div className='filtro_select'>
-                <select name="" id="" defaultValue='6 meses a 2 anos' onChange={(e) => handleSetFaixa(e)}>
+                <select name="" id="" defaultValue='6 meses a 2 anos' onChange={(e) => {handleSetFaixa(e);}}>
                   {
                     data.faixas.map(item => (
                       <option key={item.faixa} value={item.faixa}>{item.faixa}</option>

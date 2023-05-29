@@ -1,5 +1,5 @@
 .banner {
-  margin-top: 4rem;
+  margin-top: 6rem;
 
   .banner_container {
     padding: 2.5rem 1.5rem;
@@ -88,5 +88,9 @@
         max-width: 22rem;
       }
     }
+  }
+
+  @media only screen and (min-width: 1180px){
+    margin-bottom: 8rem;
   }
 }
