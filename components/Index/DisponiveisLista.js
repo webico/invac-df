@@ -5,11 +5,12 @@ import Link from 'next/link';
 
 const DisponiveisLista = ({ data, styles }) => {
   const [tab, setTab] = useState('vacina');
-  const [itemsShow, setItemsShow] = useState(4);
-
-  function handleShowMore() {
-    setItemsShow(data.length);
-  }
+  const itemsShow = 4;
+  
+  // const [itemsShow, setItemsShow] = useState(4);
+  // function handleShowMore() {
+  //   setItemsShow(data.length);
+  // }
 
   return (
     <section className={styles.disponivel}>
@@ -49,10 +50,9 @@ const DisponiveisLista = ({ data, styles }) => {
               }
             </ul>
 
-              <Link
+            <Link
               href={{pathname: '/disponibilidade'}} className={styles.ver_todas}>Ver todas as regiões</Link>
           </div>
-
 
         </section>
       </div>
