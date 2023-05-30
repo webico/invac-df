@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#key-features">Estrutura</a> •
-  <a href="#how-to-use">Como Usar</a> •
+  <a href="#how-to-use">Como Usar</a>
 </p>
 
 ## Estrutura
@@ -16,16 +16,16 @@ Para clonar e rodar esta aplicação, você precisará de [Git](https://git-scm.
 
 
 ```bash
-# Clone this repository
+# Clone o repositório
 $ git clone https://github.com/webico/invac-df.git
 
-# Go into the repository
+# Vá até o repositório
 $ cd invac-df
 
-# Install dependencies
+# Instale as dependências
 $ npm install
 
-# Run the app
+# Abra o servidor local
 $ npm run dev
 ```
 
