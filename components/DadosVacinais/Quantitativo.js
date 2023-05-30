@@ -74,9 +74,8 @@ const Quantitativo = ({ data, styles }) => {
 
   let BartCharts = [];
   for (let i = 0; i < dosesBarLista.length; i++) {
-    let colors = ['#528BF4', '#2561D3', '#093893', '#001535'];
+    let colors = ['#001535', '#093893', '#2561D3', '#528BF4'];
     const dataBar = {
-      // labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
       labels: ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
       datasets: [
         {
